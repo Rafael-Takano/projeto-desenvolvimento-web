@@ -1,0 +1,130 @@
+* {
+	padding: 0;
+	margin: 0;
+	text-decoration: none;
+	list-style: none;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: montserrat;
+}
+nav {
+	background: #5434af;
+	height: 80px;
+	width: 100%;
+}
+label.logo {
+	float: left;
+}
+nav ul {
+	float: right;
+	margin-right: 20px;
+}
+nav ul li {
+	display: inline-block;
+	line-height: 80px;
+	margin: 0 5px;
+}
+nav ul li a {
+	color: white;
+	font-size: 17px;
+	padding: 7px 13px;
+	border-radius: 3px;
+	text-transform: uppercase;
+}
+a.active, a:hover {
+	background: #1d075f;
+	transition: .5s;
+}
+
+/* botao */
+.menu-checkbtn {
+	font-size: 30px;
+	color: white;
+	float: left;
+	line-height: 80px;
+	margin-left: 40px;
+	cursor: pointer;
+	display: none;
+}
+#menu-check {
+	display: none;
+}
+
+#menu-check:checked ~ ul {
+	left: 0;
+}
+
+.menu-checkbtn {
+	display: block;
+}
+/* 
+@media (max-width: 952px){
+	label.logo{
+		font-size: 30px;
+		padding-left: 50px;
+	}
+	nav ul li a{
+		font-size: 16px;
+	}
+} */
+
+@media (max-width: 858px){
+	ul{
+		position: fixed;
+		width: 100%;
+		height: 100vh;
+		background: #1d075f;
+		top: 80px;
+		left: -100%;
+		text-align: center;
+		transition: all .5s;
+	}
+	nav ul li{
+		display: block;
+		margin: 50px 0;
+		line-height: 30px;
+	}
+	nav ul li a {
+		font-size: 20px;
+	}
+	a:hover, a.active {
+		background: none;
+		color: #5434af;
+	}
+}
+
+/* container e items*/
+/* .container-maior {
+	width: 100vmax; min-height: 100vh;
+	height: 100%;
+	background-color: lightgray;
+	display: flex;
+	justify-content: center;
+} */
+
+.product-grid {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	max-width: 360px; /* limit the container width to 4x5 grid */
+	margin: 0 auto; /* center the container horizontally */
+	border: 1px solid #ccc; /* add a border */
+	padding: 10px; /* add some padding inside the border */
+  }
+  
+  .product-grid img {
+	width: 80px; /* set the width of each image */
+	height: 100px; /* set the height of each image */
+	margin: 5px; /* add some margin between images */
+  }
+  
+.item {
+	width: 100px;
+	height: 150px;
+	background-color: white; 
+	margin-right: 5px; 
+	margin-left: 5px; 
+	border-radius: 15px;
+}
