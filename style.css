@@ -120,11 +120,3 @@ a.active, a:hover {
 	margin: 5px; /* add some margin between images */
   }
   
-.item {
-	width: 100px;
-	height: 150px;
-	background-color: white; 
-	margin-right: 5px; 
-	margin-left: 5px; 
-	border-radius: 15px;
-}
