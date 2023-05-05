@@ -214,7 +214,10 @@ footer li {
 	}
 	label.logo img {
 		position: fixed;
-		left: calc(50% - 110px);
+		width: 30%;
+		left: 35vw;
+		height: 7.91vw;
+		margin: calc((85px - 7.91vw)/2) 0px;
 	}
 	.menu-checkbtn img {
 		position: fixed;		
@@ -282,19 +285,14 @@ footer li {
 
 @media (max-width: 690px) {
 	.navbtn {
-		margin: 19.5px 10px 19.5px 0px;
+		margin-right: 20px;
 	}
-	.navbtn img {
-		float: right;
-		margin: 8px 0px 8px 0px;
-		height: 30px;		
-	}
+
 	footer ul {
 		font-size: 20px;
 	}
 	footer li, footer a{
 		font-size: 18px;
 	}
-
 
 }
