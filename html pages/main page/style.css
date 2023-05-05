@@ -55,13 +55,12 @@ label.logo img{
 	line-height: 34px;
 	letter-spacing: 1.5px;
 }
+
 .navbtn img {
 	float: right;
 	margin: 8px 26px 8px 0px;
 	height: 42px;
 }
-
-
 
 /* botao */
 .menu-checkbtn {
@@ -72,19 +71,6 @@ label.logo img{
 input {
 	display: contents;
 }
-
-
-/* 
-@media (max-width: 952px){
-	label.logo{
-		font-size: 30px;
-		padding-left: 50px;
-	}
-	nav ul li a{
-		font-size: 16px;
-	}
-} */
-
 
 .container-maior {
 	color: #999;
@@ -103,8 +89,7 @@ input {
 	border-bottom: 0px;
 	padding: 10px; 
 	background-color: #fff;	
-  }
-  
+  } 
   
 .item {
 	width: 240px;
@@ -115,7 +100,6 @@ input {
 	margin: 15px;
 	float:left
 }
-
 
 img.item-img {
 	width: 170px;
@@ -140,6 +124,7 @@ h3.item-title {
 	height: 82px;
 	margin: 8px 8px 0px 8px;
 }
+
 .AddCartimg {
 	margin-left: 42px;
 }
@@ -183,4 +168,133 @@ footer li {
 
 .pright {
 	float: right;
+}
+
+@media (max-width: 1150px){
+	.navbtn {
+		float: right;		
+		width: fit-content;
+		height: 42px;
+		border-radius: 0;
+		border: none;						
+		display: table;
+		box-shadow: none;
+	}
+	
+	.navbtn p {
+		display: none;
+	}
+	
+	.navbtn img {
+		float: right;
+		margin: 8px 26px 8px 26px;
+		height: 42px;
+		filter: drop-shadow(0px 2.5px 2.5px  rgba(0, 0, 0, 0.25));
+	}
+	
+	.product-grid {		
+		width: 834.5px;	
+	}
+
+	footer ul, footer a {
+		width: 834.5px;		
+	}
+
+	footer li {
+		width: 834.5px;
+	}
+} 
+
+
+
+@media (max-width: 900px) {
+	nav {
+		display: inline-block;
+		text-align: center;
+	}
+	label.logo img {
+		position: fixed;
+		left: calc(50% - 110px);
+	}
+	.menu-checkbtn img {
+		position: fixed;		
+	}
+	.navbtn img {
+		float: right;
+		margin: 8px 4px 8px 4px;
+		height: 42px;		
+	}
+
+	.product-grid {
+		width: 100%;
+		padding: 0px;
+	}
+
+	.item {
+		--px: calc(100vw/108);
+		width: 44.43vw;
+		height: 66.66vw;
+		border: 2px solid #bbb;
+		border-radius: 2vw;
+		margin: 2.5vw;		
+	}
+
+	img.item-img {
+		width: 31.47vw;
+		height: 31.47vw;
+		margin: 1.85vw 6.48vw;	
+	}	
+
+	h3.item-title {
+		margin-left: 1.48vw;
+		font-size: 3.70vw;
+		font-weight: 400;
+	}
+
+	.roundBtn {
+		width: 15.18vw;
+		height: 15.18vw;
+		margin: 1.48vw 1.48vw 0px 1.48vw;
+	}
+
+	.AddCartimg {
+		margin-left: 7.61vw;
+	}
+
+	.price {
+		display: inline-block;
+		width: 44.43vw;
+		text-align: center;
+		font-size: 7.405vw;
+}
+
+	footer ul, footer a {
+		width: 100%;
+		padding-left: 5%;		
+	}
+
+	footer li {
+		font-size: 25px;
+		width: 80%;
+		margin: auto;
+	}
+}
+
+@media (max-width: 690px) {
+	.navbtn {
+		margin: 19.5px 10px 19.5px 0px;
+	}
+	.navbtn img {
+		float: right;
+		margin: 8px 0px 8px 0px;
+		height: 30px;		
+	}
+	footer ul {
+		font-size: 20px;
+	}
+	footer li, footer a{
+		font-size: 18px;
+	}
+
+
 }
