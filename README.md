@@ -5,8 +5,6 @@ Igor Boson **NUSP:** 11200571
 
 Rafael Takano  **NUSP:** 11200459
 
----
-
 ## Requisitos
 
 ## Descrição do Projeto
