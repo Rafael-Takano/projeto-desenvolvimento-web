@@ -9,6 +9,7 @@
 body {
 	font-family: sans-serif;	
 }
+
 nav {	
 	background: #fff;
 	height: 85px;
@@ -24,7 +25,6 @@ nav {
 	margin: 20px 38px 18px;
 	filter:drop-shadow(0px 2.5px 2.5px  rgba(0, 0, 0, 0.25));
 }
-
 
 label.logo img{
 	float: left;
@@ -61,22 +61,19 @@ label.logo img{
 	height: 42px;
 }
 
+
+
 /* botao */
 .menu-checkbtn {
 	float: left;
-	display: none;
-}
-#menu-check {
-	display: none;
-}
-
-#menu-check:checked ~ ul {
-	left: 0;
-}
-
-.menu-checkbtn {
 	display: block;
 }
+
+input {
+	display: contents;
+}
+
+
 /* 
 @media (max-width: 952px){
 	label.logo{
@@ -87,31 +84,6 @@ label.logo img{
 		font-size: 16px;
 	}
 } */
-
-@media (max-width: 858px){
-	ul{
-		position: fixed;
-		width: 100%;
-		height: 100vh;
-		background: #1d075f;
-		top: 80px;
-		left: -100%;
-		text-align: center;
-		transition: all .5s;
-	}
-	nav ul li{
-		display: block;
-		margin: 50px 0;
-		line-height: 30px;
-	}
-	nav ul li a {
-		font-size: 20px;
-	}
-	a:hover, a.active {
-		background: none;
-		color: #5434af;
-	}
-}
 
 
 .container-maior {
@@ -125,12 +97,11 @@ label.logo img{
 	display: table;	
 	width: 1104.5px;
 	height: auto;
-	/*max-width: 360px; /* limit the container width to 4x5 grid */
-	margin: 0 auto; /* center the container horizontally */
-	border: 2px solid #bbb; /* add a border */
+	margin: 0 auto; 
+	border: 2px solid #bbb; 
 	border-top: 0px;
 	border-bottom: 0px;
-	padding: 10px; /* add some padding inside the border */
+	padding: 10px; 
 	background-color: #fff;	
   }
   
@@ -150,11 +121,6 @@ img.item-img {
 	width: 170px;
 	height: 170px;	
 	margin: 10px 35px;
-}
-
-
-input {
-	display: contents;
 }
 
 h2 {
