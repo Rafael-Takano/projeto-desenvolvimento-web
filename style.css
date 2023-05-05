@@ -1,7 +1,6 @@
 * {
 	padding: 0;
-	margin: 0;
-	color: #999;
+	margin: 0;	
 	text-decoration: none;
 	list-style: none;
 	box-sizing: border-box;	
@@ -10,43 +9,61 @@
 body {
 	font-family: sans-serif;	
 }
-nav {
-	background: #5434af;
-	height: 80px;
+nav {	
+	background: #fff;
+	height: 85px;
 	width: 100%;
+	box-shadow: 0px 2.5px 2.5px rgba(0, 0, 0, 0.25);
+	position: fixed;
+	display: table;
 }
-label.logo {
+
+.menu-checkbtn img {
+	width: 43px;
+	height: 43px;
+	margin: 20px 38px 18px;
+	filter:drop-shadow(0px 2.5px 2.5px  rgba(0, 0, 0, 0.25));
+}
+
+
+label.logo img{
 	float: left;
+	width: 220px;
+	height: 58px;
+	margin: 13.5px 8px;
 }
-nav ul {
+
+.navbtn {
 	float: right;
-	margin-right: 20px;
-}
-nav ul li {
-	display: inline-block;
-	line-height: 80px;
-	margin: 0 5px;
-}
-nav ul li a {
-	color: white;
-	font-size: 17px;
-	padding: 7px 13px;
-	border-radius: 3px;
+	width: 319px;
+	height: 58px;
+	border-radius: 26px;
+	border: 2px solid #720000;
+	margin: 11.5px 30px 11.5px 0px;
 	text-transform: uppercase;
+	color: #fff;
+	font-size: 20px;
+	font-weight: bold;
+	-webkit-text-stroke: #720000 1.5px;
+	display: table;
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
 }
-a.active, a:hover {
-	background: #1d075f;
-	transition: .5s;
+
+.navbtn p {
+	float: left;
+	margin: 12px 0px 12px 26px; 
+	line-height: 34px;
+	letter-spacing: 1.5px;
+}
+.navbtn img {
+	float: right;
+	margin: 8px 26px 8px 0px;
+	height: 42px;
 }
 
 /* botao */
 .menu-checkbtn {
-	font-size: 30px;
-	color: white;
 	float: left;
-	line-height: 80px;
-	margin-left: 40px;
-	cursor: pointer;
 	display: none;
 }
 #menu-check {
@@ -98,19 +115,23 @@ a.active, a:hover {
 
 
 .container-maior {
+	color: #999;
 	width: 100%;
 	background-color: #ededed;
+	padding: 85px 0px 0px;
 } 
 
 .product-grid {
 	display: table;	
-	width: 1102.5px;
+	width: 1104.5px;
 	height: auto;
 	/*max-width: 360px; /* limit the container width to 4x5 grid */
 	margin: 0 auto; /* center the container horizontally */
-	border: 1px solid #bbb; /* add a border */
+	border: 2px solid #bbb; /* add a border */
+	border-top: 0px;
+	border-bottom: 0px;
 	padding: 10px; /* add some padding inside the border */
-	background-color: #fff;
+	background-color: #fff;	
   }
   
   
@@ -136,9 +157,16 @@ input {
 	display: contents;
 }
 
+h2 {
+	font-weight: 400;
+	font-size: 30px;
+	margin: 8px;
+}
+
 h3.item-title {
 	margin-left: 8px;
 	font-size: 20px;
+	font-weight: 400;
 }
 
 .roundBtn {
@@ -149,9 +177,44 @@ h3.item-title {
 .AddCartimg {
 	margin-left: 42px;
 }
-price {
+
+.price {
 	display: inline-block;
 	width: 240px;
 	text-align: center;
 	font-size: 40px;
+}
+
+footer {
+	border-top: solid 2px #720000;
+	background-color: #c92828;
+	color: #fff;
+	width: 100%;
+	font-size: 30px;
+}
+
+footer ul, footer a {
+	width: 1102.5px;
+	margin: 0px auto;
+	padding: 30px 0px 0px;	
+}
+
+footer a, footer a:hover, footer a:active {
+	display: block;
+	color: #fff;
+	padding-bottom: 40px;
+}
+
+footer li {
+	width: 1102.5px;
+	display: table;
+	padding: 4px 30px;
+}
+
+.pleft {
+	float: left;
+}
+
+.pright {
+	float: right;
 }
