@@ -181,6 +181,15 @@ footer li {
 	border-radius: 40px;
 	backdrop-filter: blur(4px);
 }
+/*usar vh*/
+.addItemTitle, .addItemTitle::selection{
+	width: 1022.5px;
+	height: 100px;
+	background-color: rgba(0, 0, 0, 0);
+	border: #999 2px solid;
+	margin: 40px 40px 0px;	
+	display: block;
+}
 
 @media (max-width: 1150px){
 	.navbtn {
