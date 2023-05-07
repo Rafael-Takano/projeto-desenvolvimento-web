@@ -21,6 +21,7 @@
 		 	<p>Shopping Cart</p>
 			<img src="../../imgs/Icons/cart.svg">
 		</div>
+
 	</nav>	
 	<section class="container-maior">
 		<section class="product-grid">
@@ -155,6 +156,32 @@
 			</div>
 		</section>
 	</section>
+    <div class="cartDiv">
+        <form>
+            <p>Shopping Cart</p>
+            <div class="cartItem">
+                <img src="../../imgs/image 1.png" class="item-img">
+				<p class="item-title">Feijão 500g</p>
+                <input type="number" class="quantity" min="0" max="9">
+				<p class="price">R$ 4,99</p>
+            </div>
+            <div class="cartItem">
+                <img src="../../imgs/image 1.png" class="item-img">
+				<p class="item-title">Feijão 500g</p>
+                <input type="number" class="quantity" min="0" max="9">
+				<p class="price">R$ 4,99</p>
+            </div>
+            <div class="cart-bottom-div">
+                <p class="subtotal">Subtotal: R$ 49,90</p><br>
+                <p class="payment-text">Credit card or Debit card:</p>
+                <select id="select-payment">
+                    <option value="Credit Card">Credit Card</option>
+                    <option value="Debit Card">Debit Card</option>
+                </select>
+                <div class="confirm-purchase">Confirm Purchase</div>
+            </div>
+        </form>
+    </div>
 	<footer> 
 		<ul id="creditos">
 			<strong>Feito por:</strong>
