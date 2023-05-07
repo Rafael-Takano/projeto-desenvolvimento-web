@@ -141,31 +141,32 @@
 				
 				<p class="price">R$ 4,99</p>
 			</div>
-			<div class="item">
-				<img src="../../imgs/image 1.png" class="item-img">
-				<h3 class="item-title">Feijão 500g</h3>
-				<input type="image" src="../../imgs/buttons/Edit.svg" class="Infoimg roundBtn">
-				<input type="image" src="../../imgs/buttons/Remove item.svg" class="AddCartimg roundBtn">
-				
-				<p class="price">R$ 4,99</p>
+			<div class="addCart">
+				<img src="../../imgs/buttons/Add Item.svg" class="addProductimg">								
+				<p class="addCartP">Add Product</p>
 			</div>
 		</section>
 	</section>
 	<div id="addItemDiv">
 		<form>
 			<input type="Text" class="addItemTitle">			
-			<label for="addItemImg">
-				Add Image
-				<img src="../../imgs/buttons/Add Item.svg">
-			</label>
-			<input type="file" id="addItemImg" accept=".png, .jpg">
-			<div class="itemData">
-				<label for="addItemDesc"></label>
-				<input type="text" id="addItemDesc">
-				<label for="addItemQtdStock">Qtd in Stock:</label>
+			<div class="itemLeft">
+				<label for="addItemImg" id="addItemImgLabel">
+					<p>Add Image</p> 				
+				</label>
+				<input type="text" id="addItemPrice">
+				<input type="file" id="addItemImg" accept=".png, .jpg">
+			</div>
+				
+			<div class="itemRight">
+				<label for="addItemDesc" id="addItemDescLabel">Description</label>
+				<textarea id="addItemDesc">
+
+				</textarea>
+				<label for="addItemQtdStock" id="addItemQtdStockLabel">Qtd in Stock:</label>
 				<input type="text" id="addItemQtdStock">
-				<p>Qtd sold:</p>
-				<label for="addItemCate">Category:</label>
+				<p id="QtdSold">Qtd sold: 0</p>
+				<label for="addItemCate" id="addItemCateLabel">Category:</label>
 				<select  id="addItemCate">
 					<option value="Fruits">Fruits</option>
 					<option value="Vegetables">Vegetables</option>
@@ -185,8 +186,7 @@
 					<option value="Household & Cleaning Supplies">Household & Cleaning Supplies</option>
 					<option value="Baby Items">Baby Items</option>
 					<option value="Pet Care">Pet Care</option>
-				</select>
-				<input type="text" id="addItemPrice">
+				</select>				
 				<input type="image" src="../../imgs/buttons/Add Product.png" id="addItem">													
 			</div>
 		</form>
