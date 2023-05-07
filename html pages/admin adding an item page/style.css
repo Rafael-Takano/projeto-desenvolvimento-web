@@ -120,6 +120,7 @@ h3.item-title {
 }
 
 .roundBtn {
+	display: inline-block;
 	width: 82px;
 	height: 82px;
 	margin: 8px 8px 0px 8px;
@@ -173,24 +174,37 @@ footer li {
 #addItemDiv {
 	position: fixed;
 	width: 1102.5px;
-	height: 700px;
+	height: calc(90vh - 142px);
 	top: 142px;
 	left: calc((100vw - 1102.5px)/2);
 	background-color: rgba(255, 255, 255, 0.8);
 	border: #999 solid 2px;
 	border-radius: 40px;
 	backdrop-filter: blur(4px);
+	display: table;
 }
+
 /*usar vh*/
 .addItemTitle, .addItemTitle::selection{
 	width: 1022.5px;
-	height: 100px;
+	height: calc((90vh - 142px) / 7);
 	background-color: rgba(0, 0, 0, 0);
-	border: #999 2px solid;
+	border: #999 2px solid;	
 	margin: 40px 40px 0px;	
 	display: block;
+	outline: none;
+	font-size: calc((90vh - 142px) / 7 * 0.6);
+	color: #999;
+	padding-left: calc((90vh - 142px) / 7 * 0.2);
 }
 
+.addItemImg {
+	display: none;	
+}
+
+#addItem {
+	display: block;
+}
 @media (max-width: 1150px){
 	.navbtn {
 		float: right;		

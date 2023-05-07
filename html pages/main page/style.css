@@ -120,6 +120,7 @@ h3.item-title {
 }
 
 .roundBtn {
+	display: inline-block;
 	width: 82px;
 	height: 82px;
 	margin: 8px 8px 0px 8px;
