@@ -84,10 +84,10 @@ input {
 	width: 1104.5px;
 	height: auto;
 	margin: 0 auto; 
-	border: 2px solid #bbb; 
+	border: 0.5px solid #bbb; 
 	border-top: 0px;
 	border-bottom: 0px;
-	padding: 10px; 
+	padding: 8px; 
 	background-color: #fff;	
   } 
   
@@ -127,7 +127,7 @@ h3.item-title {
 }
 
 .AddCartimg {
-	margin-left: 42px;
+	margin-left: 40px;
 }
 
 .price {
