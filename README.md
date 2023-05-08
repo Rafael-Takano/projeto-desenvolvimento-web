@@ -17,6 +17,32 @@ No quesito dos dados que devem ser armazenados pelo sistema, é necessário mant
 ## Descrição do Projeto
 O site Express Market tem dois tipos de usuário, cliente e admin. Todos os usuários podem visualizar os items disponíveis, filtrar por categorias e ver a descrição de itens. Caso seja um usuário não logado, ele pode fazer login. Tanto o usuário não logado e o cliente podem colocar itens no seu carrinho, mas para finalizar a compra o usuário deve fazer login. O usuário admin tem o poder de criar cadastrar no sistema outro usuário admin ou usuários cliente. E também, pode criar, editar ou remover itens do sistema. Ambos o cliente e admin possuem a opção de deslogar ou deletar a sua conta.
 
+Alem disso, as informações armazenadas no servidor para essas funcionalidades acima são:
+
+- Admin:
+    - id
+    - Nome
+    - Email
+    - Senha
+    - Telefone
+    - Endereço
+- Cliente:
+    - id
+    - Nome
+    - Email
+    - Senha
+    - Telefone
+    - Endereço
+- Produtos:
+    - id
+    - Nome
+    - Foto do produto
+    - Preço 
+    - Descrição do Produto
+    - Quantidade em estoque
+    - Quantidade vendida
+    - Categoria
+
 No diagrama de navegação abaixo vemos a SPA englobada pelo possiveís estados do usuario, (Not Looged, Client, Admin), componentes que pode aparecer na tela, ações como setas implicando quem afetam e o que é possivel ser feito.
 
 ![navigation diagram](imgs/Navigation%20Diagram.png)
