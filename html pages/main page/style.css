@@ -62,7 +62,6 @@ label.logo img{
 	height: 42px;
 }
 
-/* botao */
 .menu-checkbtn {
 	float: left;
 	display: block;
@@ -205,8 +204,6 @@ footer li {
 		width: 834.5px;
 	}
 } 
-
-
 
 @media (max-width: 900px) {
 	nav {

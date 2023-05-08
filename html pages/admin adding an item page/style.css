@@ -126,7 +126,7 @@ h3.item-title {
 	margin: 8px 8px 0px 8px;
 }
 
-.AddCartimg {
+.RemoveItemimg {
 	margin-left: 40px;
 }
 
@@ -460,7 +460,7 @@ footer li {
 		margin: 1.48vw 1.48vw 0px 1.48vw;
 	}
 
-	.AddCartimg {
+	.RemoveItemimg {
 		margin-left: 7.61vw;
 	}
 
