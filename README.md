@@ -27,6 +27,8 @@ Na página de adição de um item, temos sobre a tela uma div com caixas de inpu
 ## Plano de Testes
 Visto a simplicidade das páginas elaboradas até então, ainda não vimos a necessidade de fazer testes automatizados. Os testes até então foram feitos de forma manual, mexendo na proporção da tela, com diferente números de itens e tamanho dos inputs.
 
+Mais para a frente pretendemos também utilizar o postman para testar o backend.
+
 ## Resultado dos Testes
 Os resultados foram como o esperado, mas vale ressaltar que a responsividade das telas ainda não está como o esperado, e pretendemos aperfeiçoar isso nas próximas etapas.
 
