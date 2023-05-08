@@ -9,11 +9,14 @@ Rafael Takano  **NUSP:** 11200459
 
 ## Requisitos
 O sistema possui os mesmos requisitos explicitados na descrição do projeto. Sobre o requisito específico ao nosso sistema, temos uma loja online de um supemercado, em que cada item possui uma categoria como _fruits_ e _vegetables_, atributo que é usado para filtrar os diferentes items disponíveis no sistema.
-Também, no sistemas permitimos que um usuário não logado possa colocar itens no seu carrinho, e para finalizar a compra, é necessário que ele faça login. Nesse caso, é necessário que o carrinho de compras seja salvo para que o cliente não precise colocar novamente os itens no carrinho após fazer o login.
+
+Também, no sistema permitimos que um usuário não logado possa colocar itens no seu carrinho, e para finalizar a compra, é necessário que ele faça login. Nesse caso, é necessário que o carrinho de compras seja salvo para que o cliente não precise colocar novamente os itens no carrinho após fazer o login.
+
 No quesito dos dados que devem ser armazenados pelo sistema, é necessário manter um acesso aos clientes e admins cadastrados e os seus atributos (id, telefone, email, e o endereço no caso dos clientes). Também um estoque dos itens, contendo id, foto, descrição, preço, quantidade em estoque, quantidade vendida e categoria. E também, um carrinho que contém os itens adicionados pelo cliente até então.
 
 ## Descrição do Projeto
 O site Express Market tem dois tipos de usuário, cliente e admin. Todos os usuários podem visualizar os items disponíveis, filtrar por categorias e ver a descrição de itens. Caso seja um usuário não logado, ele pode fazer login. Tanto o usuário não logado e o cliente podem colocar itens no seu carrinho, mas para finalizar a compra o usuário deve fazer login. O usuário admin tem o poder de criar cadastrar no sistema outro usuário admin ou usuários cliente. E também, pode criar, editar ou remover itens do sistema. Ambos o cliente e admin possuem a opção de deslogar ou deletar a sua conta.
+
 Veja aqui o 
 [Diagrama de navegação](https://github.com/Rafael-Takano/projeto-desenvolvimento-web/blob/main/imgs/Navigation%20Diagram.png) 
 
