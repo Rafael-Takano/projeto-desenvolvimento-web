@@ -17,8 +17,49 @@ No quesito dos dados que devem ser armazenados pelo sistema, é necessário mant
 ## Descrição do Projeto
 O site Express Market tem dois tipos de usuário, cliente e admin. Todos os usuários podem visualizar os items disponíveis, filtrar por categorias e ver a descrição de itens. Caso seja um usuário não logado, ele pode fazer login. Tanto o usuário não logado e o cliente podem colocar itens no seu carrinho, mas para finalizar a compra o usuário deve fazer login. O usuário admin tem o poder de criar cadastrar no sistema outro usuário admin ou usuários cliente. E também, pode criar, editar ou remover itens do sistema. Ambos o cliente e admin possuem a opção de deslogar ou deletar a sua conta.
 
-Veja aqui o 
-[Diagrama de navegação](https://github.com/Rafael-Takano/projeto-desenvolvimento-web/blob/main/imgs/Navigation%20Diagram.png) 
+No diagrama de navegação abaixo vemos a SPA englobada pelo possiveís estados do usuario, (Not Looged, Client, Admin), componentes que pode aparecer na tela, ações como setas implicando quem afetam e o que é possivel ser feito.
+
+![navigation diagram](imgs/Navigation%20Diagram.png)
+
+Abaixo estão os mockups das páginas:
+
+Pagina Principal (Not Logged e Client, mobile, Admin): 
+
+![main page](imgs/Mockup%20pages/Desktop%20pages/Pagina%20inicial%20-%20Desktop.png)
+![main page mobile](imgs/Mockup%20pages/smartphone%20pages/Pagina%20inicial%20-%20Phone.png)
+![main page admin](imgs/Mockup%20pages/Desktop%20pages/Visao%20Admin%20-%20Desktop.png)
+
+Carrinho de compras: 
+
+![shoppingcart](imgs/Mockup%20pages/Desktop%20pages/Carrinho%20-%20Desktop.png)
+![shoppingcart mobile](imgs/Mockup%20pages/smartphone%20pages/Carrinho%20-%20Phone.png)
+
+Categorias:
+
+![categories](imgs/Mockup%20pages/Desktop%20pages/Categorias%20-%20Desktop.png)
+![categories mobile](imgs/Mockup%20pages/smartphone%20pages/Categorias%20-%20Phone.png)
+
+Login: 
+![login](imgs/Mockup%20pages/Desktop%20pages/Login%20-%20Desktop.png)
+![login mobile](imgs/Mockup%20pages/smartphone%20pages/Login%20-%20Phone.png)
+
+Descrição do Item:
+![item description](imgs/Mockup%20pages/Desktop%20pages/Descri%C3%A7ao%20de%20item%20-%20Desktop.png)
+![item description mobile](imgs/Mockup%20pages/smartphone%20pages/Descri%C3%A7ao%20-%20Phone.png)
+
+Edição do Item (Admin): 
+![item edition](imgs/Mockup%20pages/Desktop%20pages/Visao%20Admin%20edi%C3%A7ao%20item%20-%20Desktop.png)
+
+Adição de Item (Admin): 
+![item adition](imgs/Mockup%20pages/Desktop%20pages/Visao%20Admin%20adicao%20item%20-%20Desktop.png)
+
+Opções de Usuário (Admin): 
+![user options](imgs/Mockup%20pages/Desktop%20pages/Pessoal%20Admin%20-%20Desktop.png)
+![user options](imgs/Mockup%20pages/smartphone%20pages/Pessoal%20Admin%20-%20Phone.png)
+
+Criando Usuário (Admin):
+![user create](imgs/Mockup%20pages/Desktop%20pages/Create%20Admin%20-%20Desktop.png)
+![user create mobile](imgs/Mockup%20pages/smartphone%20pages/Create%20Admin%20-%20Phone.png)
 
 ## Comentários sobre o código
 A página inicial está dividida em 3 partes principais, uma navbar, um footer e entre eles tem uma section onde estão organizados os itens. Cada item é uma div em que é organizada a imagem e informações referentes ao item. 
