@@ -1,0 +1,238 @@
+{
+    "products": [
+        {
+            "name": "Apple"
+        },
+        {
+            "name": "Banana"
+        },
+        {
+            "name": "Orange"
+        },
+        {
+            "name": "Avocado"
+        },
+        {
+            "name": "Peach"
+        },
+        {
+            "name": "Potato"
+        },
+        {
+            "name": "Onion"
+        },
+        {
+            "name": "Carrot"
+        },
+        {
+            "name": "Broccoli"
+        },
+        {
+            "name": "Tomato"
+        },
+        {
+            "name": "Cucumber"
+        },
+        {
+            "name": "Canned Soup"
+        },
+        {
+            "name": "Canned Tuna"
+        },
+        {
+            "name": "Canned Beans"
+        },
+        {
+            "name": "Butter"
+        },
+        {
+            "name": "Cheese"
+        },
+        {
+            "name": "Egg"
+        },
+        {
+            "name": "Milk"
+        },
+        {
+            "name": "Yogurt"
+        },
+        {
+            "name": "Chicken Breast"
+        },
+        {
+            "name": "Chicken Thighs"
+        },
+        {
+            "name": "Beef"
+        },
+        {
+            "name": "Pork"
+        },
+        {
+            "name": "Bacon"
+        },
+        {
+            "name": "Sausages"
+        },
+        {
+            "name": "Shrimps"
+        },
+        {
+            "name": "Crab"
+        },
+        {
+            "name": "Salmon"
+        },
+        {
+            "name": "Tuna"
+        },
+        {
+            "name": "Salami"
+        },
+        {
+            "name": "Ham"
+        },
+        {
+            "name": "Turkey"
+        },
+        {
+            "name": "Black Pepper"
+        },
+        {
+            "name": "Oregano"
+        },
+        {
+            "name": "Cinnamon"
+        },
+        {
+            "name": "Sugar"
+        },
+        {
+            "name": "Ketchup"
+        },
+        {
+            "name": "Mayonnaise"
+        },
+        {
+            "name": "Potato Chips"
+        },
+        {
+            "name": "Popcorn"
+        },
+        {
+            "name": "Nuts"
+        },
+        {
+            "name": "Crackers"
+        },
+        {
+            "name": "Bread"
+        },
+        {
+            "name": "Tortillas"
+        },
+        {
+            "name": "Cookies"
+        },
+        {
+            "name": "Muffins"
+        },
+        {
+            "name": "Pie"
+        },
+        {
+            "name": "Oats"
+        },
+        {
+            "name": "Granola"
+        },
+        {
+            "name": "Rice"
+        },
+        {
+            "name": "Macaroni"
+        },
+        {
+            "name": "Noodles"
+        },
+        {
+            "name": "Flour"
+        },
+        {
+            "name": "Baking Powder"
+        },
+        {
+            "name": "Cocoa"
+        },
+        {
+            "name": "Frozen Pizza"
+        },
+        {
+            "name": "Ice cream"
+        },
+        {
+            "name": "Frozen Fish"
+        },
+        {
+            "name": "Shampoo"
+        },
+        {
+            "name": "Conditioner"
+        },
+        {
+            "name": "Deodorant"
+        },
+        {
+            "name": "Toothpaste"
+        },
+        {
+            "name": "Dental Floss"
+        },
+        {
+            "name": "Band-Aid"
+        },
+        {
+            "name": "Cleaning Alcohol"
+        },
+        {
+            "name": "Pain Killer"
+        },
+        {
+            "name": "Antiacid"
+        },
+        {
+            "name": "Dish Soap"
+        },
+        {
+            "name": "Papel Towel"
+        },
+        {
+            "name": "Trash Bags"
+        },
+        {
+            "name": "Laundry Detergent"
+        },
+        {
+            "name": "Baby Food"
+        },
+        {
+            "name": "Diapers"
+        },
+        {
+            "name": "Wet wipes"
+        },
+        {
+            "name": "Pet food"
+        },
+        {
+            "name": "Kitty Litter"
+        },
+        {
+            "name": "Chew Toy"
+        },
+        {
+            "name": "Pet Shampoo"
+        }
+    ]
+}

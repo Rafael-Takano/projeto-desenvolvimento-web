@@ -105,7 +105,22 @@ Mais para a frente pretendemos também utilizar o postman para testar o backend.
 Os resultados foram como o esperado, mas vale ressaltar que a responsividade das telas ainda não está como o esperado, e pretendemos aperfeiçoar isso nas próximas etapas.
 
 ## Como executar
+### Mockups:
 Para rodar o programa, é necessário baixar o código disponível aqui no github, unzipar se necessário, e abrir as páginas localizadas em [/html pages](https://github.com/Rafael-Takano/projeto-desenvolvimento-web/tree/main/html%20pages)
+
+### Vite
+Para rodar o programa é necessário ter o nodeJs instalado, para isso baixe-o pelo [site](https://nodejs.org/) ou utilize seu instalador de pacotes preferido
+
+Em seguida instale os módulos necessários para a execução do programa com o npm(Node package Manager), deve ter sido instalado junto com o NodeJs, da seguinte forma: 
+
+`npm i` 
+
+Para o desenvolvimento basta iniciar a aplicação com o vite: 
+
+`npm run dev` 
+
+Dessa forma o site será hospedado no host local e mostrará atualizações na página em tempo real.
+
 
 ## Problemas
 Tivemos dificuldades em como organizar o display dos itens, principalmente no quesito responsividade, pois o display "quebrava" quando reduzíamos o tamanho da tela, mas depois de um tempo procurando soluções conseguimos resolver.

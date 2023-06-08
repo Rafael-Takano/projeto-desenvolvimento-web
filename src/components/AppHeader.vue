@@ -1,7 +1,7 @@
 <script setup>
-  import Categories from './HeaderCategory.vue';
-  import Logo from './HeaderLogo.vue';
-  import navbtn from './HeaderButtons.vue'
+  import Categories from './header/HeaderCategory.vue';
+  import Logo from './header/HeaderLogo.vue';
+  import navbtn from './header/HeaderButtons.vue'
   //imgsrc="./imgs/Icons/cart.svg"
 </script>
 
