@@ -6,8 +6,8 @@
 <template>
     <section class="container-maior">
 		<section class="product-grid">
-			<h2>All products</h2>            
-            <Items v-for="product in products.products" :product="product"/>            
+			<h2>All products</h2>            		
+			<Items v-for="product in products.products" :product="product"/>            			
         </section>
 	</section>
 </template>
@@ -24,14 +24,14 @@
 
 .product-grid {
 	display: table;	
-	width: 1104.5px;
+	width: 60vw;
 	height: auto;
-	margin: 0 auto; 
-	border: 0.5px solid #bbb; 
+	margin: 0 auto; 	
 	border-top: 0px;
 	border-bottom: 0px;
-	padding: 8px; 
+	padding: 0.675vw; 
 	background-color: #fff;	
+	box-sizing: content-box;
   } 
   
 h2 {
@@ -44,16 +44,9 @@ h2 {
 	.container-maior {
 		padding: 45px 0px 0px;
 	}
-	.product-grid {		
-		width: 834.5px;	
-	}
-}
-
-
-@media (max-width: 900px) {
 	.product-grid {
-		width: 100%;
-		padding: 0px;
+		width: calc(100% - 2.5vw);
+		padding: 1.25vw;
 	}
 }
 

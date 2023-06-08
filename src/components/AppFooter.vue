@@ -23,25 +23,25 @@
         background-color: #c92828;
         color: #fff;
         width: 100%;
-        font-size: 30px;
+        font-size: 1.5625vw;
     }
 
     ul,  a {
-        width: 1102.5px;
+        width: 60vw;
         margin: 0px auto;
-        padding: 30px 0px 0px;	
+        padding: 1.5625vw 0px 0px;	
     }
 
      a,  a:hover,  a:active {
         display: block;
         color: #fff;
-        padding-bottom: 40px;
+        padding-bottom: 2.0833vw;
     }
 
      li {
-        width: 1102.5px;
+        width: 60vw;
         display: table;
-        padding: 4px 30px;
+        padding: 0.20833vw 1.5625vw;
     }
 
     .pleft {
@@ -52,23 +52,17 @@
         float: right;
     }
 
-    @media (max-width: 1150px) {
+    @media (max-width: 1280px) {
          ul,  a {
-            width: 834.5px;		
+            width: 100%;		
+            font-size: 3vw;
         }
 
          li {
-            width: 834.5px;
+            width: 100%;
+            font-size: 2.6vw;
         }
     }
-    
-    @media (max-width: 690px) {
-         ul {
-            font-size: 20px;
-        }
-         li,  a{
-            font-size: 18px;
-        }
-    }
+        
 
 </style>
