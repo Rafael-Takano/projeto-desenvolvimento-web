@@ -1,9 +1,13 @@
 <script setup>
-    defineProps({
+    const prop = defineProps({
         product: {
             type: Object,
         }
     });
+
+    function text() {
+        return prop.product.price.toFixed(2)
+    }
 </script>
 
 <template>
@@ -14,9 +18,10 @@
             <input type="image" src="/imgs/buttons/Info.svg" class="leftButton roundBtn">
             <input type="image" src="/imgs/buttons/Add to Cart.svg" class="rightButton roundBtn">            
         </div>
-        <p class="price">R$ 4,99</p>
+        <p class="price">R$ {{ text() }}</p>        
 	</div>
 </template>
+
 
 <style scoped>
     .item {

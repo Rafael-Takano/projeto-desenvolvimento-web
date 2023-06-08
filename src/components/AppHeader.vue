@@ -10,7 +10,7 @@
     <Categories />
     <Logo />
     <navbtn id="userAccessDiv" title="User Access" imgsrc="/imgs/Icons/person.svg"/>			
-    <navbtn id="CartDiv" title="ShoppingCart" imgsrc="/imgs/Icons/cart.svg" />
+    <navbtn id="CartDiv" title="Shopping Cart" imgsrc="/imgs/Icons/cart.svg" />
 	</nav>
 </template>
 

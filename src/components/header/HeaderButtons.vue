@@ -46,7 +46,7 @@
 
   .navbtn img {
     float: right;
-    margin: 0.625vw 1.25vw;
+    margin: 0.625vw 1.05vw;
     height: 1.77vw;
   }
 

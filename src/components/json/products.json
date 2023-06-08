@@ -1,238 +1,588 @@
 {
     "products": [
         {
-            "name": "Apple"
+        "name": "Apple",
+        "id": 1,
+        "price": 0.5,
+        "description": "Fresh and juicy apple. It is a popular fruit known for its crisp texture and sweet-tart flavor. Apples are rich in fiber, antioxidants, and vitamin C. They make a healthy and refreshing snack option.",
+        "QtdStock": 100,
+        "QtdSold": 20
+        },
+        {
+        "name": "Banana",
+        "id": 2,
+        "price": 0.3,
+        "description": "Yellow banana with a creamy texture and sweet taste. Bananas are a great source of potassium, vitamin C, and dietary fiber. They provide quick energy and are a convenient on-the-go snack.",
+        "QtdStock": 150,
+        "QtdSold": 50
+        },
+        {
+        "name": "Orange",
+        "id": 3,
+        "price": 0.6,
+        "description": "Bright and citrusy orange fruit. Oranges are packed with vitamin C and other essential nutrients. They have a refreshing flavor and can be consumed as a snack or used in various recipes.",
+        "QtdStock": 80,
+        "QtdSold": 30
+        },
+        {
+        "name": "Avocado",
+        "id": 4,
+        "price": 1.5,
+        "description": "Creamy and nutritious avocado. It is a versatile fruit known for its high content of healthy fats, vitamins, and minerals. Avocado is commonly used in salads, sandwiches, and guacamole.",
+        "QtdStock": 60,
+        "QtdSold": 10
+        },
+        {
+        "name": "Peach",
+        "id": 5,
+        "price": 0.8,
+        "description": "Juicy and aromatic peach. Peaches have a soft and velvety texture with a sweet and slightly tangy flavor. They are a good source of vitamins A and C and can be enjoyed fresh, grilled, or used in desserts.",
+        "QtdStock": 70,
+        "QtdSold": 15
+        },
+        {
+        "name": "Potato",
+        "id": 6,
+        "price": 0.4,
+        "description": "Starchy and versatile potato. Potatoes come in different varieties and can be boiled, baked, mashed, or fried. They are a good source of carbohydrates, potassium, and vitamin C.",
+        "QtdStock": 200,
+        "QtdSold": 40
+        },
+        {
+        "name": "Onion",
+        "id": 7,
+        "price": 0.2,
+        "description": "Pungent and flavorful onion. Onions are widely used in cooking to add flavor to various dishes. They come in different types, including red, yellow, and white, and are a good source of antioxidants and vitamins.",
+        "QtdStock": 120,
+        "QtdSold": 25
+        },
+        {
+        "name": "Carrot",
+        "id": 8,
+        "price": 0.3,
+        "description": "Crunchy and vibrant orange carrot. Carrots are known for their high content of beta-carotene, which converts to vitamin A in the body. They are also a good source of fiber and can be enjoyed raw or cooked.",
+        "QtdStock": 100,
+        "QtdSold": 30
+        },
+        {
+        "name": "Broccoli",
+        "id": 9,
+        "price": 0.7,
+        "description": "Nutritious and green broccoli. It is a cruciferous vegetable packed with vitamins, minerals, and fiber. Broccoli can be steamed, stir-fried, or roasted and is often included in salads and stir-fry dishes.",
+        "QtdStock": 80,
+        "QtdSold": 20
+        },
+        {
+        "name": "Tomato",
+        "id": 10,
+        "price": 0.4,
+        "description": "Juicy and flavorful tomato. Tomatoes are a versatile fruit commonly used in salads, sandwiches, sauces, and soups. They are rich in antioxidants, vitamin C, and lycopene, which is beneficial for heart health.",
+        "QtdStock": 150,
+        "QtdSold": 35
+        },
+        {
+        "name": "Cucumber",
+        "id": 11,
+        "price": 0.5,
+        "description": "Cool and refreshing cucumber. It has a crisp texture and a mild, watery taste. Cucumbers are low in calories and a good source of hydration. They are often used in salads, sandwiches, and refreshing beverages.",
+        "QtdStock": 90,
+        "QtdSold": 15
+        },
+        {
+        "name": "Canned Soup",
+        "id": 12,
+        "price": 2.5,
+        "description": "Convenient and ready-to-eat canned soup. It comes in various flavors and is a quick meal option. Canned soups are often made with a combination of vegetables, meats, and seasonings, providing a comforting and nourishing experience.",
+        "QtdStock": 50,
+        "QtdSold": 10
+        },
+        {
+        "name": "Canned Tuna",
+        "id": 13,
+        "price": 3.0,
+        "description": "High-quality canned tuna. It is a popular seafood option that provides a good source of protein and omega-3 fatty acids. Canned tuna can be used in sandwiches, salads, and pasta dishes.",
+        "QtdStock": 70,
+        "QtdSold": 20
         },
         {
-            "name": "Banana"
+        "name": "Canned Beans",
+        "id": 14,
+        "price": 1.2,
+        "description": "Ready-to-eat canned beans. They come in different varieties like black beans, kidney beans, and chickpeas. Canned beans are a convenient source of plant-based protein, fiber, and essential nutrients. They can be used in soups, stews, and side dishes.",
+        "QtdStock": 100,
+        "QtdSold": 25
         },
         {
-            "name": "Orange"
+        "name": "Butter",
+        "id": 15,
+        "price": 2.0,
+        "description": "Rich and creamy butter. It is a dairy product made by churning milk or cream. Butter is commonly used in cooking, baking, and as a spread. It adds flavor and richness to dishes.",
+        "QtdStock": 80,
+        "QtdSold": 15
         },
         {
-            "name": "Avocado"
+        "name": "Cheese",
+        "id": 16,
+        "price": 3.5,
+        "description": "Versatile and flavorful cheese. It is made from milk and comes in various types, such as cheddar, mozzarella, and Swiss. Cheese is a good source of protein and calcium and is used in a wide range of dishes, including sandwiches, pasta, and cheeseboards.",
+        "QtdStock": 120,
+        "QtdSold": 30
         },
         {
-            "name": "Peach"
+        "name": "Egg",
+        "id": 17,
+        "price": 0.2,
+        "description": "Fresh and nutritious egg. Eggs are a common breakfast staple and are versatile in cooking. They are a good source of high-quality protein, vitamins, and minerals.",
+        "QtdStock": 180,
+        "QtdSold": 40
         },
         {
-            "name": "Potato"
+        "name": "Milk",
+        "id": 18,
+        "price": 2.5,
+        "description": "Nutritious and creamy milk. It is a dairy product rich in calcium, protein, and essential vitamins. Milk is commonly consumed as a beverage and is also used in various recipes.",
+        "QtdStock": 150,
+        "QtdSold": 35
         },
         {
-            "name": "Onion"
+        "name": "Yogurt",
+        "id": 19,
+        "price": 1.0,
+        "description": "Creamy and tangy yogurt. It is a fermented dairy product that contains live cultures and is known for its probiotic benefits. Yogurt can be enjoyed on its own or used in smoothies, parfaits, and as a substitute for sour cream.",
+        "QtdStock": 120,
+        "QtdSold": 25
         },
         {
-            "name": "Carrot"
+        "name": "Chicken Breast",
+        "id": 20,
+        "price": 4.5,
+        "description": "Lean and versatile chicken breast. It is a popular choice for its low-fat content and high protein content. Chicken breast can be grilled, baked, or sautéed and is used in a variety of recipes.",
+        "QtdStock": 100,
+        "QtdSold": 20
         },
         {
-            "name": "Broccoli"
+        "name": "Chicken Thighs",
+        "id": 21,
+        "price": 3.5,
+        "description": "Juicy and flavorful chicken thighs. They are darker and more tender than chicken breast and are known for their rich flavor. Chicken thighs can be roasted, grilled, or used in stews and curries.",
+        "QtdStock": 80,
+        "QtdSold": 15
         },
         {
-            "name": "Tomato"
+        "name": "Beef",
+        "id": 22,
+        "price": 6.0,
+        "description": "High-quality beef. It is a red meat that comes from cattle and is a rich source of protein, vitamins, and minerals. Beef can be cooked in various ways, including grilling, roasting, and pan-frying.",
+        "QtdStock": 120,
+        "QtdSold": 25
         },
         {
-            "name": "Cucumber"
+        "name": "Pork",
+        "id": 23,
+        "price": 5.5,
+        "description": "Tender and flavorful pork. It is a versatile meat that comes from pigs and is used in many cuisines around the world. Pork can be cooked in various ways, such as roasting, grilling, and braising.",
+        "QtdStock": 100,
+        "QtdSold": 20
         },
         {
-            "name": "Canned Soup"
+        "name": "Bacon",
+        "id": 24,
+        "price": 4.0,
+        "description": "Crispy and savory bacon. It is a meat product made from pork belly and is known for its smoky flavor. Bacon is often used in breakfast dishes, sandwiches, and as a flavor enhancer in various recipes.",
+        "QtdStock": 80,
+        "QtdSold": 15
         },
         {
-            "name": "Canned Tuna"
+        "name": "Salmon",
+        "id": 25,
+        "price": 7.5,
+        "description": "Rich and fatty salmon. It is a popular fatty fish known for its pink flesh and distinctive flavor. Salmon is a good source of omega-3 fatty acids and can be grilled, baked, or pan-seared.",
+        "QtdStock": 90,
+        "QtdSold": 20
         },
         {
-            "name": "Canned Beans"
+            "name": "Tuna",
+            "id": 26,
+            "price": 4.0,
+            "description": "Flaky and flavorful tuna. It is a popular saltwater fish known for its meaty texture and mild taste. Tuna is often used in salads, sandwiches, sushi, and pasta dishes.",
+            "QtdStock": 70,
+            "QtdSold": 15
         },
         {
-            "name": "Butter"
+        "name": "Salami",
+        "id": 27,
+        "price": 3.5,
+        "description": "Savory and cured salami. It is a type of sausage made from fermented and air-dried meat, usually pork. Salami is known for its rich flavor and is commonly used as a topping on pizzas, sandwiches, and charcuterie boards.",
+        "QtdStock": 60,
+        "QtdSold": 10
         },
         {
-            "name": "Cheese"
+        "name": "Ham",
+        "id": 28,
+        "price": 3.0,
+        "description": "Delicious and smoked ham. It is a meat product made from the hind leg of a pig or pork. Ham is versatile and can be used in sandwiches, salads, soups, and various recipes.",
+        "QtdStock": 80,
+        "QtdSold": 20
         },
         {
-            "name": "Egg"
+        "name": "Turkey",
+        "id": 29,
+        "price": 5.0,
+        "description": "Lean and flavorful turkey. It is a popular poultry meat that is lower in fat compared to other meats. Turkey is commonly served during holidays, but it can also be used in sandwiches, salads, and as a substitute for other meats in recipes.",
+        "QtdStock": 90,
+        "QtdSold": 25
         },
         {
-            "name": "Milk"
+        "name": "Black Pepper",
+        "id": 30,
+        "price": 1.0,
+        "description": "Aromatic and spicy black pepper. It is a common spice used to add heat and flavor to various dishes. Black pepper is made from dried and ground peppercorns and is a staple seasoning in many cuisines.",
+        "QtdStock": 200,
+        "QtdSold": 40
         },
         {
-            "name": "Yogurt"
+        "name": "Oregano",
+        "id": 31,
+        "price": 0.5,
+        "description": "Fragrant and herbaceous oregano. It is a culinary herb commonly used in Mediterranean and Italian cuisines. Oregano adds a distinct flavor to dishes such as pasta, pizza, salads, and marinades.",
+        "QtdStock": 150,
+        "QtdSold": 30
         },
         {
-            "name": "Chicken Breast"
+        "name": "Cinnamon",
+        "id": 32,
+        "price": 1.5,
+        "description": "Warm and aromatic cinnamon. It is a spice derived from the inner bark of trees and is known for its sweet and spicy flavor. Cinnamon is used in both sweet and savory dishes, including baked goods, desserts, and curries.",
+        "QtdStock": 100,
+        "QtdSold": 20
         },
         {
-            "name": "Chicken Thighs"
+        "name": "Sugar",
+        "id": 33,
+        "price": 2.0,
+        "description": "Sweet and granulated sugar. It is a common sweetener used in baking, cooking, and beverages. Sugar enhances the flavor and sweetness of various dishes and is a staple ingredient in many recipes.",
+        "QtdStock": 300,
+        "QtdSold": 50
         },
         {
-            "name": "Beef"
+        "name": "Ketchup",
+        "id": 34,
+        "price": 2.5,
+        "description": "Tangy and tomato-based ketchup. It is a popular condiment used as a dipping sauce, topping, or ingredient in various dishes. Ketchup pairs well with burgers, fries, sandwiches, and more.",
+        "QtdStock": 180,
+        "QtdSold": 35
         },
         {
-            "name": "Pork"
+        "name": "Mayonnaise",
+        "id": 35,
+        "price": 3.0,
+        "description": "Creamy and rich mayonnaise. It is a thick condiment made from egg yolks, oil, vinegar, and seasonings. Mayonnaise is commonly used as a spread, dressing, or base for sauces in sandwiches, salads, and dips.",
+        "QtdStock": 200,
+        "QtdSold": 40
         },
         {
-            "name": "Bacon"
+        "name": "Potato Chips",
+        "id": 36,
+        "price": 2.0,
+        "description": "Crispy and savory potato chips. They are thin slices of potatoes that are deep-fried or baked until they become crispy and golden. Potato chips are a popular snack enjoyed on their own or as a side with sandwiches and burgers.",
+        "QtdStock": 250,
+        "QtdSold": 45
         },
         {
-            "name": "Sausages"
+        "name": "Popcorn",
+        "id": 37,
+        "price": 1.5,
+        "description": "Light and fluffy popcorn. It is a popular snack made from dried corn kernels that are heated until they pop. Popcorn can be enjoyed plain or seasoned with various flavors, such as butter, cheese, or caramel.",
+        "QtdStock": 300,
+        "QtdSold": 55
         },
         {
-            "name": "Shrimps"
+        "name": "Nuts",
+        "id": 38,
+        "price": 4.0,
+        "description": "Crunchy and nutritious nuts. They are edible kernels with a hard shell that come from various trees and plants. Nuts are a good source of healthy fats, protein, and vitamins. They can be eaten as a snack or used in cooking and baking.",
+        "QtdStock": 200,
+        "QtdSold": 30
         },
         {
-            "name": "Crab"
+        "name": "Crackers",
+        "id": 39,
+        "price": 2.0,
+        "description": "Crunchy and crisp crackers. They are baked snacks made from flour, water, and seasonings. Crackers are versatile and can be enjoyed on their own, paired with cheese or dips, or used as a base for appetizers.",
+        "QtdStock": 150,
+        "QtdSold": 25
         },
         {
-            "name": "Salmon"
+        "name": "Bread",
+        "id": 40,
+        "price": 3.0,
+        "description": "Fresh and soft bread. It is a staple food made from flour, water, yeast, and salt. Bread is a versatile food that can be used for sandwiches, toast, and as an accompaniment to meals.",
+        "QtdStock": 180,
+        "QtdSold": 35
         },
         {
-            "name": "Tuna"
+        "name": "Tortillas",
+        "id": 41,
+        "price": 2.5,
+        "description": "Thin and flexible tortillas. They are round flatbreads made from wheat or corn flour. Tortillas are commonly used in Mexican cuisine and are used to make tacos, burritos, quesadillas, and wraps.",
+        "QtdStock": 220,
+        "QtdSold": 40
         },
         {
-            "name": "Salami"
+        "name": "Cookies",
+        "id": 42,
+        "price": 2.0,
+        "description": "Sweet and baked cookies. They are small, sweet treats made from dough that is baked until crispy or chewy. Cookies come in various flavors and are enjoyed as snacks or desserts.",
+        "QtdStock": 300,
+        "QtdSold": 50
         },
         {
-            "name": "Ham"
+        "name": "Muffins",
+        "id": 43,
+        "price": 2.5,
+        "description": "Soft and moist muffins. They are individual-sized baked goods similar to cupcakes but typically less sweet and often packed with ingredients like fruits, nuts, or chocolate chips. Muffins are enjoyed as a breakfast or snack option.",
+        "QtdStock": 250,
+        "QtdSold": 45
         },
         {
-            "name": "Turkey"
+        "name": "Pie",
+        "id": 44,
+        "price": 5.0,
+        "description": "Flaky and delicious pie. It is a baked dish with a pastry crust filled with sweet or savory ingredients. Pies come in various flavors such as apple, cherry, pumpkin, and chicken pot pie.",
+        "QtdStock": 150,
+        "QtdSold": 30
         },
         {
-            "name": "Black Pepper"
+        "name": "Oats",
+        "id": 45,
+        "price": 3.0,
+        "description": "Nutritious and versatile oats. They are whole grains that can be consumed as rolled oats, oatmeal, or used in baking. Oats are a good source of fiber and can be enjoyed as a healthy breakfast option or used in recipes like cookies and granola bars.",
+        "QtdStock": 200,
+        "QtdSold": 35
         },
         {
-            "name": "Oregano"
+        "name": "Granola",
+        "id": 46,
+        "price": 4.0,
+        "description": "Crunchy and wholesome granola. It is a mixture of rolled oats, nuts, dried fruits, and sweeteners that are baked until crisp. Granola is often enjoyed as a breakfast cereal or used as a topping for yogurt and smoothie bowls.",
+        "QtdStock": 180,
+        "QtdSold": 30
         },
         {
-            "name": "Cinnamon"
+        "name": "Rice",
+        "id": 47,
+        "price": 2.5,
+        "description": "Staple and versatile rice. It is a grain that is a staple food for many cultures. Rice can be cooked in various ways and is used as a side dish, base for stir-fries, sushi, and as an ingredient in dishes like rice pudding.",
+        "QtdStock": 300,
+        "QtdSold": 50
         },
         {
-            "name": "Sugar"
+        "name": "Macaroni",
+        "id": 48,
+        "price": 2.0,
+        "description": "Small and tubular macaroni. It is a type of pasta that is commonly used in macaroni and cheese dishes, pasta salads, and casseroles. Macaroni is versatile and pairs well with various sauces and ingredients.",
+        "QtdStock": 250,
+        "QtdSold": 40
         },
         {
-            "name": "Ketchup"
+        "name": "Noodles",
+        "id": 49,
+        "price": 2.5,
+        "description": "Long and thin noodles. They are a type of pasta made from unleavened dough that is stretched, rolled, and cut into various shapes. Noodles are popular in Asian cuisines and can be used in stir-fries, soups, and noodle-based dishes.",
+        "QtdStock": 220,
+        "QtdSold": 35
         },
         {
-            "name": "Mayonnaise"
+        "name": "Cereal",
+        "id": 50,
+        "price": 3.0,
+        "description": "Crunchy and flavorful cereal. It is a breakfast food made from processed grains, typically served with milk or yogurt. Cereal comes in various flavors and is a convenient and quick breakfast option.",
+        "QtdStock": 180,
+        "QtdSold": 30
         },
         {
-            "name": "Potato Chips"
+        "name": "Frozen Pizza",
+        "id": 51,
+        "price": 6.0,
+        "description": "Delicious and convenient frozen pizza. It is a pre-made pizza that is frozen and can be cooked at home. Frozen pizzas come in various flavors and styles, including cheese, pepperoni, and vegetable toppings.",
+        "QtdStock": 200,
+        "QtdSold": 40
         },
         {
-            "name": "Popcorn"
+        "name": "Ice cream",
+        "id": 52,
+        "price": 4.5,
+        "description": "Creamy and indulgent ice cream. It is a frozen dessert made from dairy products, sweeteners, and flavors. Ice cream comes in a wide range of flavors, such as chocolate, vanilla, strawberry, and more, and is enjoyed as a refreshing treat.",
+        "QtdStock": 250,
+        "QtdSold": 35
         },
         {
-            "name": "Nuts"
+        "name": "Frozen Fish",
+        "id": 53,
+        "price": 8.0,
+        "description": "High-quality frozen fish. It is seafood that has been frozen to maintain its freshness and flavor. Frozen fish can include varieties such as salmon, cod, tilapia, and more, and can be cooked in various ways, such as baking, grilling, or pan-searing.",
+        "QtdStock": 180,
+        "QtdSold": 25
         },
         {
-            "name": "Crackers"
+        "name": "Shampoo",
+        "id": 54,
+        "price": 5.0,
+        "description": "Cleansing and nourishing shampoo. It is a hair care product used for cleaning the scalp and hair. Shampoo helps remove dirt, oil, and product buildup, leaving the hair clean and refreshed. It may also contain ingredients that promote hair health and manageability.",
+        "QtdStock": 300,
+        "QtdSold": 50
         },
         {
-            "name": "Bread"
+        "name": "Conditioner",
+        "id": 55,
+        "price": 5.0,
+        "description": "Hydrating and detangling conditioner. It is a hair care product used after shampooing to moisturize, soften, and detangle the hair. Conditioner helps improve hair manageability, reduces frizz, and enhances shine.",
+        "QtdStock": 280,
+        "QtdSold": 45
         },
         {
-            "name": "Tortillas"
+        "name": "Deodorant",
+        "id": 56,
+        "price": 3.5,
+        "description": "Fresh and odor-fighting deodorant. It is a personal care product used to prevent or mask body odor. Deodorants come in various forms such as sticks, sprays, or roll-ons and contain ingredients that inhibit the growth of odor-causing bacteria.",
+        "QtdStock": 250,
+        "QtdSold": 40
         },
         {
-            "name": "Cookies"
+        "name": "Toothpaste",
+        "id": 57,
+        "price": 2.5,
+        "description": "Cleansing and freshening toothpaste. It is a dental care product used to clean and maintain oral hygiene. Toothpaste contains ingredients like fluoride, abrasives, and flavorings to effectively clean teeth, fight cavities, and freshen breath.",
+        "QtdStock": 300,
+        "QtdSold": 55
         },
         {
-            "name": "Muffins"
+        "name": "Dental Floss",
+        "id": 58,
+        "price": 2.0,
+        "description": "Oral care dental floss. It is a thin thread-like material used to remove plaque and food particles from between the teeth. Dental floss helps promote gum health and prevent tooth decay when used as part of a regular oral hygiene routine.",
+        "QtdStock": 280,
+        "QtdSold": 50
         },
         {
-            "name": "Pie"
+        "name": "Band-Aid",
+        "id": 59,
+        "price": 1.5,
+        "description": "Adhesive bandages for minor cuts and wounds. Band-Aid is a brand of adhesive bandages used to cover and protect small cuts, scrapes, and blisters. They help prevent infections and provide a protective barrier for the wound to heal.",
+        "QtdStock": 320,
+        "QtdSold": 60
         },
         {
-            "name": "Oats"
+        "name": "Cleaning Alcohol",
+        "id": 60,
+        "price": 3.0,
+        "description": "Disinfecting and cleaning alcohol. It is a solution containing ethyl or isopropyl alcohol that is used for sanitizing and disinfecting surfaces. Cleaning alcohol is effective in killing germs and bacteria and is commonly used for cleaning wounds or surfaces in households.",
+        "QtdStock": 200,
+        "QtdSold": 30
         },
         {
-            "name": "Granola"
-        },
-        {
-            "name": "Rice"
-        },
-        {
-            "name": "Macaroni"
-        },
-        {
-            "name": "Noodles"
-        },
-        {
-            "name": "Flour"
-        },
-        {
-            "name": "Baking Powder"
-        },
-        {
-            "name": "Cocoa"
-        },
-        {
-            "name": "Frozen Pizza"
-        },
-        {
-            "name": "Ice cream"
-        },
-        {
-            "name": "Frozen Fish"
-        },
-        {
-            "name": "Shampoo"
-        },
-        {
-            "name": "Conditioner"
-        },
-        {
-            "name": "Deodorant"
-        },
-        {
-            "name": "Toothpaste"
-        },
-        {
-            "name": "Dental Floss"
-        },
-        {
-            "name": "Band-Aid"
-        },
-        {
-            "name": "Cleaning Alcohol"
-        },
-        {
-            "name": "Pain Killer"
-        },
-        {
-            "name": "Antiacid"
-        },
-        {
-            "name": "Dish Soap"
-        },
-        {
-            "name": "Papel Towel"
-        },
-        {
-            "name": "Trash Bags"
-        },
-        {
-            "name": "Laundry Detergent"
-        },
-        {
-            "name": "Baby Food"
-        },
-        {
-            "name": "Diapers"
-        },
-        {
-            "name": "Wet wipes"
-        },
-        {
-            "name": "Pet food"
-        },
-        {
-            "name": "Kitty Litter"
-        },
-        {
-            "name": "Chew Toy"
-        },
-        {
-            "name": "Pet Shampoo"
+        "name": "Pain Killer",
+        "id": 61,
+        "price": 5.0,
+        "description": "Over-the-counter pain relievers. Pain killers are medications used to relieve mild to moderate pain. They can include nonsteroidal anti-inflammatory drugs (NSAIDs) or acetaminophen, which help reduce pain, fever, and inflammation.",
+        "QtdStock": 250,
+        "QtdSold": 40
+        },
+        {
+        "name": "Antacid",
+        "id": 62,
+        "price": 4.0,
+        "description": "Digestive relief antacid. It is a medication used to neutralize excess stomach acid and provide relief from indigestion, heartburn, and acid reflux. Antacids come in various forms such as tablets, chewable tablets, or liquid suspensions.",
+        "QtdStock": 300,
+        "QtdSold": 35
+        },
+        {
+        "name": "Dish Soap",
+        "id": 63,
+        "price": 2.5,
+        "description": "Effective and grease-cutting dish soap. It is a cleaning product specifically formulated for washing dishes. Dish soap helps remove grease, food residue, and stains from plates, utensils, and cookware.",
+        "QtdStock": 320,
+        "QtdSold": 55
+        },
+        {
+        "name": "Paper Towel",
+        "id": 64,
+        "price": 3.0,
+        "description": "Absorbent and disposable paper towel. It is a versatile cleaning product made of paper sheets that are highly absorbent. Paper towels are used for cleaning spills, drying hands, or general-purpose cleaning tasks.",
+        "QtdStock": 300,
+        "QtdSold": 50
+        },
+        {
+        "name": "Trash Bags",
+        "id": 65,
+        "price": 4.0,
+        "description": "Durable and disposable trash bags. They are bags made of strong plastic material used to contain and dispose of waste. Trash bags come in various sizes and are designed to hold different volumes of trash.",
+        "QtdStock": 250,
+        "QtdSold": 40
+        },
+        {
+        "name": "Laundry Detergent",
+        "id": 66,
+        "price": 7.0,
+        "description": "Effective and freshening laundry detergent. It is a cleaning product used for washing clothes. Laundry detergents come in liquid, powder, or capsule forms and contain ingredients that help remove stains, dirt, and odors from fabric.",
+        "QtdStock": 200,
+        "QtdSold": 30
+        },
+        {
+        "name": "Baby Food",
+        "id": 67,
+        "price": 2.5,
+        "description": "Nutritious and specially formulated baby food. It is a type of food specifically made for infants and young children who are transitioning to solid foods. Baby food comes in various flavors and textures and provides essential nutrients for healthy growth and development.",
+        "QtdStock": 180,
+        "QtdSold": 25
+        },
+        {
+        "name": "Diapers",
+        "id": 68,
+        "price": 10.0,
+        "description": "Absorbent and comfortable diapers. They are disposable or reusable garments worn by infants and young children to contain and absorb urine and feces. Diapers provide convenience and help keep babies dry and comfortable.",
+        "QtdStock": 250,
+        "QtdSold": 35
+        },
+        {
+        "name": "Wet Wipes",
+        "id": 69,
+        "price": 3.5,
+        "description": "Convenient and refreshing wet wipes. They are pre-moistened disposable wipes used for cleansing and refreshing the skin. Wet wipes are commonly used for baby care, personal hygiene, or general-purpose cleaning.",
+        "QtdStock": 300,
+        "QtdSold": 40
+        },
+        {
+        "name": "Pet Food",
+        "id": 70,
+        "price": 6.0,
+        "description": "Nutritious and balanced pet food. It is food specifically formulated for dogs, cats, or other pets. Pet food provides essential nutrients to support their overall health and well-being.",
+        "QtdStock": 280,
+        "QtdSold": 45
+        },
+        {
+        "name": "Kitty Litter",
+        "id": 71,
+        "price": 8.0,
+        "description": "Absorbent litter for cats. It is a granular material used in litter boxes to absorb and control cat waste. Kitty litter helps keep the litter box clean and odor-free.",
+        "QtdStock": 250,
+        "QtdSold": 35
+        },
+        {
+        "name": "Chew Toy",
+        "id": 72,
+        "price": 4.5,
+        "description": "Durable and interactive chew toy for pets. It is a toy designed for dogs or other pets to chew on. Chew toys help satisfy their natural instinct to chew and provide mental stimulation and dental health benefits.",
+        "QtdStock": 220,
+        "QtdSold": 30
+        },
+        {
+        "name": "Pet Shampoo",
+        "id": 73,
+        "price": 5.5,
+        "description": "Cleansing and gentle pet shampoo. It is a shampoo specifically formulated for dogs, cats, or other pets to clean their fur and skin. Pet shampoo helps remove dirt, odors, and keeps their coat soft and shiny.",
+        "QtdStock": 250,
+        "QtdSold": 40
         }
     ]
 }
