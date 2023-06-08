@@ -8,25 +8,29 @@
 <style scoped>
   
   img {
-    width: 43px;
-    height: 43px;
-    margin: 20px 38px 18px;
-    filter:drop-shadow(0px 2.5px 2.5px  rgba(0, 0, 0, 0.25));
+    width: 2.24vw;
+    height: 2.24vw;
+    margin: 1.04vw 1.98vw 0.94vw;
+    filter:drop-shadow(0px 0.13vw 0.13vw  rgba(0, 0, 0, 0.25));
   }
   .menu-checkbtn {
-    float: left;
-    display: block;
+    display: block;    
+    float: left;    
   }
 
   input {
     display: contents;
   }
 
-  @media (max-width: 900px) {
-    .menu-checkbtn img {
-      position: fixed;		
+  @media (max-width: 1280px) {
+    .menu-checkbtn {
+      height: 0;
     }
-
+    img {
+      margin: 5px 15px;
+      height: 35px;	
+      width: 35px;
+    }
   }
 
 </style>

@@ -3,20 +3,20 @@
 </template>
 
 <style scoped>
-    img{
+    img{        
         float: left;
-        width: 220px;
-        height: 58px;
-        margin: 13.5px 8px;
+        width: 11.46vw;
+        height: 3.02vw;
+        margin: 0.71vw 0.42vw;
     }
 
-    @media (max-width: 900px) { 
+    @media (max-width: 1280px) { 
         img {
-            position: fixed;
-            width: 30%;
-            left: 35vw;
-            height: 7.91vw;
-            margin: calc((85px - 7.91vw)/2) 0px;
+            position: relative;            
+            left: calc(50% - (132.814px)/2);
+            width: 132.814px;            
+            height: 35px;
+            margin: 5px 0px;            
         }
     }
 </style>

@@ -19,7 +19,7 @@
 	color: #999;
 	width: 100%;
 	background-color: #ededed;
-	padding: 85px 0px 0px;
+	padding: 4.43vw 0px 0px;
 } 
 
 .product-grid {
@@ -40,7 +40,10 @@ h2 {
 	margin: 8px;
 }
 
-@media (max-width: 1150px){
+@media (max-width: 1280px){
+	.container-maior {
+		padding: 45px 0px 0px;
+	}
 	.product-grid {		
 		width: 834.5px;	
 	}
