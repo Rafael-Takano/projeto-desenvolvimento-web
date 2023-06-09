@@ -1,19 +1,27 @@
 <script setup>
     import products from './json/products.json'
     import Items from './content/ContentItems.vue';  
+	import ExpandItems from './content/ExpandItems.vue';
 </script>
 
 <template>
     <section class="container-maior">
 		<section class="product-grid">
-			<h2>All products</h2>            		
-			<Items v-for="product in products.products" :product="product"/>            			
+			<h2>All products</h2>      
+			<ExpandItems class="child" />
+			<div class="child">
+				<Items v-for="product in products.products" :product="product" />            			
+			</div>
         </section>
 	</section>
 </template>
 
 <style scoped>  
 
+.child {
+	grid-row-start: 2;
+    grid-column-start: 1;
+}
 
 .container-maior {
 	color: #999;
@@ -23,7 +31,7 @@
 } 
 
 .product-grid {
-	display: table;	
+	display: grid;	
 	width: 60vw;
 	height: auto;
 	margin: 0 auto; 	

@@ -22,6 +22,7 @@
     box-shadow: 0px 2.5px 2.5px rgba(0, 0, 0, 0.25);
     position: fixed;
     display: table;
+    z-index: 1;
   }
 
 
