@@ -1,16 +1,25 @@
 <script setup>
+	import { ref } from 'vue'
     import products from './json/products.json'
     import Items from './content/ContentItems.vue';  
 	import ExpandItems from './content/ExpandItems.vue';
+
+	const isAdmin = ref(false)
+	const show = ref(false);
+	const ExpandProduct	= ref(Object);
+	function expand (prod) {	
+		ExpandProduct.value = prod
+		show.value = true			
+	}
 </script>
 
 <template>
     <section class="container-maior">
 		<section class="product-grid">
-			<h2>All products</h2>      
-			<ExpandItems class="child" />
+			<h2 @click="() => {show = false}">All products</h2>      
+			<ExpandItems class="child" v-if="show" :product="ExpandProduct" :admin="isAdmin"/>
 			<div class="child">
-				<Items v-for="product in products.products" :product="product" />            			
+				<Items v-for="product in products.products" :product="product"  @ExpandItem="expand"/>            			
 			</div>
         </section>
 	</section>
