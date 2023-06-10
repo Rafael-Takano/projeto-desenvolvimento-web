@@ -9,17 +9,22 @@
 	const ExpandProduct	= ref(Object);
 	function expand (prod) {	
 		ExpandProduct.value = prod
-		show.value = true			
+		show.value = true					
+		window.scrollTo(0,0)
+	}
+	function close () {
+		if(show.value)
+			show.value = false;
 	}
 </script>
 
 <template>
-    <section class="container-maior">
-		<section class="product-grid">
-			<h2 @click="() => {show = false}">All products</h2>      
+    <section class="container-maior" @click.self="close">
+		<section class="product-grid" @click.self="close">
+			<h2 @click="close">All products</h2>      
 			<ExpandItems class="child" v-if="show" :product="ExpandProduct" :admin="isAdmin"/>
-			<div class="child">
-				<Items v-for="product in products.products" :product="product"  @ExpandItem="expand"/>            			
+			<div class="child" @click.self="close">
+				<Items v-for="product in products.products" :product="product" @click.self="close" @ExpandItem="expand"/>            			
 			</div>
         </section>
 	</section>
