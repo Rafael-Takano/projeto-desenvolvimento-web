@@ -1,12 +1,32 @@
+<script setup> 
+	const emit = defineEmits(['updateSubtotal','removeItem'])	
+	const props = defineProps({
+		item: Object,
+		index: Number
+	})	
+	function price() {
+        const price = props.item.price*props.item.qtd;
+		return price.toFixed(2);
+    }		
+	function update() {
+		if(props.item.qtd > 0)
+			emit('updateSubtotal');
+		else  {
+			emit('removeItem', props.item);
+		}
+	}
+
+</script>
+
 <template>
     <div class="cartItem">
         <img src="/imgs/image 1.png" class="item-img">
-        <p class="item-title">Feijão 500g</p>
-		<p class="price">R$ 4,99</p>
+        <p class="item-title">{{ item.name }}</p>
+		<p class="price">R$ {{ price() }}</p>
         <div class="quantity">
-            <input type="button" value="-">
-            <p>0</p>
-            <input type="button" value="+">
+            <input type="button" @click="item.qtd--; update()" value="-">
+            <p>{{ item.qtd }}</p>
+            <input type="button" @click="item.qtd++; update()" value="+">
         </div>
     </div>
 </template>
@@ -42,22 +62,32 @@
 }
 
 .quantity{		
-	width: 5vw;
+	width: auto;
 	height: 2vw;
 	border-radius: 15px;
 	border: #999 2px solid;
-	text-align: center;
+	text-align: center;	
 	margin: 0.416666vw 0.5vw;
 	float: right;
 }
 
 .quantity input, .quantity p{
 	background-color: rgba(0, 0, 0, 0);
-	color: #999;
-	font-size: 1.5vw;
+	color: #999;	
 	border: none;
-	display: inline-block;
+	display: block;
 	margin: 0 calc(26.042vw * .01);
+	float: left;
+}
+
+.quantity input {
+	line-height: 2vw;
+	font-size: 2vw;
+}
+
+.quantity p {
+	line-height: 2vw;
+	font-size: 1vw;	
 }
 
 .price{
@@ -85,13 +115,13 @@
 		padding: 4.465vw 0;
 	}
 
-	.quantity {
-		width: 20vw;
+	.quantity {		
 		height: 6vw;
 		margin: 4.465vw 2vw;
 	}
 
 	.quantity input, .quantity p{
+		line-height: 6vw;
 		font-size: 4.465vw;
 		margin: 0 calc(26.042vw * .05)
 	}

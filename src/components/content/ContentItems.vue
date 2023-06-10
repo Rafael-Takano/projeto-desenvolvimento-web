@@ -4,12 +4,15 @@
             type: Object,
         }
     });    
-    const emit = defineEmits(['ExpandItem'])
+    const emit = defineEmits(['ExpandItem','addToCart'])
     function text() {
         return prop.product.price.toFixed(2)
     }
     function Expand() {
         emit('ExpandItem', prop.product)
+    }
+    function addItem() {
+        emit('addToCart', prop.product)
     }
 
 </script>
@@ -20,7 +23,7 @@
         <h3 class="item-title">{{ product.name }}</h3>
         <div class="itemButtons">
             <input type="image" src="/imgs/buttons/Info.svg" class="leftButton roundBtn" @click="Expand">
-            <input type="image" src="/imgs/buttons/Add to Cart.svg" class="rightButton roundBtn">            
+            <input type="image" src="/imgs/buttons/Add to Cart.svg" class="rightButton roundBtn" @click="addItem">            
         </div>
         <p class="price">R$ {{ text() }}</p>        
 	</div>

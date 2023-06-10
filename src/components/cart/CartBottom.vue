@@ -1,6 +1,16 @@
+<script setup>
+    const props = defineProps({
+        subtotal: Number
+    });
+
+    function price() {        
+		return props.subtotal.toFixed(2);
+    }	
+</script>
+
 <template>
     <div class="cart-bottom-div">
-        <p class="subtotal">Subtotal: R$ 49,90</p><br>
+        <p class="subtotal">Subtotal: R$ {{price()}}</p><br>
         <p class="payment-text">Credit card or Debit card:</p>
         <input type="text" name="CardNumber" id="cardNumber">
         <div class="confirm-purchase">Confirm Purchase</div>
@@ -67,11 +77,12 @@
 }
 
 @media (max-width: 1280px) {
-    .cart-bottom-div{
-        position: static;
+    .cart-bottom-div{        
         width: 100%;
-        height: auto;
+        height: 38.3vw;
         border: none;
+        border-top: 1px #999 solid;
+        padding: 1vw;
     }
 
     .subtotal {

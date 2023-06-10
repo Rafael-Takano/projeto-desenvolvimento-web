@@ -4,6 +4,8 @@
     import Items from './content/ContentItems.vue';  
 	import ExpandItems from './content/ExpandItems.vue';
 
+	const emit = defineEmits(['addToCart'])
+
 	const isAdmin = ref(false)
 	const show = ref(false);
 	const ExpandProduct	= ref(Object);
@@ -16,15 +18,18 @@
 		if(show.value)
 			show.value = false;
 	}
+	function addItem (prod){
+		emit('addToCart', prod);
+	}
 </script>
 
 <template>
     <section class="container-maior" @click.self="close">
 		<section class="product-grid" @click.self="close">
 			<h2 @click="close">All products</h2>      
-			<ExpandItems class="child" v-if="show" :product="ExpandProduct" :admin="isAdmin"/>
+			<ExpandItems class="child" v-if="show" :product="ExpandProduct" :admin="isAdmin" @addItem="addItem" />
 			<div class="child" @click.self="close">
-				<Items v-for="product in products.products" :product="product" @click.self="close" @ExpandItem="expand"/>            			
+				<Items v-for="product in products.products" :product="product" @click.self="close" @ExpandItem="expand" @addToCart="addItem"/>            			
 			</div>
         </section>
 	</section>

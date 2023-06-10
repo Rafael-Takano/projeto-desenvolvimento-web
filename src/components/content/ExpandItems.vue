@@ -11,6 +11,7 @@
             type: Boolean
         }
     })       
+    const emit = defineEmits(['addItem'])
     function text() {
         return props.product.price.toFixed(2)
     }
@@ -55,7 +56,7 @@
                 <p class="QtdSold">Qtd sold: {{ product.QtdSold }}</p>
                 <label for="ItemCate" class="ItemCateLabel">Category:</label>
                 <p class="ItemCate" > {{ product.Category }} </p>				
-                <input type="image" src="/public/imgs/buttons/Add to Cart.png" class="Item">													
+                <input type="image" src="/public/imgs/buttons/Add to Cart.png" class="Item" @click="emit('addItem',product)">													
             </div>
         </div>
 	</div>
