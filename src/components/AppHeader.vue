@@ -3,14 +3,19 @@
   import Logo from './header/HeaderLogo.vue';
   import navbtn from './header/HeaderButtons.vue'
   //imgsrc="./imgs/Icons/cart.svg"
+  const emit = defineEmits(['toggleCart'])
+
+  function cart() {
+    emit('toggleCart')
+  }
 </script>
 
 <template>
   <nav> 
     <Categories />
     <Logo />
-    <navbtn id="userAccessDiv" title="User Access" imgsrc="/imgs/Icons/person.svg"/>			
-    <navbtn id="CartDiv" title="Shopping Cart" imgsrc="/imgs/Icons/cart.svg" />
+    <navbtn id="userAccessDiv" title="User Access" imgsrc="/imgs/Icons/person.svg" />			
+    <navbtn id="CartDiv" title="Shopping Cart" imgsrc="/imgs/Icons/cart.svg" @click="cart"/>
 	</nav>
 </template>
 
