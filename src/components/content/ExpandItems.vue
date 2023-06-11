@@ -23,7 +23,7 @@
             <input type="Text" class="ItemTitle border" :value="product.name">			
             <div class="itemLeft">
                 <label for="ItemImg" class="ItemImgLabel border">
-                    <img src="/imgs/image 1.png" alt="" class="ItemImage"> 				
+                    <img src="/imgs/image1.png" alt="" class="ItemImage"> 				
                 </label>
                 <input type="text" class="ItemPrice border" :value="product.price">
                 <input type="file" id="ItemImg" accept=".png, .jpg">
@@ -39,7 +39,7 @@
                 <select  class="ItemCate border">
                     <option v-for="category in categories" :value="category" :selected="product.Category == category">{{ category }}</option>					
                 </select>				
-                <input type="image" src="../../imgs/buttons/Save edit.png" class="Item">													
+                <input type="image" src="../../imgs/buttons/SaveEdit.png" class="Item">													
             </div>
         </form>
         <form v-else-if="admin && add">
@@ -49,7 +49,7 @@
                     <p>Add Image</p> 				
                 </label>
                 <input type="text" class="ItemPrice border">
-                <input type="file" class="ItemImg" accept=".png, .jpg">
+                <input type="file" id="ItemImg" accept=".png, .jpg">
             </div>
             <div class="itemRight">
                 <label for="ItemDesc" class="ItemDescLabel">Description</label>
@@ -62,13 +62,13 @@
                 <select  class="ItemCate border" >
                     <option v-for="category in categories" :value="category">{{ category }}</option>					
                 </select>				
-                <input type="image" src="../../imgs/buttons/Add Product.png" class="Item">													
+                <input type="image" src="../../imgs/buttons/AddProduct.png" class="Item">													
             </div>
         </form>
         <div v-else>
             <title type="Text" class="ItemTitle">{{ product.name }}</title>
             <div class="itemLeft">
-                <img src="/imgs/image 1.png" class="ItemImgLabel">                    
+                <img src="/imgs/image1.png" class="ItemImgLabel">                    
                 <p class="ItemPrice">R$ {{ text() }}</p>                
             </div>
             <div class="itemRight">
@@ -79,7 +79,7 @@
                 <p class="QtdSold">Qtd sold: {{ product.QtdSold }}</p>
                 <label for="ItemCate" class="ItemCateLabel">Category:</label>
                 <p class="ItemCate" > {{ product.Category }} </p>				
-                <input type="image" src="/public/imgs/buttons/Add to Cart.png" class="Item" @click="emit('addItem',product)">													
+                <input type="image" src="/public/imgs/buttons/AddtoCart.png" class="Item" @click="emit('addItem',product)">													
             </div>
         </div>
 	</div>

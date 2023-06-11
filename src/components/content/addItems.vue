@@ -1,6 +1,6 @@
 <template>
     <div class="addCart">
-        <img src="/imgs/buttons/Add Item.svg" class="addProductimg">								
+        <img src="/imgs/buttons/AddItem.svg" class="addProductimg">								
         <p class="addCartP">Add Product</p>
     </div>
 </template>

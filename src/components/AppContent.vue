@@ -1,13 +1,20 @@
 <script setup>
-	import { ref } from 'vue'
+	import { ref, watch } from 'vue'
     import products from './json/products.json'
     import Items from './content/ContentItems.vue';  
 	import ExpandItems from './content/ExpandItems.vue';
 	import AddItems from './content/addItems.vue'
 
+	const sortedProducts = products.products.sort((a,b)=> {
+		return a.name>b.name
+	});
+
+	let productShowing = sortedProducts;
+
 	const emit = defineEmits(['addToCart'])
 	const props = defineProps({
-		admin: Boolean
+		admin: Boolean,
+		category: String
 	})
 	
 	const show = ref(false);
@@ -29,7 +36,19 @@
 	}
 	function addItem (prod){
 		emit('addToCart', prod);
+
 	}
+	function filter() {
+		if(props.category == '') {
+			productShowing = sortedProducts;
+		} else {
+			console.log(props.category, sortedProducts);
+			productShowing = sortedProducts.filter(e => e.Category == props.category);
+		}		
+	}
+
+	watch(props, filter) 
+
 </script>
 
 <template>
@@ -38,7 +57,7 @@
 			<h2 @click="close">All products</h2>      
 			<ExpandItems class="child" v-if="show" :product="ExpandProduct" :admin="admin" @addItem="addItem" :add="adding"/>
 			<div class="child" @click.self="close">
-				<Items v-for="product in products.products" :product="product" @click.self="close" @ExpandItem="expand" @addToCart="addItem" :admin="admin"/> 
+				<Items v-for="product in productShowing" :product="product" @click.self="close" @ExpandItem="expand" @addToCart="addItem" :admin="admin"/> 
 				<AddItems v-if="admin" @click="expand(undefined,true)"/>           			
 			</div>
         </section>

@@ -18,13 +18,13 @@
 
 <template>
     <div class="item">
-        <img src="/imgs/image 1.png" class="item-img">
+        <img src="/imgs/image1.png" class="item-img">
         <h3 class="item-title">{{ product.name }}</h3>
         <div class="itemButtons">
             <input type="image" src="/imgs/buttons/Info.svg" class="leftButton roundBtn" @click="Expand" v-if="!admin">
             <input type="image" src="/imgs/buttons/Edit.svg" class="leftButton roundBtn" @click="Expand" v-else>
-            <input type="image" src="/imgs/buttons/Add to Cart.svg" class="rightButton roundBtn" @click="addItem" v-if="!admin">            
-            <input type="image" src="/imgs/buttons/Remove item.svg" class="rightButton roundBtn" v-else>            
+            <input type="image" src="/imgs/buttons/AddtoCart.svg" class="rightButton roundBtn" @click="addItem" v-if="!admin">            
+            <input type="image" src="/imgs/buttons/RemoveItem.svg" class="rightButton roundBtn" v-else>            
         </div>
         <p class="price">R$ {{ text() }}</p>        
 	</div>

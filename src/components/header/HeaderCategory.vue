@@ -1,8 +1,15 @@
+<script setup>
+  const emits = defineEmits(['toggleCategory'])
+  function toggleCategory(){
+    emits('toggleCategory')
+  }
+</script>
+
 <template>
-    <input type="checkbox" id="menu-check" />
+  <input type="checkbox" id="menu-check" />
 	<label for="menu-check" class="menu-checkbtn">
-    <img src="/imgs/Icons/menu.svg" alt="a">
-    </label>
+    <img src="/imgs/Icons/menu.svg" alt="a" @click="toggleCategory">
+  </label>
 </template>
 
 <style scoped>
