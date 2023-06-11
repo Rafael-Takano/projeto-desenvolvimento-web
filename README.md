@@ -6,6 +6,8 @@ Igor Boson **NUSP:** 11200571
 
 Rafael Takano  **NUSP:** 11200459
 
+Olavo Morais **NUSP:** 11297792
+
 ## Requisitos
 O sistema possui os mesmos requisitos explicitados na descrição do projeto. Sobre o requisito específico ao nosso sistema, temos uma loja online de um supemercado, em que cada item possui uma categoria como _fruits_ e _vegetables_, atributo que é usado para filtrar os diferentes items disponíveis no sistema.
 
