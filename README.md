@@ -110,8 +110,8 @@ Os resultados foram como o esperado, mas vale ressaltar que a responsividade das
 ### Milestone 1 (Mockups):
 Para rodar o programa, é necessário baixar o código disponível aqui no github, unzipar se necessário, e abrir as páginas localizadas em [/html pages](https://github.com/Rafael-Takano/projeto-desenvolvimento-web/tree/main/html%20pages)
 
-### Vite
-Para rodar o programa é necessário ter o nodeJs instalado, para isso baixe-o pelo [site](https://nodejs.org/) ou utilize seu instalador de pacotes preferido
+### Milestone 2 (Vite ou Servidor estático)
+Para rodar o programa pelo vite, é necessário ter o nodeJs instalado, para isso baixe-o pelo [site](https://nodejs.org/) ou utilize seu instalador de pacotes preferido
 
 Em seguida instale os módulos necessários para a execução do programa com o npm(Node package Manager), deve ter sido instalado junto com o NodeJs, da seguinte forma: 
 
@@ -123,8 +123,11 @@ Para o desenvolvimento basta iniciar a aplicação com o vite:
 
 Dessa forma o site será hospedado no host local e mostrará atualizações na página em tempo real.
 
-Para ver o site hospedado em um servidor estático local
+Para ver o site hospedado em um servidor estático local é necessário entrar na pasta build/ e realizar o comando:
 
+`python3 -m http.server 8000`
+
+Assim o site estará hospedado no localhost:8000
 
 ## Problemas
 
