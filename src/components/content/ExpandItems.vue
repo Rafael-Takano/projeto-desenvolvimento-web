@@ -279,6 +279,7 @@
         .ItemImage {
             width: calc(75vw - 4px);
             height: calc(75vw - 4px);
+            border-radius: 20px;
         }
 
         .ItemImgLabel {
