@@ -23,7 +23,7 @@
             <input type="Text" class="ItemTitle border" :value="product.name">			
             <div class="itemLeft">
                 <label for="ItemImg" class="ItemImgLabel border">
-                    <img src="/imgs/image1.png" alt="" class="ItemImage"> 				
+                    <img :src="product.Image" alt="" class="ItemImage"> 				
                 </label>
                 <input type="text" class="ItemPrice border" :value="product.price">
                 <input type="file" id="ItemImg" accept=".png, .jpg">
@@ -68,7 +68,7 @@
         <div v-else>
             <title type="Text" class="ItemTitle">{{ product.name }}</title>
             <div class="itemLeft">
-                <img src="/imgs/image1.png" class="ItemImgLabel">                    
+                <img :src="product.Image" class="ItemImgLabel">                    
                 <p class="ItemPrice">R$ {{ text() }}</p>                
             </div>
             <div class="itemRight">
@@ -127,7 +127,8 @@
     }
 
     .ItemImage {
-        width: 100%;
+        width: calc(18vw - 4px);
+        height: calc(18vw - 4px);
         border-radius: 2vw;
     }
     .ItemImgLabel {
@@ -242,6 +243,11 @@
             float: none;
             margin: 0 auto;
             text-align: center;
+        }
+
+        .ItemImage {
+            width: calc(75vw - 4px);
+            height: calc(75vw - 4px);
         }
 
         .ItemImgLabel {

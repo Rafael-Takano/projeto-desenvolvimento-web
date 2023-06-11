@@ -20,7 +20,7 @@
 
 <template>
     <div class="cartItem">
-        <img src="/imgs/image1.png" class="item-img">
+        <img :src="item.Image" class="item-img">
         <p class="item-title">{{ item.name }}</p>
 		<p class="price">R$ {{ price() }}</p>
         <div class="quantity">

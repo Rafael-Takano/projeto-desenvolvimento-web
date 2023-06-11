@@ -6,7 +6,7 @@
   import AppCart from './components/AppCart.vue';
   import AppCategory from './components/AppCategory.vue';
 
-  const admin = ref(false);
+  const admin = ref(true);
   const category = ref('');
   const categoryShown = ref(false);
   const set = ref(false);
@@ -25,8 +25,7 @@
 
   function removeFromCart(item) {
     if(itemsInCart.value.indexOf(item) != -1)
-      itemsInCart.value.splice(itemsInCart.value.indexOf(item),1)
-    console.log('tried');
+      itemsInCart.value.splice(itemsInCart.value.indexOf(item),1)   
   }
 
   function toggleCat() {

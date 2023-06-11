@@ -3,7 +3,7 @@
         product: Object,
         admin: Boolean
     });    
-    const emit = defineEmits(['ExpandItem','addToCart'])
+    const emit = defineEmits(['ExpandItem','addToCart', 'delete'])
     function text() {
         return prop.product.price.toFixed(2)
     }
@@ -13,18 +13,21 @@
     function addItem() {
         emit('addToCart', prop.product, prop.admin)
     }
+    function deleteItem() {        
+        emit('delete', prop.product)            
+    }
 
 </script>
 
 <template>
     <div class="item">
-        <img src="/imgs/image1.png" class="item-img">
+        <img :src="product.Image" class="item-img">
         <h3 class="item-title">{{ product.name }}</h3>
         <div class="itemButtons">
             <input type="image" src="/imgs/buttons/Info.svg" class="leftButton roundBtn" @click="Expand" v-if="!admin">
             <input type="image" src="/imgs/buttons/Edit.svg" class="leftButton roundBtn" @click="Expand" v-else>
             <input type="image" src="/imgs/buttons/AddtoCart.svg" class="rightButton roundBtn" @click="addItem" v-if="!admin">            
-            <input type="image" src="/imgs/buttons/RemoveItem.svg" class="rightButton roundBtn" v-else>            
+            <input type="image" src="/imgs/buttons/RemoveItem.svg" class="rightButton roundBtn" @click="deleteItem" v-else>            
         </div>
         <p class="price">R$ {{ text() }}</p>        
 	</div>
