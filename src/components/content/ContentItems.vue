@@ -1,8 +1,7 @@
 <script setup>
     const prop = defineProps({
-        product: {
-            type: Object,
-        }
+        product: Object,
+        admin: Boolean
     });    
     const emit = defineEmits(['ExpandItem','addToCart'])
     function text() {
@@ -12,7 +11,7 @@
         emit('ExpandItem', prop.product)
     }
     function addItem() {
-        emit('addToCart', prop.product)
+        emit('addToCart', prop.product, prop.admin)
     }
 
 </script>
@@ -22,8 +21,10 @@
         <img src="/imgs/image 1.png" class="item-img">
         <h3 class="item-title">{{ product.name }}</h3>
         <div class="itemButtons">
-            <input type="image" src="/imgs/buttons/Info.svg" class="leftButton roundBtn" @click="Expand">
-            <input type="image" src="/imgs/buttons/Add to Cart.svg" class="rightButton roundBtn" @click="addItem">            
+            <input type="image" src="/imgs/buttons/Info.svg" class="leftButton roundBtn" @click="Expand" v-if="!admin">
+            <input type="image" src="/imgs/buttons/Edit.svg" class="leftButton roundBtn" @click="Expand" v-else>
+            <input type="image" src="/imgs/buttons/Add to Cart.svg" class="rightButton roundBtn" @click="addItem" v-if="!admin">            
+            <input type="image" src="/imgs/buttons/Remove item.svg" class="rightButton roundBtn" v-else>            
         </div>
         <p class="price">R$ {{ text() }}</p>        
 	</div>

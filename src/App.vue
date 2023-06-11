@@ -5,6 +5,7 @@
   import AppFooter from './components/AppFooter.vue';
   import AppCart from './components/AppCart.vue';
 
+  const admin = ref(true)
   const itemsInCart = ref(Object);
   itemsInCart.value = [];
   const cartOpen = ref(false)
@@ -27,8 +28,8 @@
 </script>
 
 <template>
-  <AppHeader @toggleCart="toggleCart"/>
-  <AppContent @addToCart="addToCart"/>
-  <AppCart v-if="cartOpen" :items="itemsInCart" @removeItem="removeFromCart"/>
+  <AppHeader @toggleCart="toggleCart" :admin="admin"/>
+  <AppContent @addToCart="addToCart" :admin="admin"/>
+  <AppCart v-if="cartOpen && !admin" :items="itemsInCart" @removeItem="removeFromCart"/>
   <AppFooter />
 </template>

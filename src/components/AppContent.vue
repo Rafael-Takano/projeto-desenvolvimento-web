@@ -3,13 +3,22 @@
     import products from './json/products.json'
     import Items from './content/ContentItems.vue';  
 	import ExpandItems from './content/ExpandItems.vue';
+	import AddItems from './content/addItems.vue'
 
 	const emit = defineEmits(['addToCart'])
-
-	const isAdmin = ref(false)
+	const props = defineProps({
+		admin: Boolean
+	})
+	
 	const show = ref(false);
+	const adding = ref(false)
 	const ExpandProduct	= ref(Object);
-	function expand (prod) {	
+	function expand (prod, add) {	
+		if (add) {
+			adding.value = true
+		} else {
+			adding.value = false
+		}
 		ExpandProduct.value = prod
 		show.value = true					
 		window.scrollTo(0,0)
@@ -27,9 +36,10 @@
     <section class="container-maior" @click.self="close">
 		<section class="product-grid" @click.self="close">
 			<h2 @click="close">All products</h2>      
-			<ExpandItems class="child" v-if="show" :product="ExpandProduct" :admin="isAdmin" @addItem="addItem" />
+			<ExpandItems class="child" v-if="show" :product="ExpandProduct" :admin="admin" @addItem="addItem" :add="adding"/>
 			<div class="child" @click.self="close">
-				<Items v-for="product in products.products" :product="product" @click.self="close" @ExpandItem="expand" @addToCart="addItem"/>            			
+				<Items v-for="product in products.products" :product="product" @click.self="close" @ExpandItem="expand" @addToCart="addItem" :admin="admin"/> 
+				<AddItems v-if="admin" @click="expand(undefined,true)"/>           			
 			</div>
         </section>
 	</section>

@@ -19,8 +19,31 @@
 
 <template>    
     <div id="ItemDiv" class="border">        
-        <form v-if="admin">
-            <input type="Text" class="ItemTitle border" >			
+        <form v-if="admin && !add">
+            <input type="Text" class="ItemTitle border" :value="product.name">			
+            <div class="itemLeft">
+                <label for="ItemImg" class="ItemImgLabel border">
+                    <img src="/imgs/image 1.png" alt="" class="ItemImage"> 				
+                </label>
+                <input type="text" class="ItemPrice border" :value="product.price">
+                <input type="file" id="ItemImg" accept=".png, .jpg">
+            </div>
+            <div class="itemRight">
+                <label for="ItemDesc" class="ItemDescLabel">Description</label>
+                <textarea class="ItemDesc border"> {{ product.description }}
+                </textarea>
+                <label for="ItemQtdStock" class="ItemQtdStockLabel">Qtd in Stock:</label>
+                <input type="text" class="ItemQtdStock border" :value="product.QtdStock">
+                <p class="QtdSold">Qtd sold: {{ product.QtdSold }}</p>
+                <label for="ItemCate" class="ItemCateLabel">Category:</label>
+                <select  class="ItemCate border">
+                    <option v-for="category in categories" :value="category" :selected="product.Category == category">{{ category }}</option>					
+                </select>				
+                <input type="image" src="../../imgs/buttons/Save edit.png" class="Item">													
+            </div>
+        </form>
+        <form v-else-if="admin && add">
+            <input type="Text" class="ItemTitle border">			
             <div class="itemLeft">
                 <label for="ItemImg" class="ItemImgLabel border">
                     <p>Add Image</p> 				
@@ -103,6 +126,10 @@
         text-align: center;
     }
 
+    .ItemImage {
+        width: 100%;
+        border-radius: 2vw;
+    }
     .ItemImgLabel {
         display: inline-block;
         width: 18vw;	

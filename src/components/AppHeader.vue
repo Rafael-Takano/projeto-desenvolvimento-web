@@ -4,6 +4,9 @@
   import navbtn from './header/HeaderButtons.vue'
   //imgsrc="./imgs/Icons/cart.svg"
   const emit = defineEmits(['toggleCart'])
+  const props = defineProps({
+    admin: Boolean
+  })
 
   function cart() {
     emit('toggleCart')
@@ -15,7 +18,7 @@
     <Categories />
     <Logo />
     <navbtn id="userAccessDiv" title="User Access" imgsrc="/imgs/Icons/person.svg" />			
-    <navbtn id="CartDiv" title="Shopping Cart" imgsrc="/imgs/Icons/cart.svg" @click="cart"/>
+    <navbtn id="CartDiv" title="Shopping Cart" imgsrc="/imgs/Icons/cart.svg" @click="cart" v-if="!admin"/>
 	</nav>
 </template>
 
