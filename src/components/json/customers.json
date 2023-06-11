@@ -1,0 +1,85 @@
+{
+	"customers": [
+	{
+		"id": 1,
+		"name": "João Silva",
+		"email": "joao.silva@example.com",
+		"password": "senha123",
+		"phone": "+55 123456789",
+		"address": "Rua Principal, 123"
+	},
+	{
+		"id": 2,
+		"name": "Maria Santos",
+		"email": "maria.santos@example.com",
+		"password": "senha456",
+		"phone": "+55 987654321",
+		"address": "Avenida Central, 456"
+	},
+	{
+		"id": 3,
+		"name": "Carlos Oliveira",
+		"email": "carlos.oliveira@example.com",
+		"password": "senha789",
+		"phone": "+55 111122223333",
+		"address": "Praça do Sol, 789"
+	},
+	{
+		"id": 4,
+		"name": "Ana Costa",
+		"email": "ana.costa@example.com",
+		"password": "senhaabc",
+		"phone": "+55 444455556666",
+		"address": "Travessa das Flores, 321"
+	},
+	{
+		"id": 5,
+		"name": "Pedro Rodrigues",
+		"email": "pedro.rodrigues@example.com",
+		"password": "senhaxyz",
+		"phone": "+55 777788889999",
+		"address": "Rua dos Sonhos, 987"
+	},
+	{
+		"id": 6,
+		 "name": "Mariana Oliveira",
+		 "email": "mariana.oliveira@example.com",
+		 "password": "senha1234",
+		 "phone": "+55 1212121212",
+		 "address": "Avenida das Flores, 1234"
+	},
+	{
+		"id": 7,
+		"name": "Gabriel Santos",
+		"email": "gabriel.santos@example.com",
+		"password": "senha5678",
+		"phone": "+55 9876543210",
+		"address": "Rua dos Amigos, 456"
+	},
+	{
+		"id": 8,
+		"name": "Juliana Costa",
+		"email": "juliana.costa@example.com",
+		"password": "senha91011",
+		"phone": "+55 123123123",
+		"address": "Praça das Estrelas, 789"
+	},
+	{
+		"id": 9,
+		"name": "Ricardo Fernandes",
+		"email": "ricardo.fernandes@example.com",
+		"password": "senha121314",
+		"phone": "+55 456456456",
+		"address": "Avenida dos Sonhos, 101"
+	},
+	{
+		"id": 10,
+		"name": "Camila Lima",
+		"email": "camila.lima@example.com",
+		"password": "senha151617",
+		"phone": "+55 789789789",
+		"address": "Rua do Futuro, 234"
+	}
+]
+
+}
