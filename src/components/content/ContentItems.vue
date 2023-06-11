@@ -5,7 +5,8 @@
     });    
     const emit = defineEmits(['ExpandItem','addToCart', 'delete'])
     function text() {
-        return prop.product.price.toFixed(2)
+        let string = prop.product.price
+        return string.toFixed(2)
     }
     function Expand() {
         emit('ExpandItem', prop.product)

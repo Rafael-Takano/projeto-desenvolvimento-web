@@ -11,7 +11,8 @@
 		return a.name>b.name
 	});
 
-	let productShowing = sortedProducts.value;
+	const productShowing = ref({})
+	productShowing.value = sortedProducts.value;
 
 	const emit = defineEmits(['addToCart'])
 	const props = defineProps({
@@ -35,7 +36,8 @@
 			top: 0,
 			behavior: 'smooth'
 		})
-	}
+	}	
+
 	function close () {
 		if(showExpand.value)
 			showExpand.value = false;
@@ -46,9 +48,9 @@
 	}
 	function filter() {
 		if(props.category == '') {
-			productShowing = sortedProducts.value;
+			productShowing.value = sortedProducts.value;
 		} else {			
-			productShowing = sortedProducts.value.filter(e => e.Category == props.category);
+			productShowing.value = sortedProducts.value.filter(e => e.Category == props.category);
 		}		
 	}
 
@@ -59,14 +61,38 @@
 	}
 
 	function deleteProd(response) {		
-		if(response)
-			sortedProducts.value.splice(sortedProducts.value.indexOf(deleteItem),1)
+		if(response) {
+			sortedProducts.value.splice(sortedProducts.value.indexOf(deleteItem),1)		
+			productShowing.value.splice(productShowing.value.indexOf(deleteItem),1)		
+		}
 		else	
-			deleteItem = {}
+		deleteItem = {}
 		showCorfirm.value = false;
 	}
 
-	watch(props, filter) 
+	function updateItem (newProd){
+		sortedProducts.value[sortedProducts.value.indexOf(ExpandProduct.value)] = newProd;
+		sortedProducts.value.sort((a,b)=> {
+			return a.name>b.name
+		});
+		
+		filter()
+
+		showExpand.value = false;
+	}
+	function newItem (newProd) {
+
+		console.log(newProd);
+		sortedProducts.value.push(newProd)
+		sortedProducts.value.sort((a,b)=> {
+			return a.name>b.name
+		});
+		filter()
+		showExpand.value = false;
+	}
+
+
+	watch(props, filter) 		
 
 </script>
 
@@ -74,7 +100,7 @@
     <section class="container-maior" @click.self="close">
 		<section class="product-grid" @click.self="close">
 			<h2 @click="close">All products</h2>      
-			<ExpandItems class="child" v-if="showExpand" :product="ExpandProduct" :admin="admin" @addItem="addItem" :add="adding"/>
+			<ExpandItems class="child" v-if="showExpand" :product="ExpandProduct" :admin="admin" @addItem="addItem" :add="adding" @updateItem="updateItem" @newItem="newItem"/>
 			<div class="child" @click.self="close">
 				<Items v-for="product in productShowing" :product="product" @click.self="close" @ExpandItem="expand" @addToCart="addItem" :admin="admin" @delete="tryDelete" />
 				<ConfirmDeletion @response="deleteProd" v-if="showCorfirm"/> 
