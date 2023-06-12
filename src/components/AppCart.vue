@@ -3,7 +3,7 @@
     import CartItem from './cart/CartItem.vue';
     import CartBottom from './cart/CartBottom.vue'
     
-    const emit = defineEmits(['removeItem'])
+    const emit = defineEmits(['removeItem','confirmPurchase'])
     const props = defineProps({
         items: Array,
     })
@@ -32,7 +32,7 @@
         <p>Shopping Cart</p>                            
         <CartItem v-for="(item, index) in items" :item="item" :index="index" @updateSubtotal="update" @removeItem="remove"/>                       
     </div>
-        <CartBottom :subtotal="subtotal"/>        
+        <CartBottom :subtotal="subtotal" @confirmPurchase="emit('confirmPurchase')"/>        
 </template>
 
 <style scoped>

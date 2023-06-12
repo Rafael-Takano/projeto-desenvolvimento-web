@@ -3,6 +3,8 @@
         subtotal: Number
     });
 
+    const emit = defineEmits(['confirmPurchase'])
+
     function price() {        
 		return props.subtotal.toFixed(2);
     }	
@@ -13,7 +15,7 @@
         <p class="subtotal">Subtotal: R$ {{price()}}</p><br>
         <p class="payment-text">Credit card or Debit card:</p>
         <input type="text" name="CardNumber" id="cardNumber">
-        <div class="confirm-purchase">Confirm Purchase</div>
+        <div class="confirm-purchase" @click="emit('confirmPurchase')">Confirm Purchase</div>
     </div>
 </template>
 
