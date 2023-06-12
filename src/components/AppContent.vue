@@ -4,12 +4,15 @@
     import Items from './content/ContentItems.vue';  
 	import ExpandItems from './content/ExpandItems.vue';
 	import AddItems from './content/addItems.vue'
+	import ConfirmDeletion from './content/ConfirmDeletion.vue';
 
-	const sortedProducts = products.products.sort((a,b)=> {
+	const sortedProducts = ref(Object)
+	sortedProducts.value = products.products.sort((a,b)=> {
 		return a.name>b.name
 	});
 
-	let productShowing = sortedProducts;
+	const productShowing = ref({})
+	productShowing.value = sortedProducts.value;
 
 	const emit = defineEmits(['addToCart'])
 	const props = defineProps({
@@ -17,7 +20,8 @@
 		category: String
 	})
 	
-	const show = ref(false);
+	const showCorfirm = ref(false);
+	const showExpand = ref(false);
 	const adding = ref(false)
 	const ExpandProduct	= ref(Object);
 	function expand (prod, add) {	
@@ -27,12 +31,16 @@
 			adding.value = false
 		}
 		ExpandProduct.value = prod
-		show.value = true					
-		window.scrollTo(0,0)
-	}
+		showExpand.value = true					
+		window.scroll({
+			top: 0,
+			behavior: 'smooth'
+		})
+	}	
+
 	function close () {
-		if(show.value)
-			show.value = false;
+		if(showExpand.value)
+			showExpand.value = false;
 	}
 	function addItem (prod){
 		emit('addToCart', prod);
@@ -40,14 +48,51 @@
 	}
 	function filter() {
 		if(props.category == '') {
-			productShowing = sortedProducts;
-		} else {
-			console.log(props.category, sortedProducts);
-			productShowing = sortedProducts.filter(e => e.Category == props.category);
+			productShowing.value = sortedProducts.value;
+		} else {			
+			productShowing.value = sortedProducts.value.filter(e => e.Category == props.category);
 		}		
 	}
 
-	watch(props, filter) 
+	let deleteItem = {}
+	function tryDelete(prod){
+		deleteItem = prod
+		showCorfirm.value = true;
+	}
+
+	function deleteProd(response) {		
+		if(response) {
+			sortedProducts.value.splice(sortedProducts.value.indexOf(deleteItem),1)		
+			productShowing.value.splice(productShowing.value.indexOf(deleteItem),1)		
+		}
+		else	
+		deleteItem = {}
+		showCorfirm.value = false;
+	}
+
+	function updateItem (newProd){
+		sortedProducts.value[sortedProducts.value.indexOf(ExpandProduct.value)] = newProd;
+		sortedProducts.value.sort((a,b)=> {
+			return a.name>b.name
+		});
+		
+		filter()
+
+		showExpand.value = false;
+	}
+	function newItem (newProd) {
+
+		console.log(newProd);
+		sortedProducts.value.push(newProd)
+		sortedProducts.value.sort((a,b)=> {
+			return a.name>b.name
+		});
+		filter()
+		showExpand.value = false;
+	}
+
+
+	watch(props, filter) 		
 
 </script>
 
@@ -55,11 +100,12 @@
     <section class="container-maior" @click.self="close">
 		<section class="product-grid" @click.self="close">
 			<h2 @click="close">All products</h2>      
-			<ExpandItems class="child" v-if="show" :product="ExpandProduct" :admin="admin" @addItem="addItem" :add="adding"/>
+			<ExpandItems class="child" v-if="showExpand" :product="ExpandProduct" :admin="admin" @addItem="addItem" :add="adding" @updateItem="updateItem" @newItem="newItem"/>
 			<div class="child" @click.self="close">
-				<Items v-for="product in productShowing" :product="product" @click.self="close" @ExpandItem="expand" @addToCart="addItem" :admin="admin"/> 
+				<Items v-for="product in productShowing" :product="product" @click.self="close" @ExpandItem="expand" @addToCart="addItem" :admin="admin" @delete="tryDelete" />
+				<ConfirmDeletion @response="deleteProd" v-if="showCorfirm"/> 
 				<AddItems v-if="admin" @click="expand(undefined,true)"/>           			
-			</div>
+			</div>			
         </section>
 	</section>
 </template>

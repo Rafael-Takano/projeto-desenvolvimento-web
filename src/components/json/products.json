@@ -8,7 +8,7 @@
         "QtdStock": 100,
         "QtdSold": 20,
         "Category": "Fruits",
-		"Image": "Products_imgs/Apple.jpg"
+		"Image": "/Products_imgs/Apple.jpg"
         },
         {
         "name": "Banana",
@@ -18,7 +18,7 @@
         "QtdStock": 150,
         "QtdSold": 50,
         "Category": "Fruits",
-		"Image": "Products_imgs/Banana.jpg"
+		"Image": "/Products_imgs/Banana.jpg"
         },
         {
         "name": "Orange",
@@ -28,7 +28,7 @@
         "QtdStock": 80,
         "QtdSold": 30,
         "Category": "Fruits",
-		"Image": "Products_imgs/Orange.jpg"
+		"Image": "/Products_imgs/Orange.jpg"
         },
         {
         "name": "Avocado",
@@ -38,7 +38,7 @@
         "QtdStock": 60,
         "QtdSold": 10,
         "Category": "Fruits",
-		"Image": "Products_imgs/Avocado.jpg"
+		"Image": "/Products_imgs/Avocado.jpg"
         },
         {
         "name": "Peach",
@@ -48,7 +48,7 @@
         "QtdStock": 70,
         "QtdSold": 15,
         "Category": "Fruits",
-		"Image": "Products_imgs/Peach.jpg"
+		"Image": "/Products_imgs/Peach.jpg"
         },
         {
         "name": "Potato",
@@ -58,7 +58,7 @@
         "QtdStock": 200,
         "QtdSold": 40,
         "Category": "Vegetables",
-		"Image": "Products_imgs/Potato.jpg"
+		"Image": "/Products_imgs/Potato.jpg"
         },
         {
         "name": "Onion",
@@ -68,7 +68,7 @@
         "QtdStock": 120,
         "QtdSold": 25,
         "Category": "Vegetables",
-		"Image": "Products_imgs/Onion.jpg"
+		"Image": "/Products_imgs/Onion.jpg"
         },
         {
         "name": "Carrot",
@@ -78,7 +78,7 @@
         "QtdStock": 100,
         "QtdSold": 30,
         "Category": "Vegetables",
-		"Image": "Products_imgs/Carrot.jpg"
+		"Image": "/Products_imgs/Carrot.jpg"
         },
         {
         "name": "Broccoli",
@@ -88,7 +88,7 @@
         "QtdStock": 80,
         "QtdSold": 20,
         "Category": "Vegetables",
-		"Image": "Products_imgs/Broccoli.jpg"
+		"Image": "/Products_imgs/Brocolli.jpg"
         },
         {
         "name": "Tomato",
@@ -98,7 +98,7 @@
         "QtdStock": 150,
         "QtdSold": 35,
         "Category": "Vegetables",
-		"Image": "Products_imgs/Tomato.jpg"
+		"Image": "/Products_imgs/Tomato.jpg"
         },
         {
         "name": "Cucumber",
@@ -108,7 +108,7 @@
         "QtdStock": 90,
         "QtdSold": 15,
         "Category": "Vegetables",
-		"Image": "Products_imgs/Cucumber.jpg"
+		"Image": "/Products_imgs/Cucumber.jpg"
         },
         {
         "name": "Canned Soup",
@@ -118,7 +118,7 @@
         "QtdStock": 50,
         "QtdSold": 10,
         "Category": "Canned Goods",
-		"Image": "Products_imgs/Canned_Soup.jpg"
+		"Image": "/Products_imgs/Canned_Soup.jpg"
         },
         {
         "name": "Canned Tuna",
@@ -128,7 +128,7 @@
         "QtdStock": 70,
         "QtdSold": 20,
         "Category": "Canned Goods",
-		"Image": "Products_imgs/Canned_Tuna.jpg"
+		"Image": "/Products_imgs/Canned_Tuna.jpg"
         },
         {
         "name": "Canned Beans",
@@ -138,7 +138,7 @@
         "QtdStock": 100,
         "QtdSold": 25,
         "Category": "Canned Goods",
-		"Image": "Products_imgs/Canned_Beans.jpg"
+		"Image": "/Products_imgs/Canned_Beans.jpg"
         },
         {
         "name": "Butter",
@@ -148,7 +148,7 @@
         "QtdStock": 80,
         "QtdSold": 15,
         "Category": "Dairy",
-		"Image": "Products_imgs/Butter.jpg"
+		"Image": "/Products_imgs/Butter.jpg"
         },
         {
         "name": "Cheese",
@@ -158,7 +158,7 @@
         "QtdStock": 120,
         "QtdSold": 30,
         "Category": "Dairy",
-		"Image": "Products_imgs/Cheese.jpg"
+		"Image": "/Products_imgs/Cheese.jpg"
         },
         {
         "name": "Egg",
@@ -168,7 +168,7 @@
         "QtdStock": 180,
         "QtdSold": 40,
         "Category": "Dairy",
-		"Image": "Products_imgs/Eggs.jpg"
+		"Image": "/Products_imgs/Eggs.jpg"
         },
         {
         "name": "Milk",
@@ -178,7 +178,7 @@
         "QtdStock": 150,
         "QtdSold": 35,
         "Category": "Dairy",
-		"Image": "Products_imgs/Milk.jpg"
+		"Image": "/Products_imgs/Milk.jpg"
         },
         {
         "name": "Yogurt",
@@ -188,7 +188,7 @@
         "QtdStock": 120,
         "QtdSold": 25,
         "Category": "Dairy",
-		"Image": "Products_imgs/Yogurt.jpg"
+		"Image": "/Products_imgs/Yogurt.jpg"
         },
         {
         "name": "Chicken Breast",
@@ -198,7 +198,7 @@
         "QtdStock": 100,
         "QtdSold": 20,
         "Category": "Meat",
-		"Image": "Products_imgs/Chicken_Breast.jpg"
+		"Image": "/Products_imgs/Chicken_Breast.jpg"
         },
         {
         "name": "Chicken Thighs",
@@ -208,7 +208,7 @@
         "QtdStock": 80,
         "QtdSold": 15,
         "Category": "Meat",
-		"Image": "Products_imgs/Chicken_Thighs.jpg"
+		"Image": "/Products_imgs/Chicken_Thighs.jpg"
         },
         {
         "name": "Beef",
@@ -218,7 +218,7 @@
         "QtdStock": 120,
         "QtdSold": 25,
         "Category": "Meat",
-		"Image": "Products_imgs/Beef.jpg"
+		"Image": "/Products_imgs/Beef.jpg"
         },
         {
         "name": "Pork",
@@ -228,7 +228,7 @@
         "QtdStock": 100,
         "QtdSold": 20,
         "Category": "Meat",
-		"Image": "Products_imgs/Pork.jpg"
+		"Image": "/Products_imgs/Pork.jpg"
         },
         {
         "name": "Bacon",
@@ -238,7 +238,7 @@
         "QtdStock": 80,
         "QtdSold": 15,
         "Category": "Meat",
-		"Image": "Products_imgs/Bacon.jpg"
+		"Image": "/Products_imgs/Bacon.jpg"
         },
         {
         "name": "Salmon",
@@ -248,7 +248,7 @@
         "QtdStock": 90,
         "QtdSold": 20,
         "Category": "Fish & Seafood",
-		"Image": "Products_imgs/Salmon.jpg"
+		"Image": "/Products_imgs/Salmon.jpg"
         },
         {
             "name": "Tuna",
@@ -258,7 +258,7 @@
             "QtdStock": 70,
             "QtdSold": 15,
             "Category": "Fish & Seafood",
-			"Image": "Products_imgs/Tuna.jpg"
+			"Image": "/Products_imgs/Tuna.jpg"
         },
         {
         "name": "Salami",
@@ -268,7 +268,7 @@
         "QtdStock": 60,
         "QtdSold": 10,
         "Category": "Deli",
-		"Image": "Products_imgs/Salami.jpg"
+		"Image": "/Products_imgs/Salami.jpg"
         },
         {
         "name": "Ham",
@@ -278,7 +278,7 @@
         "QtdStock": 80,
         "QtdSold": 20,
         "Category": "Deli",
-		"Image": "Products_imgs/Ham.jpg"
+		"Image": "/Products_imgs/Ham.jpg"
         },
         {
         "name": "Turkey",
@@ -288,7 +288,7 @@
         "QtdStock": 90,
         "QtdSold": 25,
         "Category": "Deli",
-		"Image": "Products_imgs/Turkey.jpg"
+		"Image": "/Products_imgs/Turkey.jpg"
         },
         {
         "name": "Black Pepper",
@@ -298,7 +298,7 @@
         "QtdStock": 200,
         "QtdSold": 40,
         "Category": "Condiments & Spices",
-		"Image": "Products_imgs/Black_Pepper.jpg"
+		"Image": "/Products_imgs/Black_Pepper.jpg"
         },
         {
         "name": "Oregano",
@@ -308,7 +308,7 @@
         "QtdStock": 150,
         "QtdSold": 30,
         "Category": "Condiments & Spices",
-		"Image": "Products_imgs/Oregano.jpg"
+		"Image": "/Products_imgs/Oregano.jpg"
         },
         {
         "name": "Cinnamon",
@@ -318,7 +318,7 @@
         "QtdStock": 100,
         "QtdSold": 20,
         "Category": "Condiments & Spices",
-		"Image": "Products_imgs/Cinnamon.jpg"
+		"Image": "/Products_imgs/Cinnamon.jpg"
         },
         {
         "name": "Sugar",
@@ -328,7 +328,7 @@
         "QtdStock": 300,
         "QtdSold": 50,
         "Category": "Condiments & Spices",
-		"Image": "Products_imgs/Sugar.jpg"
+		"Image": "/Products_imgs/Sugar.jpg"
         },
         {
         "name": "Ketchup",
@@ -338,7 +338,7 @@
         "QtdStock": 180,
         "QtdSold": 35,
         "Category": "Condiments & Spices",
-		"Image": "Products_imgs/Ketchup.jpg"
+		"Image": "/Products_imgs/Ketchup.jpg"
         },
         {
         "name": "Mayonnaise",
@@ -348,7 +348,7 @@
         "QtdStock": 200,
         "QtdSold": 40,
         "Category": "Condiments & Spices",
-		"Image": "Products_imgs/Mayonnaise.jpg"
+		"Image": "/Products_imgs/Mayonnaise.jpg"
         },
         {
         "name": "Potato Chips",
@@ -358,7 +358,7 @@
         "QtdStock": 250,
         "QtdSold": 45,
         "Category": "Snacks",
-		"Image": "Products_imgs/Potato_Chips.jpg"
+		"Image": "/Products_imgs/Potato_Chips.jpg"
         },
         {
         "name": "Popcorn",
@@ -368,7 +368,7 @@
         "QtdStock": 300,
         "QtdSold": 55,
         "Category": "Snacks",
-		"Image": "Products_imgs/Popcorn.jpg"
+		"Image": "/Products_imgs/Popcorn.jpg"
         },
         {
         "name": "Nuts",
@@ -378,7 +378,7 @@
         "QtdStock": 200,
         "QtdSold": 30,
         "Category": "Snacks",
-		"Image": "Products_imgs/Nuts.jpg"
+		"Image": "/Products_imgs/Nuts.jpg"
         },
         {
         "name": "Crackers",
@@ -388,7 +388,7 @@
         "QtdStock": 150,
         "QtdSold": 25,
         "Category": "Snacks",
-		"Image": "Products_imgs/Crackers.jpg"
+		"Image": "/Products_imgs/Crackers.jpg"
         },
         {
         "name": "Bread",
@@ -398,7 +398,7 @@
         "QtdStock": 180,
         "QtdSold": 35,
         "Category": "Bread & Bakery",
-		"Image": "Products_imgs/Break.jpg"
+		"Image": "/Products_imgs/Bread.jpg"
         },
         {
         "name": "Tortillas",
@@ -408,7 +408,7 @@
         "QtdStock": 220,
         "QtdSold": 40,
         "Category": "Bread & Bakery",
-		"Image": "Products_imgs/Tortillas.jpg"
+		"Image": "/Products_imgs/Tortillas.jpg"
         },
         {
         "name": "Cookies",
@@ -418,7 +418,7 @@
         "QtdStock": 300,
         "QtdSold": 50,
         "Category": "Bread & Bakery",
-		"Image": "Products_imgs/Cookies.jpg"
+		"Image": "/Products_imgs/Cookies.jpg"
         },
         {
         "name": "Muffins",
@@ -428,7 +428,7 @@
         "QtdStock": 250,
         "QtdSold": 45,
         "Category": "Bread & Bakery",
-		"Image": "Products_imgs/Muffins.jpg"
+		"Image": "/Products_imgs/Muffin.jpg"
         },
         {
         "name": "Pie",
@@ -438,7 +438,7 @@
         "QtdStock": 150,
         "QtdSold": 30,
         "Category": "Bread & Bakery",
-		"Image": "Products_imgs/Pie.jpg"
+		"Image": "/Products_imgs/Pie.jpg"
         },
         {
         "name": "Oats",
@@ -448,7 +448,7 @@
         "QtdStock": 200,
         "QtdSold": 35,
         "Category": "Pasta, Rice & Cereal",
-		"Image": "Products_imgs/Oats.jpg"
+		"Image": "/Products_imgs/Oats.jpg"
         },
         {
         "name": "Granola",
@@ -458,7 +458,7 @@
         "QtdStock": 180,
         "QtdSold": 30,
         "Category": "Pasta, Rice & Cereal",
-		"Image": "Products_imgs/Granola.jpg"
+		"Image": "/Products_imgs/Granola.jpg"
         },
         {
         "name": "Rice",
@@ -468,7 +468,7 @@
         "QtdStock": 300,
         "QtdSold": 50,
         "Category": "Pasta, Rice & Cereal",
-		"Image": "Products_imgs/Rice.jpg"
+		"Image": "/Products_imgs/Rice.jpg"
         },
         {
         "name": "Macaroni",
@@ -478,7 +478,7 @@
         "QtdStock": 250,
         "QtdSold": 40,
         "Category": "Pasta, Rice & Cereal",
-		"Image": "Products_imgs/Macaroni.jpg"
+		"Image": "/Products_imgs/Macaroni.jpg"
         },
         {
         "name": "Noodles",
@@ -488,7 +488,7 @@
         "QtdStock": 220,
         "QtdSold": 35,
         "Category": "Pasta, Rice & Cereal",
-		"Image": "Products_imgs/Noodles.jpg"
+		"Image": "/Products_imgs/Noodles.jpg"
         },
         {
         "name": "Cereal",
@@ -498,7 +498,7 @@
         "QtdStock": 180,
         "QtdSold": 30,
         "Category": "Pasta, Rice & Cereal",
-		"Image": "Products_imgs/Cereal.jpg"
+		"Image": "/Products_imgs/Cereal.jpg"
         },
         {
         "name": "Frozen Pizza",
@@ -508,7 +508,7 @@
         "QtdStock": 200,
         "QtdSold": 40,
         "Category": "Frozen Foods",
-		"Image": "Products_imgs/Frozen_Pizza.jpg"
+		"Image": "/Products_imgs/Frozen_Pizza.jpg"
         },
         {
         "name": "Ice cream",
@@ -518,7 +518,7 @@
         "QtdStock": 250,
         "QtdSold": 35,
         "Category": "Frozen Foods",
-		"Image": "Products_imgs/Ice_Cream.jpg"
+		"Image": "/Products_imgs/Ice_Cream.jpg"
         },
         {
         "name": "Frozen Fish",
@@ -528,7 +528,7 @@
         "QtdStock": 180,
         "QtdSold": 25,
         "Category": "Frozen Foods",
-		"Image": "Products_imgs/Frozen_Fish.jpg"
+		"Image": "/Products_imgs/Frozen_Fish.jpg"
         },
         {
         "name": "Shampoo",
@@ -538,7 +538,7 @@
         "QtdStock": 300,
         "QtdSold": 50,
         "Category": "Personal Care",
-		"Image": "Products_imgs/Shampoo.jpg"
+		"Image": "/Products_imgs/Shampoo.jpg"
         },
         {
         "name": "Conditioner",
@@ -548,7 +548,7 @@
         "QtdStock": 280,
         "QtdSold": 45,
         "Category": "Personal Care",
-		"Image": "Products_imgs/Conditioner.jpg"
+		"Image": "/Products_imgs/Conditioner.jpg"
         },
         {
         "name": "Deodorant",
@@ -558,7 +558,7 @@
         "QtdStock": 250,
         "QtdSold": 40,
         "Category": "Personal Care",
-		"Image": "Products_imgs/Deodorant.jpg"
+		"Image": "/Products_imgs/Deodorant.jpg"
         },
         {
         "name": "Toothpaste",
@@ -568,7 +568,7 @@
         "QtdStock": 300,
         "QtdSold": 55,
         "Category": "Personal Care",
-		"Image": "Products_imgs/Toothpaste.jpg"
+		"Image": "/Products_imgs/Toothpaste.jpg"
         },
         {
         "name": "Dental Floss",
@@ -578,7 +578,7 @@
         "QtdStock": 280,
         "QtdSold": 50,
         "Category": "Personal Care",
-		"Image": "Products_imgs/Dental_Floss.jpg"
+		"Image": "/Products_imgs/Dental_Floss.jpg"
         },
         {
         "name": "Band-Aid",
@@ -588,7 +588,7 @@
         "QtdStock": 320,
         "QtdSold": 60,
         "Category": "Personal Care",
-		"Image": "Products_imgs/Band_Aid.jpg"
+		"Image": "/Products_imgs/Band_Aid.jpg"
         },
         {
         "name": "Cleaning Alcohol",
@@ -598,7 +598,7 @@
         "QtdStock": 200,
         "QtdSold": 30,
 		"Category": "Personal Care",
-		"Image": "Products_imgs/Cleaning_Alcohol.jpg"
+		"Image": "/Products_imgs/Cleaning_Alcohol.jpg"
         },
         {
         "name": "Pain Killer",
@@ -608,7 +608,7 @@
         "QtdStock": 250,
         "QtdSold": 40,
         "Category": "Personal Care",
-		"Image": "Products_imgs/Pain_Killer.jpg"
+		"Image": "/Products_imgs/Pain_Killer.jpg"
         },
         {
         "name": "Antacid",
@@ -618,7 +618,7 @@
         "QtdStock": 300,
         "QtdSold": 35,
         "Category": "Personal Care",
-		"Image": "Products_imgs/Antacid.jpg"
+		"Image": "/Products_imgs/Antacid.jpg"
         },
         {
         "name": "Dish Soap",
@@ -628,7 +628,7 @@
         "QtdStock": 320,
         "QtdSold": 55,
         "Category": "Household & Cleaning Supplies",
-		"Image": "Products_imgs/Dish_Soap.jpg"
+		"Image": "/Products_imgs/Dish_Soap.jpg"
         },
         {
         "name": "Paper Towel",
@@ -638,7 +638,7 @@
         "QtdStock": 300,
         "QtdSold": 50,
         "Category": "Household & Cleaning Supplies",
-		"Image": "Products_imgs/Papel_Towel.jpg"
+		"Image": "/Products_imgs/Paper_Towel.jpg"
         },
         {
         "name": "Trash Bags",
@@ -648,7 +648,7 @@
         "QtdStock": 250,
         "QtdSold": 40,
         "Category": "Household & Cleaning Supplies",
-		"Image": "Products_imgs/Trash_Bags.jpg"
+		"Image": "/Products_imgs/Trash_Bags.jpg"
         },
         {
         "name": "Laundry Detergent",
@@ -658,7 +658,7 @@
         "QtdStock": 200,
         "QtdSold": 30,
         "Category": "Household & Cleaning Supplies",
-		"Image": "Products_imgs/Laundry_Detergent.jpg"
+		"Image": "/Products_imgs/Laundry_Detergent.jpg"
         },
         {
         "name": "Baby Food",
@@ -668,7 +668,7 @@
         "QtdStock": 180,
         "QtdSold": 25,
         "Category": "Baby Items",
-		"Image": "Products_imgs/Baby_Food.jpg"
+		"Image": "/Products_imgs/Baby_Food.jpg"
         },
         {
         "name": "Diapers",
@@ -678,7 +678,7 @@
         "QtdStock": 250,
         "QtdSold": 35,
         "Category": "Baby Items",
-		"Image": "Products_imgs/Diapers.jpg"
+		"Image": "/Products_imgs/Diapers.jpg"
         },
         {
         "name": "Wet Wipes",
@@ -688,7 +688,7 @@
         "QtdStock": 300,
         "QtdSold": 40,
         "Category": "Baby Items",
-		"Image": "Products_imgs/Wet_Wipes.jpg"
+		"Image": "/Products_imgs/Wet_Wipes.jpg"
         },
         {
         "name": "Pet Food",
@@ -698,7 +698,7 @@
         "QtdStock": 280,
         "QtdSold": 45,
         "Category": "Pet Care",
-		"Image": "Products_imgs/Pet_Food.jpg"
+		"Image": "/Products_imgs/Pet_Food.jpg"
         },
         {
         "name": "Kitty Litter",
@@ -708,7 +708,7 @@
         "QtdStock": 250,
         "QtdSold": 35,
         "Category": "Pet Care",
-		"Image": "Products_imgs/Kitty_Litter.jpg"
+		"Image": "/Products_imgs/Kitty_Litter.jpg"
         },
         {
         "name": "Chew Toy",
@@ -718,7 +718,7 @@
         "QtdStock": 220,
         "QtdSold": 30,
         "Category": "Pet Care",
-		"Image": "Products_imgs/Chew_Toy.jpg"
+		"Image": "/Products_imgs/Chew_Toy.jpg"
         },
         {
         "name": "Pet Shampoo",
@@ -728,7 +728,7 @@
         "QtdStock": 250,
         "QtdSold": 40,
         "Category": "Pet Care",
-		"Image": "Products_imgs/Pet_Shampoo.jpg"
+		"Image": "/Products_imgs/Pet_Shampoo.jpg"
         },
         {
             "name": "Coffee",
@@ -738,7 +738,7 @@
             "QtdStock": 300,
             "QtdSold": 55,
             "Category": "Beverages",
-			"Image": "Products_imgs/Coffee.jpg"
+			"Image": "/Products_imgs/Coffee.jpg"
           },
           {
             "name": "Teabags",
@@ -748,7 +748,7 @@
             "QtdStock": 280,
             "QtdSold": 50,
             "Category": "Beverages",
-			"Image": "Products_imgs/Teabags.jpg"
+			"Image": "/Products_imgs/TeaBags.jpg"
           },
           {
             "name": "Milk",
@@ -758,7 +758,7 @@
             "QtdStock": 320,
             "QtdSold": 60,
             "Category": "Beverages",
-			"Image": "Products_imgs/Milk.jpg"
+			"Image": "/Products_imgs/Milk.jpg"
           },
           {
             "name": "Juice",
@@ -768,7 +768,7 @@
             "QtdStock": 300,
             "QtdSold": 50,
             "Category": "Beverages",
-			"Image": "Products_imgs/Juice.jpg"
+			"Image": "/Products_imgs/Juice.jpg"
           },
           {
             "name": "Soda",
@@ -778,7 +778,7 @@
             "QtdStock": 250,
             "QtdSold": 40,
             "Category": "Beverages",
-			"Image": "Products_imgs/Soda.jpg"            
+			"Image": "/Products_imgs/Soda.jpg"            
           },
           {
             "name": "Beer",
@@ -788,7 +788,7 @@
             "QtdStock": 200,
             "QtdSold": 30,
             "Category": "Beverages",
-			"Image": "Products_imgs/Beer.jpg"
+			"Image": "/Products_imgs/Beer.jpg"
           },
           {
             "name": "Wine",
@@ -798,7 +798,7 @@
             "QtdStock": 180,
             "QtdSold": 25,
             "Category": "Beverages",
-			"Image": "Products_imgs/Wine.jpg"
+			"Image": "/Products_imgs/Wine.jpg"
           }
     ]
 }

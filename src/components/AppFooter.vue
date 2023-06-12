@@ -6,6 +6,14 @@
 				<p class="pleft">Igor Boson</p>							
 				<p class="pright">NUSP: 11200517</p>
 			</li>
+            <li> 
+                <p class="pleft">
+                    Olavo Morais 
+                </p>
+                <p class="pright">
+                    NUSP: 11297792                    
+                </p>
+            </li>
 			<li>
 				<p class="pleft">Rafael Takano</p>
 				<p class="pright">NUSP: 11200459</p>

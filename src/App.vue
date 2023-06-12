@@ -39,8 +39,7 @@
 
   function removeFromCart(item) {
     if(itemsInCart.value.indexOf(item) != -1)
-      itemsInCart.value.splice(itemsInCart.value.indexOf(item),1)
-    console.log('tried');
+      itemsInCart.value.splice(itemsInCart.value.indexOf(item),1)   
   }
 
   function toggleCat() {

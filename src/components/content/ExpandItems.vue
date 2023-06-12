@@ -10,20 +10,51 @@
         add: {
             type: Boolean
         }
-    })       
-    const emit = defineEmits(['addItem'])
+    })      
+    let newProd;    
+    const emit = defineEmits(['addItem','updateItem','newItem'])
     function text() {
         return props.product.price.toFixed(2)
+    }
+
+    function updateItem () {
+        let el = document.getElementById('formEdit');
+
+        newProd = {};
+        newProd.name = el[0].value;
+        newProd.price = Number(el[1].value);
+        newProd.description = el[3].value;
+        newProd.QtdStock = Number(el[4].value);
+        newProd.QtdSold = props.product.QtdSold
+        newProd.Category = el[5].value;
+        newProd.Image = props.product.Image
+        
+        emit('updateItem' ,newProd)
+    }
+
+    function newItem() {
+        let el = document.getElementById('addItem');
+        
+        newProd = {};
+        newProd.name = el[0].value;
+        newProd.price = Number(el[1].value);
+        newProd.description = el[3].value;
+        newProd.QtdStock = Number(el[4].value);
+        newProd.QtdSold = Number(0)
+        newProd.Category = el[5].value;
+        newProd.Image = "/Products_imgs/Antacid.jpg"        
+        
+        emit('newItem', newProd)
     }
 </script>
 
 <template>    
     <div id="ItemDiv" class="border">        
-        <form v-if="admin && !add">
+        <form v-if="admin && !add" id="formEdit">
             <input type="Text" class="ItemTitle border" :value="product.name">			
             <div class="itemLeft">
                 <label for="ItemImg" class="ItemImgLabel border">
-                    <img src="/imgs/image1.png" alt="" class="ItemImage"> 				
+                    <img :src="product.Image" alt="" class="ItemImage"> 				
                 </label>
                 <input type="text" class="ItemPrice border" :value="product.price">
                 <input type="file" id="ItemImg" accept=".png, .jpg">
@@ -39,10 +70,10 @@
                 <select  class="ItemCate border">
                     <option v-for="category in categories" :value="category" :selected="product.Category == category">{{ category }}</option>					
                 </select>				
-                <input type="image" src="../../imgs/buttons/SaveEdit.png" class="Item">													
+                <input type="image" src="../../imgs/buttons/SaveEdit.png" class="Item" @click.prevent="updateItem">													
             </div>
         </form>
-        <form v-else-if="admin && add">
+        <form v-else-if="admin && add" id="addItem">
             <input type="Text" class="ItemTitle border">			
             <div class="itemLeft">
                 <label for="ItemImg" class="ItemImgLabel border">
@@ -62,13 +93,13 @@
                 <select  class="ItemCate border" >
                     <option v-for="category in categories" :value="category">{{ category }}</option>					
                 </select>				
-                <input type="image" src="../../imgs/buttons/AddProduct.png" class="Item">													
+                <input type="image" src="../../imgs/buttons/AddProduct.png" class="Item" @click.prevent="newItem">													
             </div>
         </form>
         <div v-else>
             <title type="Text" class="ItemTitle">{{ product.name }}</title>
             <div class="itemLeft">
-                <img src="/imgs/image1.png" class="ItemImgLabel">                    
+                <img :src="product.Image" class="ItemImgLabel">                    
                 <p class="ItemPrice">R$ {{ text() }}</p>                
             </div>
             <div class="itemRight">
@@ -127,7 +158,8 @@
     }
 
     .ItemImage {
-        width: 100%;
+        width: calc(18vw - 4px);
+        height: calc(18vw - 4px);
         border-radius: 2vw;
     }
     .ItemImgLabel {
@@ -242,6 +274,12 @@
             float: none;
             margin: 0 auto;
             text-align: center;
+        }
+
+        .ItemImage {
+            width: calc(75vw - 4px);
+            height: calc(75vw - 4px);
+            border-radius: 20px;
         }
 
         .ItemImgLabel {
