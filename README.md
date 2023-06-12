@@ -74,7 +74,7 @@ Login:
 Descrição do Item:
 
 <img src="imgs/Mockup/Desktop/Descri%C3%A7ao%20de%20item.png" style="width:50%"> 
-<img src="imgs/Mockup/Smartphone/Descri%C3%A7ao.png" style="width:20%"> 
+<img src="imgs/Mockup/Smartphone/Descri%C3%A7%C3%A3o.png" style="width:20%"> 
 
 Edição do Item (Admin): 
 
@@ -82,12 +82,11 @@ Edição do Item (Admin):
 
 Adição de Item (Admin): 
 
-<img src="imgs/Mockup/Desktop/Visao%20Admin%20adicao%20item.png" style="width:50%"> 
+<img src="imgs/Mockup/Desktop/Visao%20Admin%20adi%C3%A7ao%20item.png" style="width:50%"> 
 
 Opções de Usuário (Admin): 
 
 <img src="imgs/Mockup/Desktop/Pessoal%20Admin.png" style="width:50%"> 
-<img src="imgs/Mockup/Smartphone/Pessoal%20Admin%20-%20Phone.png" style="width:20%"> 
 
 Criando Usuário (Admin):
 
@@ -135,6 +134,7 @@ Assim o site estará hospedado no localhost:8000
 Tivemos dificuldades em como organizar o display dos itens, principalmente no quesito responsividade, pois o display "quebrava" quando reduzíamos o tamanho da tela, mas depois de um tempo procurando soluções conseguimos resolver.
 
 ### Milestone 2
+Ainda não implementamos uma boa responsividade ná área do usuário, mas já é possível fazer login como admin e como cliente. Além disso, os jsons que fazem o papel de banco de dados não estão sendo alterados pelo admin.
 
 ## Comentários Extras 
 
@@ -142,3 +142,4 @@ Tivemos dificuldades em como organizar o display dos itens, principalmente no qu
 Não nos atentamos muito a deixar o site "dinâmico" até então, por exemplo, fazer a sidebar do carrinho aparecer somente quando o botão do carrinho é apertado, visto que a ideia dessa etapa é fazer apenas as páginas mockup.
 
 ### Milestone 2
+Implementamos a maior parte das funcionalidades desejadas porém devemos agora focar em resolver os pequenos problemas citados anteriormente e focar no desenvolvimento do Back-End para finalizar o projeto.
