@@ -3,7 +3,7 @@
   import Logo from './header/HeaderLogo.vue';
   import navbtn from './header/HeaderButtons.vue'
   //imgsrc="./imgs/Icons/cart.svg"
-  const emit = defineEmits(['toggleCart','toggleCategory'])
+  const emit = defineEmits(['toggleCart','toggleCategory','toggleUserAccess'])
   const props = defineProps({
     admin: Boolean
   })
@@ -14,13 +14,16 @@
   function toggleCategory() {
     emit('toggleCategory')    
   }
+  function userAccess() {
+    emit('toggleUserAccess')    
+  }
 </script>
 
 <template>
   <nav> 
     <Categories @toggleCategory="toggleCategory"/>
     <Logo />
-    <navbtn id="userAccessDiv" title="User Access" imgsrc="/imgs/Icons/person.svg" />			
+    <navbtn id="userAccessDiv" title="User Access" imgsrc="/imgs/Icons/person.svg" @click="userAccess" />			
     <navbtn id="CartDiv" title="Shopping Cart" imgsrc="/imgs/Icons/cart.svg" @click="cart" v-if="!admin"/>
 	</nav>
 </template>

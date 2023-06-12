@@ -22,7 +22,7 @@
         subtotal.value = aux
     }
     function remove(item) {
-        emit('removeItem',item);    
+        emit('removeItem',item);
     }
     
 </script>

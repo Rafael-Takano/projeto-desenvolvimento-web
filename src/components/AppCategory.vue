@@ -1,4 +1,4 @@
-<script setup>
+ <script setup>
     import categories from './json/Categories.json'
     const emit = defineEmits(['reset', 'set'])
 

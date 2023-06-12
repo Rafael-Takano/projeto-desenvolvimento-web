@@ -13,7 +13,7 @@
 </script>
 
 <template>
-    <div id="CartDiv" class="navbtn">
+    <div class="navbtn">
 		 	<p>{{ title }}</p>
 			<img :src="imgsrc">
 		</div>
