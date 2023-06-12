@@ -56,17 +56,21 @@
 
   function handleLogin(loginType, email, password){
     console.log(loginType, email, password)
-    console.log(adminsData.admins)
+    //console.log(adminsData.admnins)
     if(loginType === 'client'){
       userLoggedIn.value = true;
       admin.value = false;
     }
     if(loginType === 'admin'){
-      //const user = adminsData.admins.find(user => user.email === email && user.password === password);
-        userLoggedIn.value = true;
+      // const user = adminsData.admins.find((user) => user.email === email && user.password === password);
+      // if (user) {
+      // }
+      // else {
+      //   console.log('login invalido');
+      // }
+      userLoggedIn.value = true;
         admin.value = true;
         console.log('login sucesso');
-
     }
   }
 
