@@ -13,8 +13,7 @@
   const admin = ref(false);
   const userLoggedIn = ref(false);
   const category = ref('');
-  const categoryShown = ref(false);
-  const set = ref(false);
+  const categoryShown = ref(false);  
   const itemsInCart = ref(Object);
   itemsInCart.value = [];
 
@@ -74,6 +73,11 @@
     }
   }
 
+  function confirmPurchase() {
+    itemsInCart.value = []
+    cartOpen.value = false
+  }
+
   function handleLogout(){
     userLoggedIn.value = false;
     admin.value = false;
@@ -83,7 +87,7 @@
 <template>
   <AppHeader @toggleCart="toggleCart" @toggleUserAccess="toggleUserAccess" @toggleCategory="toggleCat" :admin="admin"/>
   <AppContent @addToCart="addToCart" :category="category" :admin="admin"/>
-  <AppCart v-if="cartOpen && !admin" :items="itemsInCart" @removeItem="removeFromCart"/>
+  <AppCart v-if="cartOpen && !admin" :items="itemsInCart" @removeItem="removeFromCart" @confirmPurchase="confirmPurchase"/>
   <AppUserAccess v-if="userAccessOpen" :admin="admin" :userLoggedIn="userLoggedIn" @login="handleLogin" @logout="handleLogout"/>
   <AppCategory v-if="categoryShown" @set="setCate" @reset="resetCate"/>
   <AppFooter />

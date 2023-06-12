@@ -56,13 +56,36 @@ export default {
 </script>
 
 <template>
-    <Login v-if="!userLoggedIn" @login="login"/>
-    <ClientAccess v-if="userLoggedIn && !admin && !showCreateCustomer && !showCreateAdmin" @logout="logout"/>
-    <AdminAccess v-if="userLoggedIn && admin && !showCreateCustomer && !showCreateAdmin" @logout="logout"  @createCustomer="createCustomer" @createAdmin="createAdmin"/>
-    <CreateCustomer v-if="showCreateCustomer" @enterCreateCustomer="enterCreateCustomer"/>
-    <CreateAdmin v-if="showCreateAdmin" @enterCreateAdmin="enterCreateAdmin"/>
+    <div class="sidebar">
+        <Login v-if="!userLoggedIn" @login="login"/>
+        <ClientAccess v-if="userLoggedIn && !admin && !showCreateCustomer && !showCreateAdmin" @logout="logout"/>
+        <AdminAccess v-if="userLoggedIn && admin && !showCreateCustomer && !showCreateAdmin" @logout="logout"  @createCustomer="createCustomer" @createAdmin="createAdmin"/>
+        <CreateCustomer v-if="showCreateCustomer" @enterCreateCustomer="enterCreateCustomer"/>
+        <CreateAdmin v-if="showCreateAdmin" @enterCreateAdmin="enterCreateAdmin"/>
+    </div>
 </template>
 
 <style scoped>
+    .sidebar {
+        position: fixed;
+        z-index: 0;
+        right: 0;   
+        top: 4.43vw;
+        background-color: #fff;
+        height: calc(100vh - 4.43vw);
+        width: 26.042vw;
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+        box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.25);	
+        border-left: 1px #999 solid;
+        padding: 1vw;
+        overflow: scroll;
+    }
 
+    @media (max-width: 1280px) { 
+        .sidebar {
+            top: 45px;
+            height: calc(100vh - 45px);
+            width: 100%;
+        }        
+    }
 </style>
