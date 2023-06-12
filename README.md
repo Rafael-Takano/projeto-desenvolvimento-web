@@ -52,47 +52,47 @@ Abaixo estão os mockups das páginas:
 
 Pagina Principal (Not Logged e Client, mobile, Admin): 
 
-<img src="imgs/Mockup%20pages/Desktop%20pages/Pagina%20inicial%20-%20Desktop.png" style="width:50%">
-<img src="imgs/Mockup%20pages/smartphone%20pages/Pagina%20inicial%20-%20Phone.png" style="width:20%">
-<img src="imgs/Mockup%20pages/Desktop%20pages/Visao%20Admin%20-%20Desktop.png" style="width:50%">
+<img src="imgs/Mockup/Desktop/Pagina%20Inicial.png" style="width:50%">
+<img src="imgs/Mockup/Smartphone/Pagina%20Inicial.png" style="width:20%">
+<img src="imgs/Mockup/Desktop/Visao%20Admin.png" style="width:50%">
 
 Carrinho de compras: 
 
-<img src="imgs/Mockup%20pages/Desktop%20pages/Carrinho%20-%20Desktop.png" style="width:50%">
-<img src="imgs/Mockup%20pages/smartphone%20pages/Carrinho%20-%20Phone.png" style="width:20%"> 
+<img src="imgs/Mockup/Desktop/Carrinho.png" style="width:50%">
+<img src="imgs/Mockup/Smartphone/Carrinho.png" style="width:20%"> 
 
 Categorias:
 
-<img src="imgs/Mockup%20pages/Desktop%20pages/Categorias%20-%20Desktop.png" style="width:50%"> 
-<img src="imgs/Mockup%20pages/smartphone%20pages/Categorias%20-%20Phone.png" style="width:20%"> 
+<img src="imgs/Mockup/Desktop/Categorias.png" style="width:50%"> 
+<img src="imgs/Mockup/Smartphone/Categorias.png" style="width:20%"> 
 
 Login: 
 
-<img src="imgs/Mockup%20pages/Desktop%20pages/Login%20-%20Desktop.png" style="width:50%"> 
-<img src="imgs/Mockup%20pages/smartphone%20pages/Login%20-%20Phone.png" style="width:20%"> 
+<img src="imgs/Mockup/Desktop/Login.png" style="width:50%"> 
+<img src="imgs/Mockup/Smartphone/Login.png" style="width:20%"> 
 
 Descrição do Item:
 
-<img src="imgs/Mockup%20pages/Desktop%20pages/Descri%C3%A7ao%20de%20item%20-%20Desktop.png" style="width:50%"> 
-<img src="imgs/Mockup%20pages/smartphone%20pages/Descri%C3%A7ao%20-%20Phone.png" style="width:20%"> 
+<img src="imgs/Mockup/Desktop/Descri%C3%A7ao%20de%20item.png" style="width:50%"> 
+<img src="imgs/Mockup/Smartphone/Descri%C3%A7ao.png" style="width:20%"> 
 
 Edição do Item (Admin): 
 
-<img src="imgs/Mockup%20pages/Desktop%20pages/Visao%20Admin%20edi%C3%A7ao%20item%20-%20Desktop.png" style="width:50%"> 
+<img src="imgs/Mockup/Desktop/Visao%20Admin%20edi%C3%A7ao%20item.png" style="width:50%"> 
 
 Adição de Item (Admin): 
 
-<img src="imgs/Mockup%20pages/Desktop%20pages/Visao%20Admin%20adicao%20item%20-%20Desktop.png" style="width:50%"> 
+<img src="imgs/Mockup/Desktop/Visao%20Admin%20adicao%20item.png" style="width:50%"> 
 
 Opções de Usuário (Admin): 
 
-<img src="imgs/Mockup%20pages/Desktop%20pages/Pessoal%20Admin%20-%20Desktop.png" style="width:50%"> 
-<img src="imgs/Mockup%20pages/smartphone%20pages/Pessoal%20Admin%20-%20Phone.png" style="width:20%"> 
+<img src="imgs/Mockup/Desktop/Pessoal%20Admin.png" style="width:50%"> 
+<img src="imgs/Mockup/Smartphone/Pessoal%20Admin%20-%20Phone.png" style="width:20%"> 
 
 Criando Usuário (Admin):
 
-<img src="imgs/Mockup%20pages/Desktop%20pages/Create%20Admin%20-%20Desktop.png" style="width:50%"> 
-<img src="imgs/Mockup%20pages/smartphone%20pages/Create%20Admin%20-%20Phone.png" style="width:20%"> 
+<img src="imgs/Mockup/Desktop/Create%20Admin.png" style="width:50%"> 
+<img src="imgs/Mockup/Smartphone/Create%20Admin.png" style="width:20%"> 
 
 ## Comentários sobre o código
 A página inicial está dividida em 3 partes principais, uma navbar, um footer e entre eles tem uma section onde estão organizados os itens. Cada item é uma div em que é organizada a imagem e informações referentes ao item. 
