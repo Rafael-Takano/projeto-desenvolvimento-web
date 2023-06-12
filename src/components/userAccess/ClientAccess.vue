@@ -32,7 +32,10 @@ export default {
     padding: 1vw;
     overflow: scroll;
 
-    text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
 }
 
 .clientAccess p {		
@@ -52,11 +55,11 @@ export default {
 	text-align: center;
 	vertical-align: middle;
 	line-height: 4.16666vw;
-	width: 24.48vw;
+	width: 90%;
 	height: 4.16666vw;
 	border-radius: 8px;
 	border: 2px solid #720000;
-	margin: 0 .78125vw;
+	margin: 2vh .78125vw 0 .78125vw;
 	text-transform: uppercase;
 	background-color: #c92828;
 	font-size: 2vw;

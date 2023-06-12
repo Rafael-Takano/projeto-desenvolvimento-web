@@ -41,31 +41,37 @@ export default {
     padding: 1vw;
     overflow: scroll;
 
-    text-align: center;
-}
-
-.Login p {		
-	font-size: 3vh;
-	color: #999;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
 }
 
 .Login img {	
 	position: center;
 	padding: 10vh 0 5vh 0;
 	background-color: #fff;
-	max-width: 80%;
-    height: auto;
+	max-height: 50vh;
+    width: auto;
+}
+
+.login input[type="text"] {
+	width: 100%;
+	margin: 8px 0;
+	border: none;
+	border-radius: 8px;
+	padding: 10px;
 }
 
 .login-button {
 	text-align: center;
 	vertical-align: middle;
 	line-height: 4.16666vw;
-	width: 24.48vw;
+	width: 90%;
 	height: 4.16666vw;
 	border-radius: 8px;
 	border: 2px solid #720000;
-	margin: 0 .78125vw;
+	margin: 2vh .78125vw 0 .78125vw;
 	text-transform: uppercase;
 	background-color: #c92828;
 	font-size: 2vw;

@@ -56,6 +56,7 @@
 
   function handleLogin(loginType, email, password){
     console.log(loginType, email, password)
+    console.log(adminsData.admins)
     if(loginType === 'client'){
       userLoggedIn.value = true;
       admin.value = false;
