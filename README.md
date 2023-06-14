@@ -95,7 +95,7 @@ Criando Usuário (Admin):
 
 ## Comentários sobre o código
 A página inicial está dividida em 3 partes principais, uma navbar, um footer e entre eles tem uma section onde estão organizados os itens. Cada item é uma div em que é organizada a imagem e informações referentes ao item. 
-Na página de adição de um item, temos sobre a tela uma div com caixas de input para receber as informações do item. E na tela do carrinho, temos uma div representando o carrinho e, contido nesse elemento, temos outras divs para cada item no carrinho.
+Na página de adição de um item, temos sobre a tela uma div com caixas de input para receber as informações do item. E na tela do carrinho, temos uma div representando o carrinho e, contido nesse elemento, temos outras divs para cada item no carrinho. A pasta src contém o código dos componentes em vue.js e os json's que armazenam as informações dos produtos e os logins.
 
 ## Plano de Testes
 Visto a simplicidade das páginas elaboradas até então, ainda não vimos a necessidade de fazer testes automatizados. Os testes até então foram feitos de forma manual, mexendo na proporção da tela, com diferente números de itens e tamanho dos inputs.
