@@ -20,6 +20,7 @@
 		category: String
 	})
 	
+	const noProducts = ref(false);
 	const showCorfirm = ref(false);
 	const showExpand = ref(false);
 	const adding = ref(false)
@@ -49,9 +50,17 @@
 	function filter() {
 		if(props.category == '') {
 			productShowing.value = sortedProducts.value;
-		} else {			
+		} 
+		else {			
 			productShowing.value = sortedProducts.value.filter(e => e.Category == props.category);
 		}		
+
+		if(productShowing.value.length === 0) {
+			noProducts.value = true;
+		} 
+		else {
+			noProducts.value = false;
+		}
 	}
 
 	let deleteItem = {}
@@ -99,13 +108,17 @@
 <template>
     <section class="container-maior" @click.self="close">
 		<section class="product-grid" @click.self="close">
-			<h2 @click="close">All products</h2>      
-			<ExpandItems class="child" v-if="showExpand" :product="ExpandProduct" :admin="admin" @addItem="addItem" :add="adding" @updateItem="updateItem" @newItem="newItem"/>
-			<div class="child" @click.self="close">
-				<Items v-for="product in productShowing" :product="product" @click.self="close" @ExpandItem="expand" @addToCart="addItem" :admin="admin" @delete="tryDelete" />
-				<ConfirmDeletion @response="deleteProd" v-if="showCorfirm"/> 
-				<AddItems v-if="admin" @click="expand(undefined,true)"/>           			
-			</div>			
+			<section class="grid" @click.self="close">			
+				<h2 @click="close" v-if="category == '' ">All products</h2>      
+				<h2 @click="close" v-else>{{ category }}</h2>
+				<h3 v-if="noProducts && !admin" class="child">There is no products of: {{ category }}</h3>
+				<ExpandItems class="child" v-if="showExpand" :product="ExpandProduct" :admin="admin" @addItem="addItem" :add="adding" @updateItem="updateItem" @newItem="newItem"/>
+				<div class="child" @click.self="close">
+					<Items v-for="product in productShowing" :product="product" @click.self="close" @ExpandItem="expand" @addToCart="addItem" :admin="admin" @delete="tryDelete" />
+					<ConfirmDeletion @response="deleteProd" v-if="showCorfirm"/> 
+					<AddItems v-if="admin" @click="expand(undefined,true)"/>           			
+				</div>			
+			</section>
         </section>
 	</section>
 </template>
@@ -114,7 +127,7 @@
 
 .child {
 	grid-row-start: 2;
-    grid-column-start: 1;
+    grid-column-start: 1;	
 }
 
 .container-maior {
@@ -124,9 +137,11 @@
 	background-color: #ededed;
 	padding: 4.43vw 0px 0px;
 } 
+.grid {
+	display: grid;	
+}
 
 .product-grid {
-	display: grid;	
 	width: 60vw;
 	height: auto;
 	margin: 0 auto; 	
@@ -141,6 +156,13 @@
 h2 {
 	font-weight: 400;
 	font-size: 30px;
+	margin: 8px;	
+}
+
+h3 {	
+	color: #ac2020;
+	font-weight: bold;
+	font-size: 40px;
 	margin: 8px;
 }
 
