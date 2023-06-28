@@ -85,10 +85,34 @@
 </script>
 
 <template>
-  <AppHeader @toggleCart="toggleCart" @toggleUserAccess="toggleUserAccess" @toggleCategory="toggleCat" :admin="admin"/>
-  <AppContent @addToCart="addToCart" :category="category" :admin="admin"/>
-  <AppCart v-if="cartOpen && !admin" :items="itemsInCart" @removeItem="removeFromCart" @confirmPurchase="confirmPurchase"/>
-  <AppUserAccess v-if="userAccessOpen" :admin="admin" :userLoggedIn="userLoggedIn" @login="handleLogin" @logout="handleLogout"/>
-  <AppCategory v-if="categoryShown" @set="setCate" @reset="resetCate"/>
-  <AppFooter />
+  <div class="main">
+    <AppHeader @toggleCart="toggleCart" @toggleUserAccess="toggleUserAccess" @toggleCategory="toggleCat" :admin="admin"/>
+    <AppContent @addToCart="addToCart" :category="category" :admin="admin"/>
+    <AppCart v-if="cartOpen && !admin" :items="itemsInCart" @removeItem="removeFromCart" @confirmPurchase="confirmPurchase"/>
+    <AppUserAccess v-if="userAccessOpen" :admin="admin" :userLoggedIn="userLoggedIn" @login="handleLogin" @logout="handleLogout"/>
+    <AppCategory v-if="categoryShown" @set="setCate" @reset="resetCate"/>
+  </div>
+  <AppFooter class="footer"/>
 </template>
+
+<style scoped>  
+
+.main {
+  min-height: calc(100vh - 310px);
+}
+
+.footer {
+  height: 310px;
+  
+}
+
+@media (max-width: 1280px) {
+  .main {
+    min-height: calc(100vh - 26vw);
+  }
+    .footer {
+      height: 26vw;     
+    }
+}
+
+</style>

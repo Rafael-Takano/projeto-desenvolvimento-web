@@ -119,6 +119,7 @@
 
 .container-maior {
 	color: #999;
+	min-height: calc(100vh - 380px);
 	width: 100%;
 	background-color: #ededed;
 	padding: 4.43vw 0px 0px;
@@ -134,6 +135,7 @@
 	padding: 0.675vw; 
 	background-color: #fff;	
 	box-sizing: content-box;
+	min-height: calc(100vh - 380px);
   } 
   
 h2 {
@@ -149,7 +151,7 @@ h2 {
 	.product-grid {
 		width: calc(100% - 2.5vw);
 		padding: 1.25vw;
-	}
+	} 
 }
 
 </style>

@@ -26,7 +26,7 @@
 
 <style scoped>
 
-    footer {
+    footer {                
         border-top: solid 2px #720000;
         background-color: #c92828;
         color: #fff;
