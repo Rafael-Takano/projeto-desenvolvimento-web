@@ -12,7 +12,7 @@
         }
     })      
     let newProd;    
-    const emit = defineEmits(['addItem','updateItem','newItem'])
+    const emit = defineEmits(['addItem','updateItem','newItem', 'closeExpand'])
     function text() {
         return props.product.price.toFixed(2)
     }
@@ -50,6 +50,7 @@
 
 <template>    
     <div id="ItemDiv" class="border">        
+        <input type="image" src="/imgs/buttons/close page.svg" alt="close" class="close" @click="emit('closeExpand')">
         <form v-if="admin && !add" id="formEdit">
             <input type="Text" class="ItemTitle border" :value="product.name">			
             <div class="itemLeft">
@@ -112,8 +113,8 @@
                 <p class="ItemCate" > {{ product.Category }} </p>				
                 <input type="image" src="/public/imgs/buttons/AddtoCart.png" class="Item" @click="emit('addItem',product)">													
             </div>
-        </div>
-	</div>
+        </div>        
+	</div>    
 </template>
 
 <style scoped>
@@ -244,8 +245,16 @@
         display: block;	
     }
 
-    input {
+    #ItemImg {
 	    display: contents;
+    }
+
+    .close {            
+        float: right;
+        position: relative;
+        top: -15px;
+        right: -15px;        
+        width: 40px;
     }
 
     @media (max-width: 1280px){
@@ -263,7 +272,7 @@
 
         .ItemTitle{
             width: 92.726%;	
-            margin: 2.5vw auto;
+            margin: 2.5vw 3.85%;
             height: 10vw;
             font-size: 8vw;
         }
@@ -332,5 +341,8 @@
             height: auto;
             margin: 3vw auto 0px;
         }
+
+        
+ 
     }
 </style>
