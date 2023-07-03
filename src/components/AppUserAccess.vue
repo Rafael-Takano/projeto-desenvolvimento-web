@@ -57,9 +57,9 @@ export default {
 
 <template>
     <div class="sidebar">
-        <Login v-if="!userLoggedIn" @login="login"/>
+        <Login v-if="!userLoggedIn && !showCreateCustomer" @login="login" @createCustomer="createCustomer"/>
         <ClientAccess v-if="userLoggedIn && !admin && !showCreateCustomer && !showCreateAdmin" @logout="logout"/>
-        <AdminAccess v-if="userLoggedIn && admin && !showCreateCustomer && !showCreateAdmin" @logout="logout"  @createCustomer="createCustomer" @createAdmin="createAdmin"/>
+        <AdminAccess v-if="userLoggedIn && admin && !showCreateCustomer && !showCreateAdmin" @logout="logout" @createAdmin="createAdmin"/>
         <CreateCustomer v-if="showCreateCustomer" @enterCreateCustomer="enterCreateCustomer"/>
         <CreateAdmin v-if="showCreateAdmin" @enterCreateAdmin="enterCreateAdmin"/>
     </div>

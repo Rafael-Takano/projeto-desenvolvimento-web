@@ -16,10 +16,9 @@ export default {
 </script>
 
 <template>
-    <div class="AdminAccess">
-        <div class="button" @click="createCustomer">Create Customer</div>
+    <div class="AdminAccess">        
         <div class="button" @click="createAdmin">Create Admin</div>
-        <div class="button" >Delete Account</div>
+        <div class="button" >Manage Users</div>
         <div class="button" @click="logout" >Log off</div>
     </div>  
 </template>

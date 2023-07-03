@@ -6,11 +6,14 @@ export default {
             password: ''
         };
     },
-	emits: ['login'],
+	emits: ['login', 'createCustomer'],
     methods: {
         login(loginType) {
             this.$emit('login', loginType, this.email, this.password);
-        }
+        },
+		createCustomer() {
+			this.$emit('createCustomer');			
+		}
     }
 }
 </script>
@@ -22,6 +25,7 @@ export default {
         <input type="password" placeholder="Password" v-model="password">
         <div class="login-button" @click="login('client')">Client Login</div>
         <div class="login-button" @click="login('admin')">Admin Login</div>
+		<div class="login-button" @click="createCustomer()">Create Customer</div>
     </div>  
 </template>
 
