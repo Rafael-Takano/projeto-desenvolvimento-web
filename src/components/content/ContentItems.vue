@@ -22,13 +22,16 @@
 
 <template>
     <div class="item">
-        <img :src="product.Image" class="item-img">
+        <img :src="product.Image" v-if="product.QtdStock > 0" class="item-img">        
+        <img :src="product.Image" v-else class="item-img out-of-stock">
+        
         <h3 class="item-title">{{ product.name }}</h3>
         <div class="itemButtons">
             <input type="image" src="/imgs/buttons/Info.svg" class="leftButton roundBtn" @click="Expand" v-if="!admin">
             <input type="image" src="/imgs/buttons/Edit.svg" class="leftButton roundBtn" @click="Expand" v-else>
-            <input type="image" src="/imgs/buttons/AddtoCart.svg" class="rightButton roundBtn" @click="addItem" v-if="!admin">            
-            <input type="image" src="/imgs/buttons/RemoveItem.svg" class="rightButton roundBtn" @click="deleteItem" v-else>            
+            <input type="image" src="/imgs/buttons/RemoveItem.svg" class="rightButton roundBtn" @click="deleteItem" v-if="admin">            
+            <input type="image" src="/imgs/buttons/AddtoCart.svg" class="rightButton roundBtn" @click="addItem" v-else-if="product.QtdStock > 0">    
+            <input type="image" src="/imgs/buttons/AddtoCart.svg" class="rightButton roundBtn out-of-stock" v-else>        
         </div>
         <p class="price">R$ {{ text() }}</p>        
 	</div>
@@ -72,6 +75,10 @@
 
     .rightButton {
         float: right;
+    }
+
+    .out-of-stock {
+        filter: grayscale();        
     }
 
     .price {

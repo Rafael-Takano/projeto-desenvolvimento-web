@@ -24,9 +24,15 @@
         <p class="item-title">{{ item.name }}</p>
 		<p class="price">R$ {{ price() }}</p>
         <div class="quantity">
-            <input type="button" @click="item.qtd--; update()" value="-">
+            <input type="button" @click="item.qtd--; update();" value="-">
             <p>{{ item.qtd }}</p>
-            <input type="button" @click="item.qtd++; update()" value="+">
+            <input type="button" 
+				@click=" if(item.QtdStock > item.qtd)
+					{
+						item.qtd++; 
+						update();
+					}" 
+				value="+">
         </div>
     </div>
 </template>

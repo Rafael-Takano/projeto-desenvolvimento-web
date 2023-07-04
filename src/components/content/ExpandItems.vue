@@ -100,7 +100,8 @@
         <div v-else>
             <title type="Text" class="ItemTitle">{{ product.name }}</title>
             <div class="itemLeft">
-                <img :src="product.Image" class="ItemImgLabel">                    
+                <img :src="product.Image" class="ItemImgLabel" v-if="product.QtdStock > 0">                    
+                <img :src="product.Image" class="ItemImgLabel out-of-stock" v-else>
                 <p class="ItemPrice">R$ {{ text() }}</p>                
             </div>
             <div class="itemRight">
@@ -111,7 +112,8 @@
                 <p class="QtdSold">Qtd sold: {{ product.QtdSold }}</p>
                 <label for="ItemCate" class="ItemCateLabel">Category:</label>
                 <p class="ItemCate" > {{ product.Category }} </p>				
-                <input type="image" src="/public/imgs/buttons/AddtoCart.png" class="Item" @click="emit('addItem',product)">													
+                <input type="image" src="/public/imgs/buttons/AddtoCart.png" class="Item" @click="emit('addItem',product)" v-if="product.QtdStock > 0">													
+                <input type="image" src="/public/imgs/buttons/AddtoCart.png" class="Item out-of-stock" v-else>							
             </div>
         </div>        
 	</div>    
@@ -255,6 +257,10 @@
         top: -15px;
         right: -15px;        
         width: 40px;
+    }
+
+    .out-of-stock {
+        filter: grayscale();        
     }
 
     @media (max-width: 1280px){

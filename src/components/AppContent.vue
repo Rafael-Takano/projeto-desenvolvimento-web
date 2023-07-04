@@ -112,12 +112,12 @@
 				<h2 @click="close" v-if="category == '' ">All products</h2>      
 				<h2 @click="close" v-else>{{ category }}</h2>
 				<h3 v-if="noProducts && !admin" class="child">There is no products of: {{ category }}</h3>
-				<ExpandItems class="child" v-if="showExpand" :product="ExpandProduct" :admin="admin" @addItem="addItem" :add="adding" @updateItem="updateItem" @newItem="newItem" @closeExpand="close"/>
 				<div class="child" @click.self="close">
 					<Items v-for="product in productShowing" :product="product" @click.self="close" @ExpandItem="expand" @addToCart="addItem" :admin="admin" @delete="tryDelete" />
 					<ConfirmDeletion @response="deleteProd" v-if="showCorfirm"/> 
 					<AddItems v-if="admin" @click="expand(undefined,true)"/>           			
 				</div>			
+				<ExpandItems class="child" v-if="showExpand" :product="ExpandProduct" :admin="admin" @addItem="addItem" :add="adding" @updateItem="updateItem" @newItem="newItem" @closeExpand="close"/>
 			</section>
         </section>
 	</section>
