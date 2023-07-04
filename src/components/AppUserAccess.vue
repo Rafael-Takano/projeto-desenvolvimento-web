@@ -4,6 +4,7 @@ import ClientAccess from "./userAccess/ClientAccess.vue"
 import AdminAccess from "./userAccess/AdminAccess.vue"
 import CreateCustomer from "./userAccess/CreateCustomer.vue"
 import CreateAdmin from "./userAccess/CreateAdmin.vue"
+import ManageUsers from "./userAccess/ManageUsers.vue"
 
 export default {
     data() {
@@ -11,7 +12,8 @@ export default {
             email: '',
             password: '',
             showCreateCustomer: false,
-            showCreateAdmin: false
+            showCreateAdmin: false,
+            managingUsers: false,
         };
     },
     components: {
@@ -19,7 +21,8 @@ export default {
         ClientAccess,
         AdminAccess,
         CreateCustomer,
-        CreateAdmin
+        CreateAdmin,
+        ManageUsers
     },
     props: {
         userLoggedIn: {
@@ -50,16 +53,20 @@ export default {
         enterCreateAdmin(){
             this.showCreateAdmin = false;
         },
+        manageUsers() {    
+            this.managingUsers = true;      
+        }
 
     }
 }
 </script>
 
 <template>
-    <div class="sidebar">
+    <manageUsers v-if="managingUsers"/>
+    <div v-else class="sidebar">
         <Login v-if="!userLoggedIn && !showCreateCustomer" @login="login" @createCustomer="createCustomer"/>
         <ClientAccess v-if="userLoggedIn && !admin && !showCreateCustomer && !showCreateAdmin" @logout="logout"/>
-        <AdminAccess v-if="userLoggedIn && admin && !showCreateCustomer && !showCreateAdmin" @logout="logout" @createAdmin="createAdmin"/>
+        <AdminAccess v-if="userLoggedIn && admin && !showCreateCustomer && !showCreateAdmin" @logout="logout" @createAdmin="createAdmin" @manage-users="manageUsers"/>
         <CreateCustomer v-if="showCreateCustomer" @enterCreateCustomer="enterCreateCustomer"/>
         <CreateAdmin v-if="showCreateAdmin" @enterCreateAdmin="enterCreateAdmin"/>
     </div>
