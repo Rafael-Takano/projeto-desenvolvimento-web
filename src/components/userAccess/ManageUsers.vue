@@ -7,7 +7,7 @@ import { ref } from 'vue'
 const clientClass = ref('opt selected');
 const adminClass = ref('opt');
 const showAdmins = ref(false);
-const selected = ref(Object);
+const selected = ref('');
 const editing = ref(false)
 const users = ref(Array)
 const admins = ref(Array)
@@ -53,16 +53,60 @@ function showAdmin() {
     selected.value = '';
 }
 
-function selectUser(user) {    
+function selectUser(user) {
     selected.value = user;
 }
 
-function update() {
+function update() {    
     if (selected.value == '') {
         alert('Choose an User to edit')
         return
     }
     editing.value = true;
+}
+
+function fetchUpdate() {
+    let el = document.getElementById('editing');    
+    let data = {};
+    data["_id"] = selected.value._id
+    data["name"] = el.childNodes[3].value;
+    data["email"] = el.childNodes[9].value;
+    data["phone"] = el.childNodes[15].value;
+    data["address"] = el.childNodes[21].value;        
+
+    if (showAdmins.value) {
+        fetch('/admins', {
+        method: 'PUT',
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data)
+    })
+        .then(
+            async res => {
+                console.log(await res.json());
+                reloadAdm();
+                editing.value = false;
+            }
+        )
+    }
+    else {
+        fetch('/users', {
+        method: 'PUT',
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data)
+    })
+        .then(
+            async res => {
+                console.log(await res.json());
+                reloadCli();
+                editing.value = false;
+            }
+        )
+    }
+    selected.value = '';
 }
 
 function remove() {
@@ -83,7 +127,7 @@ function remove() {
         body: JSON.stringify(data)
     })
         .then(
-            async () => {                
+            async () => {
                 reloadCli();
             }
         )
@@ -93,7 +137,7 @@ function remove() {
 
 <template>
     <div class="dim">
-        <div v-if="editing" class="editing">
+        <div v-if="editing" id="editing">
             <label for="name"> Name: </label> <br>
             <input type="text" name="name" :value="selected.name" class="editInput"> <br>
             <label for="email"> E-mail: </label> <br>
@@ -102,8 +146,8 @@ function remove() {
             <input type="text" name="phone" :value="selected.phone" class="editInput"> <br>
             <label for="address"> Address: </label> <br>
             <input type="text" name="address" :value="selected.address" class="editInput"> <br>
-            <input type="button" value="Cancel" class="br-btn">
-            <input type="button" value="Submit" class="br-btn">
+            <input type="button" value="Cancel" class="br-btn" @click="editing = false">
+            <input type="button" value="Submit" class="br-btn" @click="fetchUpdate()">
         </div>
         <div v-else class="content">
             <div class="tabs">
@@ -249,7 +293,7 @@ function remove() {
     border: none;
 }
 
-.editing {
+#editing {
     display: table;
     width: 60%;
     height: auto;

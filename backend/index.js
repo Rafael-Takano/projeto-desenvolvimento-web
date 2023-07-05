@@ -61,15 +61,6 @@ app.use(cors({
   origin: '127.0.0.1:5173'
 }));
 
-app.post("/user", async (request, response) => {
-  const user = new User(request.body);
-  try {
-    await user.save();
-    response.send(user);
-  } catch (error) {
-    response.status(500).send(error);
-  }
-});
 
 app.get("/users", async (request, response) => {
   const users = await User.find({});
@@ -80,6 +71,27 @@ app.get("/users", async (request, response) => {
     response.status(500).send(error);
   }
 });
+
+app.post("/users", async (request, response) => {
+  const user = new User(request.body);
+  try {
+    await user.save();
+    response.send(user);
+  } catch (error) {
+    response.status(500).send(error);
+  }
+});
+
+app.put("/users", async (request, response) => {
+  let usr = request.body;
+  try {
+    console.log(usr);
+    let newUsr = await User.findOneAndUpdate({_id: usr._id},{ name: usr.name, email: usr.email, phone: usr.phone, address: usr.address }, {new: true});
+    response.status(200).send(newUsr);
+  } catch (error) {
+    response.status(500).send(error);
+  }
+}); 
 
 app.delete("/users", async (request, response) => {
   let usr = request.body;
@@ -100,6 +112,16 @@ app.get("/admins", async (request, response) => {
     response.status(500).send(error);
   }
 });
+
+app.put("/admins", async (request, response) => {
+  let adm = request.body;
+  try {
+    await Admin.updateOne({_id: adm._id },{ name: adm.name, email: adm.email, phone: adm.phone, address: adm.address });
+    response.status(200);
+  } catch (error) {
+    response.status(500).send(error);
+  }
+}); 
 
 app.get('/categories', async (request, response) => {
   const Categories = await Category.find({})
