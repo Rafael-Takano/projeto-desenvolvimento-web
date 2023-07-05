@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "buildb": "vite build; rm -rf backend/public/; mv dist/ backend/public/",
     "preview": "vite preview"
   },
   "dependencies": {

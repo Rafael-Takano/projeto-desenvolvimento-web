@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const port = 8000; 
+const cors = require('cors');
 
 const mongoose = require('mongoose');
 
@@ -12,27 +13,27 @@ class Database {
   }
   _connect() {
     mongoose
-      .connect(`mongodb://${server}/${database}`)
-      .then(() => {
-        console.log('Database connection successful');
-      })
-      .catch((err) => {
-        console.error('Database connection failed');
-      });
+    .connect(`mongodb://${server}/${database}`)
+    .then(() => {
+      console.log('Database connection successful');
+    })
+    .catch((err) => {
+      console.error('Database connection failed');
+    });
   }
 }
 
 module.exports = new Database();
 
 const productSchema = new mongoose.Schema({
-    name: String,
-    id: Number,
-    price: Number,
-    description: String,
-    QtdStock: Number,
-    QtdSold: Number,
-    Category: String,
-    Image: String
+  name: String,
+  id: Number,
+  price: Number,
+  description: String,
+  QtdStock: Number,
+  QtdSold: Number,
+  Category: String,
+  Image: String
 });
 
 const userSchema = new mongoose.Schema({
@@ -54,50 +55,24 @@ const Admin = mongoose.model('Admin', userSchema);
 const Product = mongoose.model("Product",productSchema)
 const Category = mongoose.model("Category",categorySchema)
 
-const fs = require('fs');
-
-// Path to the JSON file
-const filePath = 'Categories.json';
-
-// Read the JSON file
-fs.readFile(filePath, 'utf8', (err, data) => {
-  if (err) {
-    console.error('Error reading file:', err);
-    return;
-  }
-
-  try {
-    // Parse the JSON data
-    jsonData=JSON.parse(data)
-    for(let i = 0;i<jsonData.length;i++){
-      newCategory = new Category({
-        category: jsonData[i]
-      })
-    
-      newCategory.save()
-    }
-    
-
-  } catch (err) {
-    console.error('Error parsing JSON data:', err);
-  }
-});
-
 app.use(express.json());
-
+app.use(express.static('public'))
+app.use(cors({
+    origin: '127.0.0.1:5173'
+}));
 
 app.post("/user", async (request, response) => {
-    console.log(request.body);
+  console.log(request.body);
     const user = new User(request.body);
     try {
-        await user.save();
+      await user.save();
       response.send(user);
     } catch (error) {
       response.status(500).send(error);
     }
-});
-
-app.get("/users", async (request, response) => {
+  });
+  
+  app.get("/users", async (request, response) => {
     const users = await User.find({});
     try {
       response.send(users);
@@ -106,9 +81,22 @@ app.get("/users", async (request, response) => {
     }
 });
 
-app.use((req, res, next) => {
-    console.log("Foi");
-    next();
+app.get('/categories', async (request, response) => {
+    const Categories = await Category.find({})
+    try {
+      response.send(Categories);
+    } catch (error) {
+      response.status(500).send(error)
+    }
+});
+
+app.get('/products', async (request, response) => {
+  const products = await Product.find({})
+  try {
+    response.send(products);
+  } catch (error) {
+    response.status(500).send(error)
+  }
 });
 
 app.get('/', function(req, res){

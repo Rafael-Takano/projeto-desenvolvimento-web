@@ -1,5 +1,10 @@
- <script setup>
-    import categories from './json/Categories.json'
+ <script setup>    
+    const props = defineProps({
+        categories: {
+            type: Object,
+            required: true
+        }
+    })      
     const emit = defineEmits(['reset', 'set'])
 
     function reset() {
@@ -13,7 +18,7 @@
 <template>
     <div class="categories"> 
         <input type="button" value="All products" @click="reset">
-        <input type="button" v-for="category in categories" :value="category" @click="set(category)">
+        <input type="button" v-for="category in categories" :value="category.category" @click="set(category.category)">
     </div>
 </template>
 
