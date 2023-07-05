@@ -19,8 +19,8 @@ const itemsInCart = ref(Object);
 const cartOpen = ref(false);
 itemsInCart.value = [];
 
-//'/categories'
-fetch('file://home/rafaeltakano/Downloads/ExpressMarket.categories.json', {
+
+fetch('/categories', {
   method: 'GET',
   headers: {
     'Accept': 'application/json',
@@ -28,7 +28,7 @@ fetch('file://home/rafaeltakano/Downloads/ExpressMarket.categories.json', {
 })
   .then(
     async res => {
-      categories.value = await res.json();
+      categories.value = await res.json();      
     })
   .catch(error => {
     console.log(error);
@@ -102,8 +102,8 @@ function handleLogout() {
 
 <template>
   <div class="main">
-    <AppHeader @toggleCart="toggleCart" @toggleUserAccess="toggleUserAccess" @toggleCategory="toggleCat" :admin="admin" />
-    <AppContent @addToCart="addToCart" :category="category" :admin="admin" :products="products" />
+    <AppHeader @toggleCart="toggleCart" @toggleUserAccess="toggleUserAccess" @toggleCategory="toggleCat" :admin="admin" @reset="resetCate" />
+    <AppContent @addToCart="addToCart" :category="category" :admin="admin" />
     <AppCart v-if="cartOpen && !admin" :items="itemsInCart" @removeItem="removeFromCart"
       @confirmPurchase="confirmPurchase" />
     <AppUserAccess v-if="userAccessOpen" :admin="admin" :userLoggedIn="userLoggedIn" @login="handleLogin"

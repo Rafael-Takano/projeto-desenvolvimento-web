@@ -1,0 +1,126 @@
+[{
+  "_id": {
+    "$oid": "64a199b5778f5828b353458f"
+  },
+  "category": "Condiments & Spices",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64a199b5778f5828b3534592"
+  },
+  "category": "Beverages",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64a199b5778f5828b3534593"
+  },
+  "category": "Pasta, Rice & Cereal",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64a199b5778f5828b3534590"
+  },
+  "category": "Snacks",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64a199b5778f5828b3534595"
+  },
+  "category": "Frozen Foods",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64a199b5778f5828b3534596"
+  },
+  "category": "Personal Care",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64a199b5778f5828b3534597"
+  },
+  "category": "Household & Cleaning Supplies",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64a199b5778f5828b3534598"
+  },
+  "category": "Baby Items",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64a199b5778f5828b3534599"
+  },
+  "category": "Pet Care",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64a199b5778f5828b3534591"
+  },
+  "category": "Bread & Bakery",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64a199b5778f5828b3534594"
+  },
+  "category": "Baking",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64a199b5778f5828b3534589"
+  },
+  "category": "Vegetables",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64a199b5778f5828b353458b"
+  },
+  "category": "Dairy",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64a199b5778f5828b3534588"
+  },
+  "category": "Fruits",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64a199b5778f5828b353458a"
+  },
+  "category": "Canned Goods",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64a199b5778f5828b353458c"
+  },
+  "category": "Meat",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64a199b5778f5828b353458d"
+  },
+  "category": "Fish & Seafood",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64a199b5778f5828b353458e"
+  },
+  "category": "Deli",
+  "__v": 0
+}]

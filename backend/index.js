@@ -99,10 +99,6 @@ app.get('/products', async (request, response) => {
   }
 });
 
-app.get('/', function(req, res){
-    res.send("Hello world!");
- }); 
-
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
 });

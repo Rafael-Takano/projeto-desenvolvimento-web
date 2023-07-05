@@ -1,0 +1,24 @@
+[{
+  "_id": {
+    "$oid": "64a198657cd596f5a5a75d75"
+  },
+  "id": 1,
+  "name": "Antônio João",
+  "email": "antonio.joao@example.com",
+  "password": "senhaabc",
+  "phone": "+55 912345678",
+  "address": "Rua da Esperança, 123",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64a198657cd596f5a5a75d76"
+  },
+  "id": 2,
+  "name": "Maria Luiza",
+  "email": "maria.luiza@example.com",
+  "password": "senhadef",
+  "phone": "+55 998765432",
+  "address": "Rua da Graça, 012",
+  "__v": 0
+}]
