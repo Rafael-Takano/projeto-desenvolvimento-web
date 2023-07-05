@@ -12,7 +12,6 @@ const showCorfirm = ref(false);
 const showExpand = ref(false);
 const adding = ref(false)
 const ExpandProduct = ref(Object);
-const key = ref(0);
 const productShowing = ref({})
 const emit = defineEmits(['addToCart'])
 const props = defineProps({
@@ -21,10 +20,6 @@ const props = defineProps({
 })
 
 productShowing.value = products;
-
-function reload() {
-	key.value += 1;
-}
 
 fetch('/products')
 	.then(

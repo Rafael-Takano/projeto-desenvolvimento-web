@@ -71,7 +71,7 @@
                 <select  class="ItemCate border">
                     <option v-for="category in categories" :value="category" :selected="product.Category == category">{{ category }}</option>					
                 </select>				
-                <input type="image" src="../../imgs/buttons/SaveEdit.png" class="Item" @click.prevent="updateItem">													
+                <input type="image" src="/imgs/buttons/SaveEdit.png" class="Item" @click.prevent="updateItem">													
             </div>
         </form>
         <form v-else-if="admin && add" id="addItem">
@@ -94,7 +94,7 @@
                 <select  class="ItemCate border" >
                     <option v-for="category in categories" :value="category">{{ category }}</option>					
                 </select>				
-                <input type="image" src="../../imgs/buttons/AddProduct.png" class="Item" @click.prevent="newItem">													
+                <input type="image" src="/imgs/buttons/AddProduct.png" class="Item" @click.prevent="newItem">													
             </div>
         </form>
         <div v-else>
@@ -112,8 +112,8 @@
                 <p class="QtdSold">Qtd sold: {{ product.QtdSold }}</p>
                 <label for="ItemCate" class="ItemCateLabel">Category:</label>
                 <p class="ItemCate" > {{ product.Category }} </p>				
-                <input type="image" src="/public/imgs/buttons/AddtoCart.png" class="Item" @click="emit('addItem',product)" v-if="product.QtdStock > 0">													
-                <input type="image" src="/public/imgs/buttons/AddtoCart.png" class="Item out-of-stock" v-else>							
+                <input type="image" src="/imgs/buttons/AddtoCart.png" class="Item" @click="emit('addItem',product)" v-if="product.QtdStock > 0">													
+                <input type="image" src="/imgs/buttons/AddtoCart.png" class="Item out-of-stock" v-else>							
             </div>
         </div>        
 	</div>    
