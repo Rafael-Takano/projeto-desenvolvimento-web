@@ -141,6 +141,16 @@ app.get('/products', async (request, response) => {
   }
 });
 
+app.get('/search/:str', async (request, response) => {
+  console.log(request.params.str)
+  const regex = new RegExp(request.params.str, 'i');
+  const products = await Product.find({ $or: [{ name: regex }, { description: regex },{Category: regex}] })
+  try {
+    response.send(products);
+  } catch (error) {
+    response.status(500).send(error)
+  }
+});
 
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);

@@ -14,6 +14,7 @@ const categories = ref(Object)
 const categoryShown = ref(false);
 const itemsInCart = ref(Object);
 const cartOpen = ref(false);
+const toggleCate = ref(0);
 itemsInCart.value = [];
 
 
@@ -59,10 +60,12 @@ function toggleCat() {
 }
 
 function setCate(cate) {
+  toggleCate.value = 1
   category.value = cate
 }
 
 function resetCate() {
+  toggleCate.value = 1
   category.value = ''
 }
 
@@ -100,7 +103,7 @@ function handleLogout() {
 <template>
   <div class="main">
     <AppHeader @toggleCart="toggleCart" @toggleUserAccess="toggleUserAccess" @toggleCategory="toggleCat" :admin="admin" @reset="resetCate" />
-    <AppContent @addToCart="addToCart" :category="category" :admin="admin" :categories="categories" />
+    <AppContent @addToCart="addToCart" :category="category" :admin="admin" :categories="categories" :toggleCat="toggleCate" @untoggleCat="toggleCate = 0"/>
     <AppCart v-if="cartOpen && !admin" :items="itemsInCart" @removeItem="removeFromCart"
       @confirmPurchase="confirmPurchase" />
     <AppUserAccess v-if="userAccessOpen" :admin="admin" :userLoggedIn="userLoggedIn" @login="handleLogin"
