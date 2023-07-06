@@ -185,6 +185,7 @@ watch(props, filter)
   	.product-grid {
   		width: calc(100% - 2.5vw);
   		padding: 1.25vw;
+		padding-top: 45px;
   	}
   }
 </style>
