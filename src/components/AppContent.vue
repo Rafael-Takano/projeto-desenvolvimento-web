@@ -16,7 +16,8 @@ const productShowing = ref({})
 const emit = defineEmits(['addToCart'])
 const props = defineProps({
 	admin: Boolean,
-	category: String
+	category: String,
+	categories: Array
 })
 
 productShowing.value = products;
@@ -88,6 +89,7 @@ function deleteProd(response) {
 }
 
 function updateItem(newProd) {
+	//console.log("Logging from Appcontent UpdateItem", ExpandProduct.value, newProd)
 	sortedProducts.value[sortedProducts.value.indexOf(ExpandProduct.value)] = newProd;
 	sortedProducts.value.sort((a, b) => {
 		return a.name > b.name
@@ -126,7 +128,7 @@ watch(props, filter)
 					<ConfirmDeletion @response="deleteProd" v-if="showCorfirm" />
 					<AddItems v-if="admin" @click="expand(undefined, true)" />
 				</div>
-				<ExpandItems class="child" v-if="showExpand" :product="ExpandProduct" :admin="admin" @addItem="addItem"
+				<ExpandItems class="child" v-if="showExpand" :product="ExpandProduct" :admin="admin" :categories="categories" @addItem="addItem"
 					:add="adding" @updateItem="updateItem" @newItem="newItem" @closeExpand="close" />
 			</section>
 		</section>

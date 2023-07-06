@@ -1,5 +1,5 @@
 <script setup>
-    import categories from '../json/Categories.json'     
+    import { ref } from "vue";      
     const props = defineProps({        
         product: {
             type: Object
@@ -9,27 +9,28 @@
         },        
         add: {
             type: Boolean
+        },
+        categories: {
+            type: Array
         }
     })      
-    let newProd;    
+    const newProd = ref(Object);
+    newProd.value = props.product;         
+    console.log(newProd);
     const emit = defineEmits(['addItem','updateItem','newItem', 'closeExpand'])
     function text() {
         return props.product.price.toFixed(2)
     }
 
-    function updateItem () {
-        let el = document.getElementById('formEdit');
+    function imgPreview(event) {
+        console.log(event);
+        newProd.value.Image = URL.createObjectURL(event.target.files[0])
+    }
 
-        newProd = {};
-        newProd.name = el[0].value;
-        newProd.price = Number(el[1].value);
-        newProd.description = el[3].value;
-        newProd.QtdStock = Number(el[4].value);
-        newProd.QtdSold = props.product.QtdSold
-        newProd.Category = el[5].value;
-        newProd.Image = props.product.Image
-        
-        emit('updateItem' ,newProd)
+    function updateItem () {                
+        newProd.value.price = Number(newProd.value.price);
+        newProd.value.QtdStock = Number(newProd.value.price);
+        emit('updateItem' ,newProd.value)
     }
 
     function newItem() {
@@ -52,24 +53,24 @@
     <div id="ItemDiv" class="border">        
         <input type="image" src="/imgs/buttons/close page.svg" alt="close" class="close" @click="emit('closeExpand')">
         <form v-if="admin && !add" id="formEdit">
-            <input type="Text" class="ItemTitle border" :value="product.name">			
+            <input type="Text" class="ItemTitle border" v-model="newProd.name">			
             <div class="itemLeft">
                 <label for="ItemImg" class="ItemImgLabel border">
                     <img :src="product.Image" alt="" class="ItemImage"> 				
                 </label>
-                <input type="text" class="ItemPrice border" :value="product.price">
-                <input type="file" id="ItemImg" accept=".png, .jpg">
+                <input type="text" class="ItemPrice border" v-model="newProd.price">
+                <input type="file" id="ItemImg" accept=".png, .jpg" @input="event => imgPreview(event)">
             </div>
             <div class="itemRight">
                 <label for="ItemDesc" class="ItemDescLabel">Description</label>
-                <textarea class="ItemDesc border"> {{ product.description }}
+                <textarea class="ItemDesc border" v-model="newProd.description"> {{ product.description }}
                 </textarea>
                 <label for="ItemQtdStock" class="ItemQtdStockLabel">Qtd in Stock:</label>
-                <input type="text" class="ItemQtdStock border" :value="product.QtdStock">
+                <input type="text" class="ItemQtdStock border" v-model="newProd.QtdStock">
                 <p class="QtdSold">Qtd sold: {{ product.QtdSold }}</p>
                 <label for="ItemCate" class="ItemCateLabel">Category:</label>
-                <select  class="ItemCate border">
-                    <option v-for="category in categories" :value="category" :selected="product.Category == category">{{ category }}</option>					
+                <select  class="ItemCate border" v-model="newProd.Category">
+                    <option v-for="category in categories" :value="category.category" :selected="newProd.Category == category.category">{{ category.category }}</option>					
                 </select>				
                 <input type="image" src="/imgs/buttons/SaveEdit.png" class="Item" @click.prevent="updateItem">													
             </div>

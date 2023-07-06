@@ -7,9 +7,6 @@ import AppCart from './components/AppCart.vue';
 import AppCategory from './components/AppCategory.vue';
 import AppUserAccess from './components/AppUserAccess.vue';
 
-import adminsData from './components/json/admins.json';
-import customersData from './components/json/customers.json';
-
 const admin = ref(false);
 const userLoggedIn = ref(false);
 const category = ref('');
@@ -103,7 +100,7 @@ function handleLogout() {
 <template>
   <div class="main">
     <AppHeader @toggleCart="toggleCart" @toggleUserAccess="toggleUserAccess" @toggleCategory="toggleCat" :admin="admin" @reset="resetCate" />
-    <AppContent @addToCart="addToCart" :category="category" :admin="admin" />
+    <AppContent @addToCart="addToCart" :category="category" :admin="admin" :categories="categories" />
     <AppCart v-if="cartOpen && !admin" :items="itemsInCart" @removeItem="removeFromCart"
       @confirmPurchase="confirmPurchase" />
     <AppUserAccess v-if="userAccessOpen" :admin="admin" :userLoggedIn="userLoggedIn" @login="handleLogin"
