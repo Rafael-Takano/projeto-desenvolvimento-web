@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 const port = 8000;
-const cors = require('cors');
 
 const mongoose = require('mongoose');
 
@@ -57,14 +56,29 @@ const Category = mongoose.model("Category", categorySchema)
 
 app.use(express.json());
 app.use(express.static('public'))
-app.use(cors({
-  origin: '127.0.0.1:5173'
-}));
 
+app.get('/login', async function (req, res) {
+  console.log("Verificando Login");
+  try {
+    aux = await Admin.find({ email: req.body.email, password: req.body.password }).then();
+    if (aux.length > 0) {
+      res.status(200).send("Admin logado");
+    } else {
+      aux = await User.find({ email: req.body.email, password: req.body.password }).then();
+      if (aux.length > 0) {
+        res.status(200).send("Usuário Comum logado");
+      } else {
+        res.status(404).send("Não encontrado");
+      }
+    }
+  } catch (err) {
+    console.log(err);
+    res.status(500).send({});
+  }
+});
 
 app.get("/users", async (request, response) => {
-  const users = await User.find({});
-  users.map(user => user['password'] = '')
+  const users = await User.find({}, { password: 0 }).sort({name:1});
   try {
     response.send(users);
   } catch (error) {
@@ -73,11 +87,17 @@ app.get("/users", async (request, response) => {
 });
 
 app.post("/users", async (request, response) => {
-  const user = new User(request.body);
+  const newUser = new User(request.body);
   try {
-    await user.save();
-    response.send(user);
+    users = await User.find({ email: newUser.email });
+    if (users.length > 0) {
+      response.status(409).send({});
+    } else {
+      await newUser.save()
+      response.status(200).send(newUser);
+    }
   } catch (error) {
+    console.log(error)
     response.status(500).send(error);
   }
 });
@@ -86,25 +106,25 @@ app.put("/users", async (request, response) => {
   let usr = request.body;
   try {
     console.log(usr);
-    let newUsr = await User.findOneAndUpdate({_id: usr._id},{ name: usr.name, email: usr.email, phone: usr.phone, address: usr.address }, {new: true});
+    let newUsr = await User.findOneAndUpdate({ _id: usr._id }, { name: usr.name, email: usr.email, phone: usr.phone, address: usr.address }, { new: true });
     response.status(200).send(newUsr);
   } catch (error) {
     response.status(500).send(error);
   }
-}); 
+});
 
 app.delete("/users", async (request, response) => {
   let usr = request.body;
   try {
-    await User.deleteOne({ _id: usr._id })    
+    await User.deleteOne({ _id: usr._id })
     response.status(200).send(`user ${usr._id} was delete`)
-  } catch (err) {    
+  } catch (err) {
     response.status(500).send(err);
   }
 })
 
 app.get("/admins", async (request, response) => {
-  let users = await Admin.find({});
+  let users = await Admin.find({}).sort({name:1});
   users.map(user => user['password'] = '')
   try {
     response.send(users);
@@ -113,18 +133,34 @@ app.get("/admins", async (request, response) => {
   }
 });
 
+app.post("/admins", async (request, response) => {
+  let newAdmin = new Admin(request.body);
+  try {
+    admins = await Admin.find({ email: newAdmin.email });
+    if (admins.length > 0) {
+      response.status(409).send({});
+    } else {
+      await newAdmin.save()
+      response.status(200).send(newAdmin);
+    }
+  } catch (error) {
+    console.log(error)
+    response.status(500).send(error);
+  }
+});
+
 app.put("/admins", async (request, response) => {
   let adm = request.body;
   try {
-    await Admin.updateOne({_id: adm._id },{ name: adm.name, email: adm.email, phone: adm.phone, address: adm.address });
+    await Admin.updateOne({ _id: adm._id }, { name: adm.name, email: adm.email, phone: adm.phone, address: adm.address });
     response.status(200);
   } catch (error) {
     response.status(500).send(error);
   }
-}); 
+});
 
 app.get('/categories', async (request, response) => {
-  const Categories = await Category.find({})
+  const Categories = await Category.find({}).sort({name:1})
   try {
     response.send(Categories);
   } catch (error) {
@@ -132,8 +168,22 @@ app.get('/categories', async (request, response) => {
   }
 });
 
+app.get('/categories/:category', async (request, response) => {
+  try {
+    const produtos = await Product.find({ Category: request.params.category }).sort({name:1});
+    if (produtos.length == 0) {
+      response.status(404).send(produtos);
+    } else {
+      response.status(200).send(produtos);
+    }
+  } catch (error) {
+    console.log(error)
+    response.status(500).send(error)
+  }
+});
+
 app.get('/products', async (request, response) => {
-  const products = await Product.find({})
+  const products = await Product.find({}).sort({name:1});
   try {
     response.send(products);
   } catch (error) {
@@ -141,10 +191,46 @@ app.get('/products', async (request, response) => {
   }
 });
 
+app.post('/products', async (request, response) => {
+  let newProduct = new Product(request.body)
+
+  try {
+    newProduct.save()
+    response.status(200).send(newProduct);
+  } catch (error) {
+    console.log(error)
+    response.status(500).send(error)
+  }
+});
+
+app.put('/products', async (request, response) => {
+  console.log("requisição put para products")
+  let newProduct = request.body;
+  try {
+    await Product.findByIdAndUpdate({ _id: newProduct._id}, { name: newProduct.name, id: newProduct.id, price: newProduct.price, description: newProduct.description, QtdStock: newProduct.QntStock, QtdSold: newProduct.QtdSold, Category: newProduct.Category, Image: newProduct.Image }, { new: true });
+    response.status(200);
+    response.send(newProduct)
+  } catch (error) {
+    console.log(error)
+    response.status(500).send(error);
+  }
+});
+
+app.delete('/products', async (request, response) => {
+  let product = request.body;
+  console.log(product);
+  try {
+    await Product.deleteOne({ _id: product._id })
+    response.status(200).send(`product ${product._id} was delete`)
+  } catch (err) {
+    response.status(500).send(err);
+  }
+})
+
 app.get('/search/:str', async (request, response) => {
   console.log(request.params.str)
   const regex = new RegExp(request.params.str, 'i');
-  const products = await Product.find({ $or: [{ name: regex }, { description: regex },{Category: regex}] })
+  const products = await Product.find({ $or: [{ name: regex }, { description: regex }, { Category: regex }] }).sort({name:1});
   try {
     response.send(products);
   } catch (error) {

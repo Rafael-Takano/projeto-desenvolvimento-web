@@ -22,20 +22,6 @@ const props = defineProps({
 	toggleCat: Number
 })
 
-productShowing.value = products;
-
-fetch('/products')
-	.then(
-		async res => {
-			products = await res.json();
-			sortedProducts.value = products.sort((a, b) => {
-				return a.name > b.name
-			});
-			productShowing.value = sortedProducts.value
-		})
-	.catch(err => console.log(err))
-
-
 function expand(prod, add) {
 	if (add) {
 		adding.value = true
@@ -60,15 +46,10 @@ function addItem(prod) {
 }
 
 let searching = false
-function filter() {
-	if (props.category == '') {
-		productShowing.value = sortedProducts.value;
-	}
-	else {
-		productShowing.value = sortedProducts.value.filter(e => e.Category == props.category);
-	}
-
+async function filter() {
 	searching = false;
+	await reload();
+
 	emit('untoggleCat');
 
 	if (productShowing.value.length === 0) {
@@ -87,34 +68,21 @@ function tryDelete(prod) {
 
 function deleteProd(response) {
 	if (response) {
-		sortedProducts.value.splice(sortedProducts.value.indexOf(deleteItem), 1)
-		productShowing.value.splice(productShowing.value.indexOf(deleteItem), 1)
+		fetch('/products', {
+			method: 'DELETE',
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify(deleteItem),
+		})
+			.catch(err => {
+				console.log(err);
+			})
+		reload();
 	}
 	else
 		deleteItem = {}
 	showCorfirm.value = false;
-}
-
-function updateItem(newProd) {
-	//console.log("Logging from Appcontent UpdateItem", ExpandProduct.value, newProd)
-	sortedProducts.value[sortedProducts.value.indexOf(ExpandProduct.value)] = newProd;
-	sortedProducts.value.sort((a, b) => {
-		return a.name > b.name
-	});
-
-	filter()
-
-	showExpand.value = false;
-}
-function newItem(newProd) {
-
-	console.log(newProd);
-	sortedProducts.value.push(newProd)
-	sortedProducts.value.sort((a, b) => {
-		return a.name > b.name
-	});
-	filter()
-	showExpand.value = false;
 }
 
 function search() {
@@ -122,7 +90,7 @@ function search() {
 		alert('Empty search isn\'t allowed');
 		return;
 	}
-	searching = true; 
+	searching = true;
 	fetch(`/search/${searchValue.value}`, {
 		method: 'GET'
 	}).then(async res => {
@@ -130,6 +98,33 @@ function search() {
 	})
 }
 
+function reload() {
+	if (searching) {
+		fetch(`/search/${searchValue.value}`, {
+			method: 'GET'
+		}).then(async res => {
+			productShowing.value = await res.json();
+		}).catch(err => console.log(err))
+	}
+	else if (props.category == '') {
+		fetch('/products'
+		).then(
+			async res => {
+				productShowing.value = await res.json();
+			}
+		).catch(err => console.log(err))
+	}
+	else {
+		fetch(`/categories/${props.category}`
+		).then(
+			async res => {
+				productShowing.value = await res.json();
+			}
+		).catch(err => console.log(err))
+	}
+}
+
+reload()
 
 watch(props, filter)
 
@@ -154,8 +149,8 @@ watch(props, filter)
 					<AddItems v-if="admin" @click="expand(undefined, true)" />
 				</div>
 				<ExpandItems class="child" v-if="showExpand" :product="ExpandProduct" :admin="admin"
-					:categories="categories" @addItem="addItem" :add="adding" @updateItem="updateItem" @newItem="newItem"
-					@closeExpand="close" />
+					:categories="categories" @addItem="addItem" :add="adding" @updateItem="reload(); close()"
+					@newItem="reload(); close()" @closeExpand="close" />
 			</section>
 		</section>
 	</section>
