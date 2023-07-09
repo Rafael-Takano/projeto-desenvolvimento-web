@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const port = 8000;
+const fs = require('fs')
 
 const mongoose = require('mongoose');
 
@@ -48,6 +49,16 @@ const categorySchema = new mongoose.Schema({
   category: String
 });
 
+function base64ToImage(base64String, outputPath) {
+  // Remove the data URL prefix (e.g., 'data:image/png;base64,')
+  const base64Data = base64String.replace(/^data:image\/\w+;base64,/, '');
+
+  // Create a buffer from the Base64 string
+  const imageBuffer = Buffer.from(base64Data, 'base64');
+
+  // Write the buffer to the output file
+  fs.writeFile(outputPath, imageBuffer, err => console.log(err));  
+}
 
 const User = mongoose.model('User', userSchema);
 const Admin = mongoose.model('Admin', userSchema);
@@ -195,6 +206,7 @@ app.post('/products', async (request, response) => {
   let newProduct = new Product(request.body)
 
   try {
+    base64ToImage(request.body.imageBlob,'./public' + request.body.Image)
     newProduct.save()
     response.status(200).send(newProduct);
   } catch (error) {
@@ -207,7 +219,10 @@ app.put('/products', async (request, response) => {
   console.log("requisição put para products")
   let newProduct = request.body;
   try {
-    await Product.findByIdAndUpdate({ _id: newProduct._id}, { name: newProduct.name, id: newProduct.id, price: newProduct.price, description: newProduct.description, QtdStock: newProduct.QntStock, QtdSold: newProduct.QtdSold, Category: newProduct.Category, Image: newProduct.Image }, { new: true });
+    if (request.body.imageBlob) {
+      base64ToImage(request.body.imageBlob,'./public' + request.body.Image)
+    }
+    await Product.findByIdAndUpdate({ _id: newProduct._id}, { name: newProduct.name, id: newProduct.id, price: newProduct.price, description: newProduct.description, QtdStock: newProduct.QtdStock, QtdSold: newProduct.QtdSold, Category: newProduct.Category, Image: newProduct.Image }, { new: true });
     response.status(200);
     response.send(newProduct)
   } catch (error) {

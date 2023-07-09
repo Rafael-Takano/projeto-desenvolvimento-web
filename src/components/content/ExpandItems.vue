@@ -43,8 +43,12 @@ function imgPreview(event) {
 
 async function updateItem() {
     newProd.value.price = Number(newProd.value.price);
-    newProd.value.QtdStock = Number(newProd.value.price);
+    newProd.value.QtdStock = Number(newProd.value.QtdStock);
     let reader = new FileReader();
+    if (Object.keys(newProd).some(k => newProd[k] === '')) {
+        alert('There are missing values on the Product update');
+        return;
+    }
     if (imageBlob) {
         reader.readAsDataURL(imageBlob);
         reader.onload = () => {
@@ -84,29 +88,16 @@ async function updateItem() {
 
 function newItem() {
     newProd.value.price = Number(newProd.value.price);
-    newProd.value.QtdStock = Number(newProd.value.price);
-    if (imageBlob) {
-        let reader = new FileReader();
-        reader.readAsDataURL(imageBlob);
-        reader.onload = () => {
-            newProd.value.imageBlob = reader.result;
-            newProd.value.Image = '/Products_imgs/' + imageBlob.name;
-            fetch('/products', {
-                method: 'POST',
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(newProd.value)
-            })
-                .then(
-                    async res => {
-                        console.log(await res.json())
-                        emit('newItem')
-                    }
-                )
-        }
+    newProd.value.QtdStock = Number(newProd.value.QtdStock);
+    if (!imageBlob || Object.keys(newProd).some(k => newProd[k] === '')) {
+        alert('There are missing values on the new Product');
+        return;
     }
-    else
+    let reader = new FileReader();
+    reader.readAsDataURL(imageBlob);
+    reader.onload = () => {
+        newProd.value.imageBlob = reader.result;
+        newProd.value.Image = '/Products_imgs/' + imageBlob.name;
         fetch('/products', {
             method: 'POST',
             headers: {
@@ -120,6 +111,7 @@ function newItem() {
                     emit('newItem')
                 }
             )
+    }
 }
 </script>
 

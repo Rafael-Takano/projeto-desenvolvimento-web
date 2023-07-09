@@ -5,8 +5,6 @@ import ExpandItems from './content/ExpandItems.vue';
 import AddItems from './content/addItems.vue'
 import ConfirmDeletion from './content/ConfirmDeletion.vue';
 
-let products = []
-const sortedProducts = ref(Object)
 const noProducts = ref(false);
 const showCorfirm = ref(false);
 const showExpand = ref(false);
@@ -94,7 +92,7 @@ function search() {
 	fetch(`/search/${searchValue.value}`, {
 		method: 'GET'
 	}).then(async res => {
-		productShowing.value = await res.json();
+		productShowing.value = await res.json();		
 	})
 }
 
@@ -110,7 +108,7 @@ function reload() {
 		fetch('/products'
 		).then(
 			async res => {
-				productShowing.value = await res.json();
+				productShowing.value = await res.json();				
 			}
 		).catch(err => console.log(err))
 	}

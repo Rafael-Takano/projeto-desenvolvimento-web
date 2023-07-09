@@ -36,8 +36,9 @@ function tryPurchase(cardData) {
         alert('There is no Products on the shopping cart');
         return;
     }
+    console.log(data);
     fetch('/buy', {
-        method: 'POST',
+        method: 'PUT',
         headers: {
             "Content-Type": "application/json",
         },
