@@ -1,6 +1,6 @@
 <script>
 export default {
-    emits: ['logout'],
+    emits: ['logout','delete','edit'],
     methods: {
         logout() {
             this.$emit('logout');
@@ -11,7 +11,8 @@ export default {
 
 <template>
     <div class="clientAccess">
-        <div class="button" >Delete Account</div>
+		<div class="button" @click="$emit('edit')">Edit Account</div>
+        <div class="button" @click="$emit('delete')">Delete Account</div>
         <div class="button" @click="logout" >Log off</div>
     </div>  
 </template>

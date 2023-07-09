@@ -31,6 +31,9 @@ export default {
         },
         admin: {
             type: Boolean
+        },
+        user: {
+            type: Object
         }
     },
     emits: ['login', 'logout', 'createCustomer', 'createAdmin'],
@@ -55,8 +58,15 @@ export default {
         },
         manageUsers() {    
             this.managingUsers = true;      
+        },
+        deleteSelf() {
+            if(this.$props.admin) {
+                console.log('delete admin');
+            }            
+            else {
+                console.log('delete client');
+            }
         }
-
     }
 }
 </script>
@@ -65,10 +75,10 @@ export default {
     <manageUsers v-if="managingUsers"/>
     <div v-else class="sidebar">
         <Login v-if="!userLoggedIn && !showCreateCustomer" @login="login" @createCustomer="createCustomer"/>
-        <ClientAccess v-if="userLoggedIn && !admin && !showCreateCustomer && !showCreateAdmin" @logout="logout"/>
-        <AdminAccess v-if="userLoggedIn && admin && !showCreateCustomer && !showCreateAdmin" @logout="logout" @createAdmin="createAdmin" @manage-users="manageUsers"/>
+        <ClientAccess v-if="userLoggedIn && !admin && !showCreateCustomer && !showCreateAdmin" @logout="logout" @delete="deleteSelf" @edit=""/>
+        <AdminAccess v-if="userLoggedIn && admin && !showCreateCustomer && !showCreateAdmin" @logout="logout" @createAdmin="createAdmin" @manage-users="manageUsers" @delete="deleteSelf" @edit=""/>
         <CreateCustomer v-if="showCreateCustomer" @enterCreateCustomer="enterCreateCustomer"/>
-        <CreateAdmin v-if="showCreateAdmin" @enterCreateAdmin="enterCreateAdmin"/>
+        <CreateAdmin v-if="showCreateAdmin" @enterCreateAdmin="enterCreateAdmin"/>        
     </div>
 </template>
 

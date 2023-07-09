@@ -3,9 +3,10 @@ import { ref, toRef, watch, onMounted } from 'vue'
 import CartItem from './cart/CartItem.vue';
 import CartBottom from './cart/CartBottom.vue'
 
-const emit = defineEmits(['removeItem', 'confirmPurchase'])
+const emit = defineEmits(['removeItem', 'confirmPurchase', 'untoggleCat'])
 const props = defineProps({
     items: Array,
+    logged: Boolean
 })
 
 const items = toRef(props.items)
@@ -26,6 +27,10 @@ function remove(item) {
 }
 
 function tryPurchase(cardData) {
+    if (!props.logged) {
+        alert('Please log on your account before finishing the purchase');
+        return;
+    }
     if (Object.keys(cardData).some(k => cardData[k] == '')) {
         alert('There are missing informations of the card');
         return;
@@ -43,8 +48,10 @@ function tryPurchase(cardData) {
             "Content-Type": "application/json",
         },
         body: JSON.stringify(data)
-    }).then(async res => console.log(await res.json())
-    ).catch( err => console.log(err))
+    }).then(async res => {
+        console.log(await res.json());
+        emit('untoggleCat')
+    }).catch(err => console.log(err))
 }
 
 </script>

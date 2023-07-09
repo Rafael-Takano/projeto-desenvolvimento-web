@@ -88,6 +88,26 @@ app.get('/login', async function (req, res) {
   }
 });
 
+app.put("/buy", async (request, response) => {
+  try{
+    let produtos=request.body.products;
+    console.log(produtos);
+    for(let i=0;i<produtos.length;i++){
+      if(produtos[i].qtd>produtos[i].QtdStock){
+        response.status(400).send("Tentanto comprar mais do que é possível");
+        return
+      }
+    }
+    for(let i=0;i<produtos.length;i++){
+      await Product.findByIdAndUpdate({_id: produtos[i]._id},{$set: {QtdStock: produtos[i].QtdStock-produtos[i].qtd, QtdSold: produtos[i].QtdSold+produtos[i].qtd}}).then();
+    }
+    response.status(200).send(produtos)
+  }catch(err){
+    console.log(err);
+    response.status(500).send(err);
+  }
+});
+
 app.get("/users", async (request, response) => {
   const users = await User.find({}, { password: 0 }).sort({name:1});
   try {

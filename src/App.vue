@@ -104,8 +104,7 @@ function handleLogout() {
   <div class="main">
     <AppHeader @toggleCart="toggleCart" @toggleUserAccess="toggleUserAccess" @toggleCategory="toggleCat" :admin="admin" @reset="resetCate" />
     <AppContent @addToCart="addToCart" :category="category" :admin="admin" :categories="categories" :toggleCat="toggleCate" @untoggleCat="toggleCate = 0"/>
-    <AppCart v-if="cartOpen && !admin" :items="itemsInCart" @removeItem="removeFromCart"
-      @confirmPurchase="confirmPurchase" />
+    <AppCart v-if="cartOpen && !admin" :items="itemsInCart" @removeItem="removeFromCart" :logged="userLoggedIn" @confirmPurchase="confirmPurchase" @untoggleCat="toggleCate = -1"/>
     <AppUserAccess v-if="userAccessOpen" :admin="admin" :userLoggedIn="userLoggedIn" @login="handleLogin"
       @logout="handleLogout" />
     <AppCategory v-if="categoryShown" @set="setCate" @reset="resetCate" :categories="categories" />

@@ -40,7 +40,6 @@ function close() {
 }
 function addItem(prod) {
 	emit('addToCart', prod);
-
 }
 
 let searching = false
