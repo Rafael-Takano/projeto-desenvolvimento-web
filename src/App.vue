@@ -15,6 +15,16 @@ const categoryShown = ref(false);
 const itemsInCart = ref(Object);
 const cartOpen = ref(false);
 const toggleCate = ref(0);
+const user = {
+  "_id":  "64a198657cd596f5a5a75d75",
+  "id": 1,
+  "name": "Antônio João",
+  "email": "antonio.joao@example.com",
+  "password": "senhaabc",
+  "phone": "+55 912345678",
+  "address": "Rua da Esperança, 123",
+  "__v": 0
+};
 itemsInCart.value = [];
 
 
@@ -105,8 +115,7 @@ function handleLogout() {
     <AppHeader @toggleCart="toggleCart" @toggleUserAccess="toggleUserAccess" @toggleCategory="toggleCat" :admin="admin" @reset="resetCate" />
     <AppContent @addToCart="addToCart" :category="category" :admin="admin" :categories="categories" :toggleCat="toggleCate" @untoggleCat="toggleCate = 0"/>
     <AppCart v-if="cartOpen && !admin" :items="itemsInCart" @removeItem="removeFromCart" :logged="userLoggedIn" @confirmPurchase="confirmPurchase" @untoggleCat="toggleCate = -1"/>
-    <AppUserAccess v-if="userAccessOpen" :admin="admin" :userLoggedIn="userLoggedIn" @login="handleLogin"
-      @logout="handleLogout" />
+    <AppUserAccess v-if="userAccessOpen" :admin="admin" :userLoggedIn="userLoggedIn" @login="handleLogin" @logout="handleLogout" :user="user"/>
     <AppCategory v-if="categoryShown" @set="setCate" @reset="resetCate" :categories="categories" />
   </div>
   <AppFooter class="footer" />

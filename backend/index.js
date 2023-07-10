@@ -57,7 +57,7 @@ function base64ToImage(base64String, outputPath) {
   const imageBuffer = Buffer.from(base64Data, 'base64');
 
   // Write the buffer to the output file
-  fs.writeFile(outputPath, imageBuffer, err => console.log(err));  
+  fs.writeFile(outputPath, imageBuffer, err => console.log(err));
 }
 
 const User = mongoose.model('User', userSchema);
@@ -89,27 +89,27 @@ app.get('/login', async function (req, res) {
 });
 
 app.put("/buy", async (request, response) => {
-  try{
-    let produtos=request.body.products;
+  try {
+    let produtos = request.body.products;
     console.log(produtos);
-    for(let i=0;i<produtos.length;i++){
-      if(produtos[i].qtd>produtos[i].QtdStock){
+    for (let i = 0; i < produtos.length; i++) {
+      if (produtos[i].qtd > produtos[i].QtdStock) {
         response.status(400).send("Tentanto comprar mais do que é possível");
         return
       }
     }
-    for(let i=0;i<produtos.length;i++){
-      await Product.findByIdAndUpdate({_id: produtos[i]._id},{$set: {QtdStock: produtos[i].QtdStock-produtos[i].qtd, QtdSold: produtos[i].QtdSold+produtos[i].qtd}}).then();
+    for (let i = 0; i < produtos.length; i++) {
+      await Product.findByIdAndUpdate({ _id: produtos[i]._id }, { $set: { QtdStock: produtos[i].QtdStock - produtos[i].qtd, QtdSold: produtos[i].QtdSold + produtos[i].qtd } }).then();
     }
     response.status(200).send(produtos)
-  }catch(err){
+  } catch (err) {
     console.log(err);
     response.status(500).send(err);
   }
 });
 
 app.get("/users", async (request, response) => {
-  const users = await User.find({}, { password: 0 }).sort({name:1});
+  const users = await User.find({}, { password: 0 }).sort({ name: 1 });
   try {
     response.send(users);
   } catch (error) {
@@ -136,8 +136,11 @@ app.post("/users", async (request, response) => {
 app.put("/users", async (request, response) => {
   let usr = request.body;
   try {
-    console.log(usr);
-    let newUsr = await User.findOneAndUpdate({ _id: usr._id }, { name: usr.name, email: usr.email, phone: usr.phone, address: usr.address }, { new: true });
+    let newUsr;
+    if (request.body.password)
+      newUsr = await Admin.updateOne({ _id: usr._id }, { name: usr.name, email: usr.email, password: usr.password, phone: usr.phone, address: usr.address });
+    else
+      newUsr = await Admin.updateOne({ _id: usr._id }, { name: usr.name, email: usr.email, phone: usr.phone, address: usr.address });
     response.status(200).send(newUsr);
   } catch (error) {
     response.status(500).send(error);
@@ -155,7 +158,7 @@ app.delete("/users", async (request, response) => {
 })
 
 app.get("/admins", async (request, response) => {
-  let users = await Admin.find({}).sort({name:1});
+  let users = await Admin.find({}).sort({ name: 1 });
   users.map(user => user['password'] = '')
   try {
     response.send(users);
@@ -183,15 +186,28 @@ app.post("/admins", async (request, response) => {
 app.put("/admins", async (request, response) => {
   let adm = request.body;
   try {
-    await Admin.updateOne({ _id: adm._id }, { name: adm.name, email: adm.email, phone: adm.phone, address: adm.address });
-    response.status(200);
+    if (request.body.password)
+      adm = await Admin.updateOne({ _id: adm._id }, { name: adm.name, email: adm.email, password: adm.password, phone: adm.phone, address: adm.address });
+    else
+      adm = await Admin.updateOne({ _id: adm._id }, { name: adm.name, email: adm.email, phone: adm.phone, address: adm.address });
+    response.status(200).send(adm);
   } catch (error) {
     response.status(500).send(error);
   }
 });
 
+app.delete("/admins", async (request, response) => {
+  let usr = request.body;
+  try {
+    await Admin.deleteOne({ _id: usr._id })
+    response.status(200).send(`Admin ${usr._id} was delete`)
+  } catch (err) {
+    response.status(500).send(err);
+  }
+})
+
 app.get('/categories', async (request, response) => {
-  const Categories = await Category.find({}).sort({name:1})
+  const Categories = await Category.find({}).sort({ name: 1 })
   try {
     response.send(Categories);
   } catch (error) {
@@ -201,7 +217,7 @@ app.get('/categories', async (request, response) => {
 
 app.get('/categories/:category', async (request, response) => {
   try {
-    const produtos = await Product.find({ Category: request.params.category }).sort({name:1});
+    const produtos = await Product.find({ Category: request.params.category }).sort({ name: 1 });
     if (produtos.length == 0) {
       response.status(404).send(produtos);
     } else {
@@ -214,7 +230,7 @@ app.get('/categories/:category', async (request, response) => {
 });
 
 app.get('/products', async (request, response) => {
-  const products = await Product.find({}).sort({name:1});
+  const products = await Product.find({}).sort({ name: 1 });
   try {
     response.send(products);
   } catch (error) {
@@ -226,7 +242,7 @@ app.post('/products', async (request, response) => {
   let newProduct = new Product(request.body)
 
   try {
-    base64ToImage(request.body.imageBlob,'./public' + request.body.Image)
+    base64ToImage(request.body.imageBlob, './public' + request.body.Image)
     newProduct.save()
     response.status(200).send(newProduct);
   } catch (error) {
@@ -240,9 +256,9 @@ app.put('/products', async (request, response) => {
   let newProduct = request.body;
   try {
     if (request.body.imageBlob) {
-      base64ToImage(request.body.imageBlob,'./public' + request.body.Image)
+      base64ToImage(request.body.imageBlob, './public' + request.body.Image)
     }
-    await Product.findByIdAndUpdate({ _id: newProduct._id}, { name: newProduct.name, id: newProduct.id, price: newProduct.price, description: newProduct.description, QtdStock: newProduct.QtdStock, QtdSold: newProduct.QtdSold, Category: newProduct.Category, Image: newProduct.Image }, { new: true });
+    await Product.findByIdAndUpdate({ _id: newProduct._id }, { name: newProduct.name, id: newProduct.id, price: newProduct.price, description: newProduct.description, QtdStock: newProduct.QtdStock, QtdSold: newProduct.QtdSold, Category: newProduct.Category, Image: newProduct.Image }, { new: true });
     response.status(200);
     response.send(newProduct)
   } catch (error) {
@@ -265,7 +281,7 @@ app.delete('/products', async (request, response) => {
 app.get('/search/:str', async (request, response) => {
   console.log(request.params.str)
   const regex = new RegExp(request.params.str, 'i');
-  const products = await Product.find({ $or: [{ name: regex }, { description: regex }, { Category: regex }] }).sort({name:1});
+  const products = await Product.find({ $or: [{ name: regex }, { description: regex }, { Category: regex }] }).sort({ name: 1 });
   try {
     response.send(products);
   } catch (error) {
