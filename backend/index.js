@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
 const port = 8000;
 const fs = require('fs')
@@ -67,17 +68,28 @@ const Category = mongoose.model("Category", categorySchema)
 
 app.use(express.json());
 app.use(express.static('public'))
+app.use(cors());
 
-app.get('/login', async function (req, res) {
+app.post('/login', async function (req, res) {
   console.log("Verificando Login");
   try {
     aux = await Admin.find({ email: req.body.email, password: req.body.password }).then();
     if (aux.length > 0) {
-      res.status(200).send("Admin logado");
+      let user = aux[0];
+      if (user instanceof mongoose.Document) {
+        user = user.toObject();
+      }
+      user.admin = true;
+      res.send(user);
     } else {
       aux = await User.find({ email: req.body.email, password: req.body.password }).then();
       if (aux.length > 0) {
-        res.status(200).send("Usuário Comum logado");
+        let user = aux[0];
+        if (user instanceof mongoose.Document) {
+          user = user.toObject();
+        }
+        user.admin = false;
+        res.send(user);
       } else {
         res.status(404).send("Não encontrado");
       }

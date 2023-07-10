@@ -41,8 +41,8 @@ export default {
     },
     emits: ['login', 'logout', 'createCustomer', 'createAdmin'],
     methods: {
-        login(loginType, email, password) {
-            this.$emit('login', loginType, email, password);
+        login(loginType, _id) {
+            this.$emit('login', loginType, _id);
         },
         logout() {
             this.$emit('logout');

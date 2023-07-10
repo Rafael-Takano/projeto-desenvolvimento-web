@@ -6,6 +6,7 @@
     "dev": "vite",
     "build": "vite build",
     "buildb": "vite build; rm -rf backend/public/; mv dist/ backend/public/",
+    "buildb-w": "vite build && rmdir /s /q backend\\public && move dist backend\\public",
     "preview": "vite preview"
   },
   "dependencies": {
