@@ -16,7 +16,7 @@ Também, no sistema permitimos que um usuário não logado possa colocar itens n
 No quesito dos dados que devem ser armazenados pelo sistema, é necessário manter um acesso aos clientes e admins cadastrados e os seus atributos (id, telefone, email, e o endereço no caso dos clientes). Também um estoque dos itens, contendo id, foto, descrição, preço, quantidade em estoque, quantidade vendida e categoria. E também, um carrinho que contém os itens adicionados pelo cliente até então.
 
 ## Descrição do Projeto
-O site Express Market tem dois tipos de usuário, cliente e admin. Todos os usuários podem visualizar os items disponíveis, filtrar por categorias e ver a descrição de itens. Caso seja um usuário não logado, ele pode fazer login. Tanto o usuário não logado e o cliente podem colocar itens no seu carrinho, mas para finalizar a compra o usuário deve fazer login. O usuário admin tem o poder de criar cadastrar no sistema outro usuário admin ou usuários cliente. E também, pode criar, editar ou remover itens do sistema. Ambos o cliente e admin possuem a opção de deslogar ou deletar a sua conta.
+O site Express Market tem dois tipos de usuário, cliente e admin. Todos os usuários podem visualizar os items disponíveis, filtrar por categorias, procurar produtos e ver a descrição de itens. Caso seja um usuário não logado, ele pode fazer login. Tanto o usuário não logado e o cliente podem colocar itens no seu carrinho, mas para finalizar a compra o usuário deve fazer login. O usuário admin tem o poder de cadastrar no sistema outro usuário admin. Clientes criam suas próprias contas de usuários cliente. Admins também, pode criar, editar ou remover itens do sistema. Ambos o cliente e admin possuem a opção de deslogar ou deletar a sua conta.
 
 Alem disso, as informações armazenadas no servidor para essas funcionalidades acima são:
 
@@ -98,12 +98,12 @@ A página inicial está dividida em 3 partes principais, uma navbar, um footer e
 Na página de adição de um item, temos sobre a tela uma div com caixas de input para receber as informações do item. E na tela do carrinho, temos uma div representando o carrinho e, contido nesse elemento, temos outras divs para cada item no carrinho. A pasta src contém o código dos componentes em vue.js e os json's que armazenam as informações dos produtos e os logins.
 
 ## Plano de Testes
-Visto a simplicidade das páginas elaboradas até então, ainda não vimos a necessidade de fazer testes automatizados. Os testes até então foram feitos de forma manual, mexendo na proporção da tela, com diferente números de itens e tamanho dos inputs.
+Visto a simplicidade das páginas elaboradas, não vimos a necessidade de fazer testes automatizados. Os testes até então foram feitos de forma manual, mexendo na proporção da tela, com diferente números de itens e tamanho dos inputs.
 
-Mais para a frente pretendemos também utilizar o postman para testar o backend.
+Durante o processo de teste do Backend, foram utilizadas abordagens manuais para verificar o correto funcionamento das funcionalidades do servidor. Para isso, foi empregada a ferramenta Postman.
 
 ## Resultado dos Testes
-Os resultados foram como o esperado, mas vale ressaltar que a responsividade das telas ainda não está como o esperado, e pretendemos aperfeiçoar isso nas próximas etapas.
+A realização dos testes foi de extrema importância, pois permitiu identificar possíveis erros e aprimorar o desempenho do backend. A ferramenta Postman desempenhou um papel fundamental nesse processo, facilitando o desenvolvimento e a depuração do sistema de forma eficiente e precisa. Com base nos resultados obtidos, foi possível realizar as correções necessárias para garantir um produto final de maior qualidade e confiabilidade.
 
 ## Como executar
 ### Milestone 1 (Mockups):
@@ -128,6 +128,8 @@ Para ver o site hospedado em um servidor estático local é necessário entrar n
 
 Assim o site estará hospedado no localhost:8000
 
+### Entrega Final
+
 ## Problemas
 
 ### Milestone 1 
@@ -136,6 +138,9 @@ Tivemos dificuldades em como organizar o display dos itens, principalmente no qu
 ### Milestone 2
 Ainda não implementamos uma boa responsividade ná área do usuário, mas já é possível fazer login como admin e como cliente. Além disso, os jsons que fazem o papel de banco de dados não estão sendo alterados pelo admin.
 
+### Entrega Final
+Durante o desenvolvimento do projeto, trabalhar com o backend usando Node.js/Express e MongoDB apresentou desafios significativos. Lidar com promessas, async/await e configurar o CORS exigiu um entendimento aprofundado dessas tecnologias. No entanto, superar esses desafios permitiu a criação de um backend robusto, capaz de lidar com operações assíncronas de forma eficiente e garantir a segurança das interações com os clientes.
+
 ## Comentários Extras 
 
 ### Milestone 1 
@@ -143,3 +148,6 @@ Não nos atentamos muito a deixar o site "dinâmico" até então, por exemplo, f
 
 ### Milestone 2
 Implementamos a maior parte das funcionalidades desejadas porém devemos agora focar em resolver os pequenos problemas citados anteriormente e focar no desenvolvimento do Back-End para finalizar o projeto.
+
+### Entrega Final
+Tivemos a oportunidade de vencer os desafios relacionados ao projeto e aprender mais sobre as tecnologias Vue.js, Node.js, Express e MongoDB. Além disso, também adquirimos conhecimento em outras ferramentas como o Postman. O trabalho permitiu expandir nosso conhecimento e explorar tecnologias relevantes para o Mercado de Trabalho e para a área de Ciências da Computação. Estamos orgulhosos do produto entregue e confiantes com o conhecimento adquirido.
