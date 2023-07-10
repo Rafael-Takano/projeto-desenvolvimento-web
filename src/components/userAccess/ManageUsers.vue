@@ -57,7 +57,7 @@ function selectUser(user) {
     selected.value = user;
 }
 
-function update() {    
+function update() {
     if (selected.value == '') {
         alert('Choose an User to edit')
         return
@@ -66,45 +66,45 @@ function update() {
 }
 
 function fetchUpdate() {
-    let el = document.getElementById('editing');    
+    let el = document.getElementById('editing');
     let data = {};
     data["_id"] = selected.value._id
     data["name"] = el.childNodes[3].value;
     data["email"] = el.childNodes[9].value;
     data["phone"] = el.childNodes[15].value;
-    data["address"] = el.childNodes[21].value;        
+    data["address"] = el.childNodes[21].value;
 
     if (showAdmins.value) {
         fetch('/admins', {
-        method: 'PUT',
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data)
-    })
-        .then(
-            async res => {
-                console.log(await res.json());
-                reloadAdm();
-                editing.value = false;
-            }
-        )
+            method: 'PUT',
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data)
+        })
+            .then(
+                async res => {
+                    console.log(await res.json());
+                    reloadAdm();
+                    editing.value = false;
+                }
+            )
     }
     else {
         fetch('/users', {
-        method: 'PUT',
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data)
-    })
-        .then(
-            async res => {
-                console.log(await res.json());
-                reloadCli();
-                editing.value = false;
-            }
-        )
+            method: 'PUT',
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data)
+        })
+            .then(
+                async res => {
+                    console.log(await res.json());
+                    reloadCli();
+                    editing.value = false;
+                }
+            )
     }
     selected.value = '';
 }

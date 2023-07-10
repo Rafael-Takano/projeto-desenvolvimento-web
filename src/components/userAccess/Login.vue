@@ -1,36 +1,36 @@
 <script>
 import { ref } from 'vue'
 export default {
-    data() {
-        return {
-            email: '',
-            password: ''
-        };
-    },
+	data() {
+		return {
+			email: '',
+			password: ''
+		};
+	},
 	emits: ['login', 'createCustomer'],
-    methods: {
-        async login() {
+	methods: {
+		async login() {
 			const user = await loginUser(this.email, this.password);
 			// if no response
-			if (user == undefined){
+			if (user == undefined) {
 				this.$emit('login', 'cliente', 0);
 			}
 			//if admin
-			else if (user.admin){
-            	this.$emit('login', 'admin', user._id);
+			else if (user.admin) {
+				this.$emit('login', 'admin', user);
 			}
 			//if customer
 			else {
-            	this.$emit('login', 'client', user._id);
+				this.$emit('login', 'client', user);
 			}
-        },
+		},
 		createCustomer() {
-			this.$emit('createCustomer');			
+			this.$emit('createCustomer');
 		}
-    }
+	}
 }
 
-function loginUser(email, password){
+function loginUser(email, password) {
 	let data = {};
 	data["email"] = email;
 	data["password"] = password;
@@ -38,56 +38,55 @@ function loginUser(email, password){
 
 	return fetch('/login', {
 		method: 'POST',
-        headers: {
-            "Content-Type": "application/json",
-        },
+		headers: {
+			"Content-Type": "application/json",
+		},
 		body: JSON.stringify(data)
 	})
-	.then(async res => {
-      const user = await res.json();
-	  console.log('login.vue', user);
-	  return user;
-    })
-	.catch(
-		err => console.log(err)
-	);
+		.then(async res => {
+			const user = await res.json();
+			console.log('login.vue', user);
+			return user;
+		})
+		.catch(
+			err => console.log(err)
+		);
 }
 
-function fetchCreateCustomer(email, password){
+function fetchCreateCustomer(email, password) {
 
 }
 
 </script>
 
 <template>
-    <div class="Login">
-        <img src="/imgs/Icons/person.svg">
-        <input type="text" placeholder="Email" v-model="email">
-        <input type="password" placeholder="Password" v-model="password">
-        <div class="login-button" @click="login()">Login</div>
+	<div class="Login">
+		<img src="/imgs/Icons/person.svg">
+		<input type="text" placeholder="Email" v-model="email">
+		<input type="password" placeholder="Password" v-model="password">
+		<div class="login-button" @click="login()">Login</div>
 		<div class="login-button" @click="createCustomer()">Create Customer</div>
-    </div>  
+	</div>
 </template>
 
 <style scoped>
-
-img {	
+img {
 	width: 40%;
-	margin: 10% 30% ;
-	background-color: #fff;	    
+	margin: 10% 30%;
+	background-color: #fff;
 }
 
 input {
 	display: block;
-	width: 100%;	
-	border: 1px #999 solid;	
+	width: 100%;
+	border: 1px #999 solid;
 	border-radius: 8px;
 	margin: .3vw 0;
 	padding: 10px;
 }
 
 .login-button {
-	text-align: center;	
+	text-align: center;
 	line-height: 4.16666vw;
 	width: 100%;
 	height: auto;
@@ -105,7 +104,7 @@ input {
 }
 
 @media (max-width: 1280px) {
-    input {
+	input {
 		margin: 1vw 0;
 	}
 
@@ -115,5 +114,4 @@ input {
 		font-size: 8vw;
 	}
 }
-
 </style>

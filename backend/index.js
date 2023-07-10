@@ -1,5 +1,4 @@
 const express = require('express');
-const cors = require('cors');
 const app = express();
 const port = 8000;
 const fs = require('fs')
@@ -67,11 +66,9 @@ const Product = mongoose.model("Product", productSchema)
 const Category = mongoose.model("Category", categorySchema)
 
 app.use(express.json());
-app.use(express.static('public'))
-app.use(cors());
+app.use(express.static('public'));
 
 app.post('/login', async function (req, res) {
-  console.log("Verificando Login");
   try {
     aux = await Admin.find({ email: req.body.email, password: req.body.password }).then();
     if (aux.length > 0) {
@@ -150,9 +147,9 @@ app.put("/users", async (request, response) => {
   try {
     let newUsr;
     if (request.body.password)
-      newUsr = await Admin.updateOne({ _id: usr._id }, { name: usr.name, email: usr.email, password: usr.password, phone: usr.phone, address: usr.address });
+      newUsr = await User.updateOne({ _id: usr._id }, { name: usr.name, email: usr.email, password: usr.password, phone: usr.phone, address: usr.address });
     else
-      newUsr = await Admin.updateOne({ _id: usr._id }, { name: usr.name, email: usr.email, phone: usr.phone, address: usr.address });
+      newUsr = await User.updateOne({ _id: usr._id }, { name: usr.name, email: usr.email, phone: usr.phone, address: usr.address });
     response.status(200).send(newUsr);
   } catch (error) {
     response.status(500).send(error);

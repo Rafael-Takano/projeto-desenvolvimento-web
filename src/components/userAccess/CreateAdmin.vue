@@ -18,7 +18,7 @@ export default {
 				password: this.password,
 				phone: this.number,
 				address: this.address
-			}			
+			}
 			if (Object.keys(usr).some(k => usr[k] == '')) {
 				alert('There are empty field, fill them please')
 				return;

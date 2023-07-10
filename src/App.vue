@@ -9,23 +9,13 @@ import AppUserAccess from './components/AppUserAccess.vue';
 
 const admin = ref(false);
 const userLoggedIn = ref(false);
-const user_id = ref('');
 const category = ref('');
 const categories = ref(Object)
 const categoryShown = ref(false);
 const itemsInCart = ref(Object);
 const cartOpen = ref(false);
 const toggleCate = ref(0);
-const user = {
-  "_id":  "64a198657cd596f5a5a75d75",
-  "id": 1,
-  "name": "Antônio João",
-  "email": "antonio.joao@example.com",
-  "password": "senhaabc",
-  "phone": "+55 912345678",
-  "address": "Rua da Esperança, 123",
-  "__v": 0
-};
+const user = ref(Object)
 itemsInCart.value = [];
 
 
@@ -80,22 +70,22 @@ function resetCate() {
   category.value = ''
 }
 
-function handleLogin(loginType, _id) {
-  if (_id == 0) {
+function handleLogin(loginType, usr) {
+  if (usr == 0) {
+    alert('Wrong Credentials')
     userLoggedIn.value = false;
     admin.value = false;
   }
   else if (loginType == 'admin'){
-    user_id.value = _id;
+    user.value = usr;
     userLoggedIn.value = true;
     admin.value = true;
   }
   else if (loginType == 'client'){
-    user_id.value = _id;
+    user.value = usr;
     userLoggedIn.value = true;
     admin.value = false;
-  }
-    console.log(_id)
+  }    
 }
 
 function confirmPurchase() {

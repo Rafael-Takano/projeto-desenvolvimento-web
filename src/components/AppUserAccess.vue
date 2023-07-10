@@ -41,8 +41,8 @@ export default {
     },
     emits: ['login', 'logout', 'createCustomer', 'createAdmin'],
     methods: {
-        login(loginType, _id) {
-            this.$emit('login', loginType, _id);
+        login(loginType, usr) {
+            this.$emit('login', loginType, usr);
         },
         logout() {
             this.$emit('logout');
@@ -62,7 +62,7 @@ export default {
         manageUsers() {
             this.managingUsers = true;
         },
-        deleteSelf() {            
+        deleteSelf() {
             this.$emit('logout');
             if (this.$props.admin) {
                 fetch('/admins', {
@@ -83,7 +83,7 @@ export default {
                     },
                     body: JSON.stringify(this.$props.user)
                 }).then(async res => {
-                    console.log(await res.json());                    
+                    console.log(await res.json());
                 })
             }
         }
@@ -101,7 +101,7 @@ export default {
             @createAdmin="createAdmin" @manage-users="manageUsers" @delete="deleteSelf" @edit="editing = true" />
         <CreateCustomer v-if="showCreateCustomer" @enterCreateCustomer="enterCreateCustomer" />
         <CreateAdmin v-if="showCreateAdmin" @enterCreateAdmin="enterCreateAdmin" />
-        <EditingSelf v-if="editing" :user="user" :admin="admin" @finish-edit="editing = false"/>
+        <EditingSelf v-if="editing" :user="user" :admin="admin" @finish-edit="editing = false" />
     </div>
 </template>
 
