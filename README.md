@@ -130,6 +130,18 @@ Assim o site estará hospedado no localhost:8000
 
 ### Entrega Final
 
+Para rodar é necessário ter o mongoDB instalado localmente, e criar um banco chamado ExpressMarket, e 4 colections: products, users, admins, categories. E importar os documentos iniciais na pasta database jsons/. 
+
+Em seguida realiza-se os seguintes comandos:
+
+```
+cd backend/
+npm install
+npm run dev
+```
+
+O site estará hospeadado no localhost:8000.
+
 ## Problemas
 
 ### Milestone 1 
