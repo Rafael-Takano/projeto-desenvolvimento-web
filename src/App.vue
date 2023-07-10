@@ -9,6 +9,7 @@ import AppUserAccess from './components/AppUserAccess.vue';
 
 const admin = ref(false);
 const userLoggedIn = ref(false);
+const user_id = ref('');
 const category = ref('');
 const categories = ref(Object)
 const categoryShown = ref(false);
@@ -79,24 +80,22 @@ function resetCate() {
   category.value = ''
 }
 
-function handleLogin(loginType, email, password) {
-  console.log(loginType, email, password)
-  //console.log(adminsData.admnins)
-  if (loginType === 'client') {
+function handleLogin(loginType, _id) {
+  if (_id == 0) {
+    userLoggedIn.value = false;
+    admin.value = false;
+  }
+  else if (loginType == 'admin'){
+    user_id.value = _id;
+    userLoggedIn.value = true;
+    admin.value = true;
+  }
+  else if (loginType == 'client'){
+    user_id.value = _id;
     userLoggedIn.value = true;
     admin.value = false;
   }
-  if (loginType === 'admin') {
-    // const user = adminsData.admins.find((user) => user.email === email && user.password === password);
-    // if (user) {
-    // }
-    // else {
-    //   console.log('login invalido');
-    // }
-    userLoggedIn.value = true;
-    admin.value = true;
-    console.log('login sucesso');
-  }
+    console.log(_id)
 }
 
 function confirmPurchase() {
@@ -107,6 +106,7 @@ function confirmPurchase() {
 function handleLogout() {
   userLoggedIn.value = false;
   admin.value = false;
+  user_id.value = 0;
 }
 </script>
 

@@ -1,4 +1,5 @@
 <script>
+import { ref } from 'vue'
 export default {
     data() {
         return {
@@ -8,14 +9,54 @@ export default {
     },
 	emits: ['login', 'createCustomer'],
     methods: {
-        login(loginType) {
-            this.$emit('login', loginType, this.email, this.password);
+        async login() {
+			const user = await loginUser(this.email, this.password);
+			// if no response
+			if (user == undefined){
+				this.$emit('login', 'cliente', 0);
+			}
+			//if admin
+			else if (user.admin){
+            	this.$emit('login', 'admin', user._id);
+			}
+			//if customer
+			else {
+            	this.$emit('login', 'client', user._id);
+			}
         },
 		createCustomer() {
 			this.$emit('createCustomer');			
 		}
     }
 }
+
+function loginUser(email, password){
+	let data = {};
+	data["email"] = email;
+	data["password"] = password;
+	let user;
+
+	return fetch('/login', {
+		method: 'POST',
+        headers: {
+            "Content-Type": "application/json",
+        },
+		body: JSON.stringify(data)
+	})
+	.then(async res => {
+      const user = await res.json();
+	  console.log('login.vue', user);
+	  return user;
+    })
+	.catch(
+		err => console.log(err)
+	);
+}
+
+function fetchCreateCustomer(email, password){
+
+}
+
 </script>
 
 <template>
@@ -23,8 +64,7 @@ export default {
         <img src="/imgs/Icons/person.svg">
         <input type="text" placeholder="Email" v-model="email">
         <input type="password" placeholder="Password" v-model="password">
-        <div class="login-button" @click="login('client')">Client Login</div>
-        <div class="login-button" @click="login('admin')">Admin Login</div>
+        <div class="login-button" @click="login()">Login</div>
 		<div class="login-button" @click="createCustomer()">Create Customer</div>
     </div>  
 </template>
