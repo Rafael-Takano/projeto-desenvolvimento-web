@@ -1,47 +1,64 @@
 <script>
 export default {
-    data() {
-        return {
+	data() {
+		return {
 			name: '',
-            email: '',
-            password: '',
+			email: '',
+			password: '',
 			number: '',
 			address: ''
-        };
-    },
+		};
+	},
 	emits: ['enterCreateCustomer'],
-    methods: {
-        enterCreateCustomer() {
-            this.$emit('enterCreateCustomer');
-        }
-    }
+	methods: {
+		enterCreateCustomer() {
+			let usr = {
+				name: this.name,
+				email: this.email,
+				password: this.password,
+				phone: this.number,
+				address: this.address
+			}			
+			if (Object.keys(usr).some(k => usr[k] == '')) {
+				alert('There are empty field, fill them please')
+				return;
+			}
+			this.$emit('enterCreateCustomer');
+			fetch('/users', {
+				method: 'POST',
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify(usr)
+			}).then(async res => console.log(await res.json()))
+		}
+	}
 }
 </script>
 
 <template>
-    <div class="Login">
-        <img src="/imgs/Icons/person.svg">
-        <input type="text" placeholder="Name" v-model="name">
-        <input type="text" placeholder="Email" v-model="email">
-        <input type="password" placeholder="Password" v-model="password">
-        <input type="text" placeholder="Number" v-model="number">
-        <input type="text" placeholder="Address" v-model="address">
-        <div class="button" @click="enterCreateCustomer" >Create Customer</div>
-    </div>  
+	<div class="Login">
+		<img src="/imgs/Icons/person.svg">
+		<input type="text" placeholder="Name" v-model="name">
+		<input type="text" placeholder="Email" v-model="email">
+		<input type="password" placeholder="Password" v-model="password">
+		<input type="text" placeholder="Number" v-model="number">
+		<input type="text" placeholder="Address" v-model="address">
+		<div class="button" @click="enterCreateCustomer">Create Customer</div>
+	</div>
 </template>
 
 <style scoped>
-
-img {	
+img {
 	width: 40%;
-	margin: 10% 30% ;
-	background-color: #fff;	    
+	margin: 10% 30%;
+	background-color: #fff;
 }
 
 input {
 	display: block;
-	width: 100%;	
-	border: 1px #999 solid;	
+	width: 100%;
+	border: 1px #999 solid;
 	border-radius: 8px;
 	margin: .3vw 0;
 	padding: 10px;
@@ -49,7 +66,7 @@ input {
 
 
 .button {
-	text-align: center;	
+	text-align: center;
 	line-height: 4.16666vw;
 	width: 100%;
 	height: auto;
@@ -67,7 +84,7 @@ input {
 }
 
 @media (max-width: 1280px) {
-    input {
+	input {
 		margin: 1vw 0;
 	}
 
@@ -77,5 +94,4 @@ input {
 		font-size: 8vw;
 	}
 }
-
 </style>
